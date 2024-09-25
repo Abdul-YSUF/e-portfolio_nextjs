@@ -1,0 +1,196 @@
+.section_5 {
+  @include flexbox;
+  flex-direction: column;
+  padding-top: 110px;
+}
+
+.form_contact {
+  @include flexbox;
+  flex-direction: column;
+  margin-top: 0;
+  width: 100%;
+  @include breakpoints_desktop {
+    flex-direction: row;
+    margin-top: 30px;
+  }
+}
+
+.label_form {
+  color: black;
+  margin-bottom: 5px;
+}
+
+.nuit .label_form {
+  color: white;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  max-width: 100%;
+  margin-top: 30px;
+  @include breakpoints_desktop {
+    width: 40%;
+    max-width: unset;
+    margin-left: 100px;
+    margin-top: 24px;
+  }
+}
+
+.form input,
+.form textarea {
+  background: transparent;
+  border: 2px solid;
+  border-image: linear-gradient(
+      45deg,
+      rgba(192, 54, 154, 1),
+      rgba(97, 0, 255, 0.89),
+      rgba(46, 137, 13, 0.89)
+    )
+    1;
+}
+
+.div_titre {
+  @include flexbox;
+  margin-top: 40px;
+}
+
+.titre_form {
+  width: 90%;
+  font-size: 18px;
+}
+
+.nuit .titre_form {
+  color: $white;
+}
+
+.nuit input::placeholder textarea::placeholder {
+  color: rgb(148, 148, 148);
+}
+
+.nom_de_contact {
+  padding: 10px;
+}
+
+.email {
+  padding: 10px;
+}
+
+.telephone {
+  padding: 10px;
+}
+
+.message {
+  padding: 10px 10px 30px 10px;
+}
+
+.nuit .input_nuit {
+  background: linear-gradient(#151d2a, #151d2a) padding-box,
+    linear-gradient(to right, rgba(192, 187, 54, 1), rgba(97, 0, 255, 0.89))
+      border-box;
+  border: 2px solid transparent;
+  border-radius: 15px;
+  color: white;
+  transition: background 1000ms ease-in-out;
+}
+
+.error {
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.error-msg {
+  color: red;
+}
+
+.button_denvoi {
+  @include flexbox;
+  margin-left: 0;
+  width: auto;
+  background: transparent;
+  border: 4px solid;
+  border-image: linear-gradient(
+      45deg,
+      rgba(192, 54, 154, 1),
+      rgba(97, 0, 255, 0.89),
+      rgba(46, 137, 13, 0.89)
+    )
+    1;
+  border-radius: 15px;
+  padding: 10px;
+  cursor: pointer;
+  @include breakpoints_desktop {
+    display: block;
+    width: 30%;
+    margin-left: 180px;
+  }
+}
+
+.nuit .button_denvoi {
+  background: linear-gradient(#151d2a, #151d2a) padding-box,
+    linear-gradient(to right, rgba(192, 54, 170, 1), rgba(137, 95, 13, 0.89))
+      border-box;
+  border: 4px solid transparent;
+  color: $white;
+  transition: background 1000ms ease-in-out;
+}
+
+.button_denvoi:hover {
+  transform: none;
+  background: linear-gradient($white, $white) padding-box,
+    linear-gradient(to right, rgba(192, 54, 170, 1), rgba(137, 95, 13, 0.89))
+      border-box;
+  border: 4px solid transparent;
+  @include breakpoints_desktop {
+    transform: scale(1.05);
+  }
+}
+
+.nuit .button_denvoi:hover {
+  background: linear-gradient(#151d2a, #151d2a) padding-box,
+    linear-gradient(to right, rgba(192, 54, 170, 1), rgba(137, 95, 13, 0.89))
+      border-box;
+}
+
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 255, 0, 0.8);
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: white;
+}
+
+.contact_img {
+  width: 90%;
+  height: 280px;
+  object-fit: fill;
+  border-radius: 10px;
+  margin-top: 30px;
+  @include breakpoints_desktop {
+    width: 38%;
+    height: 370px;
+    object-fit: cover;
+    margin-top: 10px;
+  }
+}
+
+.emailto {
+  @include flexbox;
+  display: none;
+  flex-direction: column;
+  width: 90%;
+  margin-top: 40px;
+  @include breakpoints_desktop {
+    display: none;
+    flex-direction: unset;
+    width: unset;
+  }
+}
+
+.nuit .emailto {
+  color: $white;
+}

@@ -1,0 +1,213 @@
+.competences {
+  @include flexbox;
+  flex-direction: column;
+  padding-top: 110px;
+  @include breakpoints_desktop {
+    margin-top: 60px;
+  }
+  &__div {
+    width: 90%;
+    height: 711.5px;
+    background-position: bottom 0px center;
+    background: $nuit;
+    background-image: url(/assets/growtika-9WnjxT1NCoY-unsplash.jpg);
+    background-size: cover;
+    border-radius: 63px;
+    margin-top: 50px;
+    @include breakpoints_desktop {
+      width: 85%;
+      height: 460px;
+      background-position: center;
+    }
+  }
+  &__titre {
+    @include flexbox;
+    color: $white;
+    font-size: 24px;
+    font-weight: 600;
+    @include breakpoints_desktop {
+      margin-top: unset;
+    }
+  }
+  &__details {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: 100%;
+    height: 300px;
+    @include breakpoints_desktop {
+      flex-direction: row;
+    }
+  }
+  &__un,
+  &__deux {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-radius: 100px;
+    align-items: center;
+    justify-content: space-around;
+    text-align: left;
+    height: 360px;
+    background-color: $nuit;
+    color: $white;
+    @include breakpoints_desktop {
+      height: 460px;
+      width: 50%;
+      border-radius: unset;
+      align-items: unset;
+    }
+  }
+  &__un {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 63px;
+    border-top-left-radius: 63px;
+    @include breakpoints_desktop {
+      border-top-left-radius: 63px;
+      border-bottom-left-radius: 63px;
+      border-top-right-radius: unset;
+    }
+  }
+  &__deux {
+    border-bottom-right-radius: 63px;
+    border-bottom-left-radius: 63px;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    margin-top: 0px;
+    @include breakpoints_desktop {
+      border-top-right-radius: 63px;
+      border-bottom-right-radius: 63px;
+      border-bottom-left-radius: unset;
+    }
+  }
+  &__barre {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    padding-left: 0;
+    @include breakpoints_desktop {
+      width: 85%;
+      margin-left: 40px;
+      margin-top: unset;
+      padding: unset;
+      margin-bottom: 10px;
+    }
+  }
+  &__li {
+    margin-top: 10px;
+    @include breakpoints_desktop {
+      margin-top: 20px;
+    }
+  }
+}
+
+.competences__un ul {
+  margin-top: 65px;
+  @include breakpoints_desktop {
+    margin-top: unset;
+  }
+}
+
+.competences__deux ul {
+  height: 360px;
+  @include breakpoints_desktop {
+    margin-top: unset;
+    height: unset;
+  }
+}
+
+.progressbar-title {
+  display: flex;
+  flex-direction: row;
+  color: $white;
+}
+
+.skill {
+  display: inline-block;
+  margin-top: 0;
+  margin-bottom: 0px;
+  font-size: 15px;
+  font-weight: 300;
+  font-style: italic;
+  @include breakpoints_desktop {
+    font-size: 18px;
+  }
+}
+
+.progress-value percent {
+  position: absolute;
+  right: 5px;
+  top: 20%;
+}
+
+.bar-container {
+  background: #ffffff;
+  position: relative;
+  width: 100%;
+  height: 5px;
+  margin-top: 5px;
+  display: block;
+  border-radius: 5px;
+}
+
+.progressbar {
+  position: absolute;
+  width: 0%;
+  height: 100%;
+  border-radius: 5px;
+}
+
+.containeur {
+  display: flex;
+  width: 0px;
+  border-radius: 8px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.circular-progress {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  @include flexbox;
+  position: absolute;
+  right: 5px;
+  top: -15%;
+  @include breakpoints_desktop {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+.circular-progress::before {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: $white;
+  @include breakpoints_desktop {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.progress-value {
+  position: relative;
+  font-size: 10px;
+  font-weight: 600;
+  color: $black;
+  @include breakpoints_desktop {
+    font-size: 12px;
+  }
+}
+
+.jour .competences__titre {
+  color: $black;
+}
+
+.nuit .competences__titre {
+  color: $white;
+}

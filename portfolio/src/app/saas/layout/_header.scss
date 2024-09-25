@@ -1,0 +1,462 @@
+.header {
+  @include flexbox;
+  box-shadow: 0px 5px 10px 0px #aaa;
+  position: fixed;
+  width: 100%;
+  max-width: 1280px;
+  background: $white;
+  transition: 1000ms ease-in-out;
+  color: #000;
+  height: 80px;
+  z-index: 10000;
+}
+
+.nuit .header {
+  background: #151d2a;
+  transition: 1000ms ease-in-out;
+}
+
+.navbar {
+  display: block;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  position: relative;
+  height: 64px;
+  @include breakpoints_desktop {
+    display: flex;
+    position: unset;
+    height: unset;
+  }
+}
+
+.navbar-logo {
+  @include flexbox;
+  width: 60%;
+  @include breakpoints_desktop {
+    width: 30%;
+  }
+}
+
+.logo {
+  @include flexbox;
+  position: absolute;
+  left: 15px;
+  top: 15px;
+  width: 200px;
+  height: auto;
+  max-width: 100%;
+  z-index: 1;
+  @include breakpoints_desktop {
+    width: 240px;
+    top: 20px;
+    left: 45px;
+  }
+}
+
+.header input[type="checkbox"],
+.header .hamburger-lines,
+.navbar_reseau {
+  @include breakpoints_desktop {
+    display: none;
+  }
+}
+
+.navbar input[type="checkbox"],
+.navbar .hamburger-lines,
+.navbar_reseau {
+  display: block;
+  @include breakpoints_desktop {
+    display: unset;
+  }
+}
+
+.navbar input[type="checkbox"] {
+  position: absolute;
+  display: block;
+  height: 32px;
+  width: 35px;
+  top: 15.5px;
+  right: 20px;
+  z-index: 5;
+  opacity: 0;
+  cursor: pointer;
+}
+
+li.navbar_li {
+  @include flexbox;
+  padding: 0px;
+}
+
+.navbar_li a {
+  padding: 10px 15px 0 15px;
+}
+
+.header .menu-items {
+  display: flex;
+  position: absolute;
+  right: 0;
+  padding-top: 90px;
+  background: $white;
+  height: 1200px;
+  max-width: 100%;
+  transform: translate(380%);
+  flex-direction: column;
+  transition: transform 0.5s ease-in-out;
+  transition: 1000ms ease-in-out;
+  box-shadow: 0px 0px 10px 5px #aaa;
+  @include breakpoints_desktop {
+    position: unset;
+    padding-top: unset;
+    height: unset;
+    max-width: unset;
+    transform: unset;
+    transition: transform unset;
+    flex-direction: row;
+    box-shadow: unset;
+  }
+}
+
+.nuit .header .menu-items {
+  background: #151d2a;
+}
+
+.nuit .menu-items a {
+  color: white;
+}
+
+.menu-items {
+  display: flex;
+  margin: -10px 0px 0px 0px;
+  width: 100%;
+  @include breakpoints_desktop {
+    @include flexbox;
+    margin: 0px 0px 0px 90px;
+  }
+}
+
+.menu-items li {
+  list-style: none;
+  font-size: 18px;
+}
+
+.menu-items a {
+  text-decoration: none;
+  color: #444;
+  font-weight: 500;
+  transition: color 0.3s ease-in-out;
+}
+
+.menu-items a:hover {
+  color: #08b7a2;
+  transition: none;
+  @include breakpoints_desktop {
+    transition: color 0.3s ease-in-out;
+  }
+}
+
+.navbar_reseau {
+  @include flexbox;
+  margin-top: 5px;
+  gap: 5px;
+  @include breakpoints_desktop {
+    display: none;
+  }
+}
+
+.navbar_github {
+  background: $white;
+  width: 100%;
+  margin-top: 5px;
+  border: 2px solid;
+  border-radius: 100px;
+}
+
+.navbar_linkedin {
+  margin-top: 5px;
+  border: 2px solid;
+  background: $white;
+  border-radius: 100px;
+}
+
+.navbar_Gmail {
+  margin-top: 5px;
+  border: 2px solid;
+  background: $white;
+  border-radius: 100px;
+}
+
+.navbar_github:hover {
+  transform: none;
+  @include breakpoints_desktop {
+    transform: scale(1.2);
+  }
+}
+
+.navbar_linkedin:hover {
+  transform: none;
+  @include breakpoints_desktop {
+    transform: scale(1.2);
+  }
+}
+
+.navbar_Gmail:hover {
+  transform: none;
+  @include breakpoints_desktop {
+    transform: scale(1.2);
+  }
+}
+
+/* ---- Mode Sombre ---- */
+.container {
+  position: fixed;
+  margin-top: 70px;
+  @include breakpoints_desktop {
+    margin-top: 5px;
+  }
+}
+
+.container h2 {
+  transition: 1000ms ease-in-out;
+  font-size: 18px;
+  background: linear-gradient(
+    to right,
+    rgba(245, 107, 244, 0.79) 0%,
+    #efad05 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 20px;
+  @include breakpoints_desktop {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+}
+
+.nuit .container h2 {
+  background: linear-gradient(to right, #30cfd0 0%, #794fac 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.toggle {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 35px;
+  border-radius: 60px;
+  border: 2px solid $black;
+  cursor: pointer;
+  transition: border 0.3s ease-in-out;
+  margin-top: 0px;
+  margin-left: 7px;
+  box-shadow: inset 0 3px 10px rgba(0, 0, 0, 0.4),
+    inset 0 -3px 20px rgba(255, 255, 255, 0.4);
+  @include breakpoints_desktop {
+    margin-left: 2px;
+  }
+}
+
+.nuit .toggle {
+  border: 2px solid $white;
+  border-color: $white;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.checkbox {
+  display: none;
+}
+
+.svg {
+  width: 25%;
+  font-size: 32px;
+  line-height: 60px;
+  text-align: center;
+  z-index: 1;
+}
+
+.sun--jour {
+  margin-left: 6.5px;
+  @include breakpoints_desktop {
+    margin-left: 6px;
+  }
+}
+
+.moon--nuit {
+  margin-right: 7px;
+}
+
+.ball {
+  position: absolute;
+  width: 27px;
+  height: 27px;
+  margin: 3px;
+  background: linear-gradient(180deg, #ffcc96, #d8865d);
+  border-radius: 180px;
+  box-shadow: -3px -3px 10px #00000040, 3px 3px 20px #00000040;
+  transition: all 0.3s ease-in-out;
+}
+
+/* ---- Mode Jour ---- */
+.jour {
+  background-color: $white;
+}
+.jour .toggle {
+  background: linear-gradient(145deg, rgba(220, 56, 34, 0.79), #efad05);
+}
+.jour .sun--jour {
+  color: $black;
+}
+.jour .moon--nuit {
+  color: $black;
+}
+.jour .ball {
+  background: linear-gradient(180deg, #d4d72c, #d8865d);
+}
+/* ---- Mode Nuit ---- */
+.nuit {
+  background: #151d2a;
+}
+
+.nuit .toggle {
+  background: linear-gradient(145deg, #30cfd0, #330867);
+}
+
+.nuit .sun--jour {
+  color: $white;
+  transition: 0.3s;
+}
+
+.nuit .moon--nuit {
+  color: $white;
+  transition: 0.3s;
+}
+
+.nuit .ball {
+  background: rgb(114, 162, 199) 100%;
+  transition: 0.3s;
+  transform: translateX(44.5px);
+  margin-left: 2px;
+  @include breakpoints_desktop {
+    transform: translateX(48px);
+  }
+}
+
+@media (max-width: 991px) {
+  .navbar .hamburger-lines {
+    display: block;
+    height: 23px;
+    width: 35px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .navbar .hamburger-lines .line {
+    display: block;
+    height: 4px;
+    width: 100%;
+    border-radius: 10px;
+    background: #333;
+  }
+
+  .nuit .navbar .hamburger-lines .line {
+    background: $white;
+  }
+
+  .navbar .hamburger-lines .line1 {
+    height: 3px;
+    transform-origin: right;
+    transition: transform 0.4s ease-in-out;
+  }
+
+  .navbar .hamburger-lines .line2 {
+    width: 45px;
+    margin-left: -5px;
+    height: 3px;
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .navbar .hamburger-lines .line3 {
+    height: 3px;
+    transform-origin: right;
+    transition: transform 0.4s ease-in-out;
+  }
+
+  .header .menu-items li {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  .navbar input[type="checkbox"]:checked ~ .menu-items {
+    transform: translateX(0);
+  }
+
+  .navbar input[type="checkbox"]:checked ~ .hamburger-lines .line1 {
+    transform: rotate(-35deg);
+  }
+
+  .navbar input[type="checkbox"]:checked ~ .hamburger-lines .line2 {
+    transform: scaleY(0);
+  }
+
+  .navbar input[type="checkbox"]:checked ~ .hamburger-lines .line3 {
+    transform: rotate(35deg);
+  }
+
+  .navbar_reseau {
+    gap: 15px;
+  }
+
+  .mode_nuit {
+    width: 85%;
+    margin-top: -10px;
+  }
+  
+  @media (orientation: landscape) {
+    .header .menu-items {
+      padding-top: 70px;
+    }
+  
+    .header .menu-items li {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  
+    .navbar_reseau {
+      gap: 5px;
+    }
+  
+    .navbar_github,
+    .navbar_linkedin,
+    .navbar_Gmail {
+      width: 80%;
+    }
+  
+    .menu-items li a {
+      font-size: 17px;
+    }
+  
+    .container h2 {
+      font-size: 16px;
+    }
+  
+    .ball {
+      margin-left: 2px;
+    }
+  
+    .nuit .ball {
+      transform: translateX(36.5px);
+    }
+  }  
+}

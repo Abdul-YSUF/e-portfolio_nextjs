@@ -1,0 +1,18 @@
+@mixin flexbox($justify-content: center, $text-align: center, $align-items: center) {
+	display: flex;
+	justify-content: $justify-content;
+	text-align: $text-align;
+	align-items: $align-items;
+}
+
+@mixin breakpoints_desktop {
+	@media screen and (min-width: map-get($breakpoints_desktop, laptop)) {
+		@content;
+	}
+}
+
+@mixin breakpoints_large {
+	@media screen and (min-width: map-get($breakpoints_large, l)) and (max-width: map-get($breakpoints_large, lm)) {
+		@content;
+	}
+}

@@ -1,0 +1,134 @@
+.section_2 {
+  @include flexbox;
+  flex-direction: column;
+  padding-top: 110px;
+  @include breakpoints_desktop {
+    display: block;
+    flex-direction: unset;
+    margin-bottom: -40px;
+  }
+}
+
+.stitre {
+  font-size: 24px;
+  font-weight: 600;
+  color: $black;
+}
+
+.nuit .stitre {
+  color: $white;
+}
+
+.texte {
+  @include flexbox;
+  margin-left: 0;
+  text-align: center;
+  width: 90%;
+  padding: 0px 20px 0px 20px;
+  font-size: 16px;
+  font-weight: 300;
+  @include breakpoints_desktop {
+    width: 46%;
+    margin-left: 80px;
+    margin-top: 30px;
+    padding: unset;
+  }
+}
+
+.jour .texte {
+  color: black;
+}
+
+.nuit .texte {
+  color: white;
+}
+
+.téléchargement {
+  @include flexbox;
+  display: none;
+  margin-left: 0px;
+  margin-top: -20px;
+  width: auto;
+  height: 40px;
+  background: $background-linear-gradient;
+  border-radius: 8px;
+  color: $white;
+  cursor: pointer;
+  @include breakpoints_desktop {
+    margin-left: 540px;
+    margin-top: 30px;
+    width: 15%;
+  }
+}
+
+.téléchargement:hover {
+  background: #05e0c6;
+}
+
+.img_téléchargement {
+  width: 13.5%;
+  height: 30px;
+  margin-left: 2px;
+  margin-right: 0px;
+  @include breakpoints_desktop {
+    width: 14%;
+    margin-left: 10px;
+    margin-right: 5px;
+  }
+}
+
+.qui_suis-je {
+  @include flexbox;
+  flex-direction: column;
+  margin-top: 40px;
+  @include breakpoints_desktop {
+    margin-top: 30px;
+    flex-direction: row;
+  }
+}
+
+/*.border_blue {
+  display: flex;
+  border: 10px solid rgb(8, 169, 223);
+  border-radius: 500px;
+  margin-left: 0;
+  margin: auto;
+  animation: none;
+  @include breakpoints_desktop {
+    margin-top: 10px;
+    margin-left: 80px;
+  }
+}*/
+
+.about-me {
+  width: 250px;
+  height: auto;
+  max-width: 100%;
+  margin-bottom: 35px;
+  @include breakpoints_desktop {
+    width: 28%;
+    margin-top: 50px;
+  }
+}
+
+.me {
+  width: 100%;
+  box-shadow: 0 0 0 10px rgb(8, 169, 223);
+  border: 10px solid green;
+  border-radius: 500px;
+}
+
+.profil_img {
+  @include flexbox;
+  margin-left: 0;
+  margin-top: 0px;
+  width: 100%;
+  border-radius: 100px;
+  @include breakpoints_desktop {
+    display: block;
+    position: absolute;
+    width: 15%;
+    top: 878px;
+    left: 175px;
+  }
+}

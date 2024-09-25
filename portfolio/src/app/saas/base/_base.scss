@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800&display=swap");
+
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: "Lexend", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+body {
+  background: radial-gradient(circle, #c7e360, #b59c84, #b4c4c7);
+  animation: radialGradientAnimation 10s ease infinite;
+}
+
+a {
+  text-decoration: none;
+  color: $black;
+}
+
+li {
+  position: relative;
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+  list-style-type: none;
+}

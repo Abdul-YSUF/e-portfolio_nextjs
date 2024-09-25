@@ -1,0 +1,145 @@
+.footer {
+  @include flexbox;
+  flex-direction: column;
+  background: linear-gradient(180deg, #222222 0%, rgba(77, 77, 77, 0) 100%);
+  margin-top: 80px;
+  @include breakpoints_desktop {
+
+  }
+}
+
+.nuit .footer {
+  background: linear-gradient(180deg, #343434 0%, rgba(77, 77, 77, 0) 100%);
+}
+
+.footer_logo-div {
+  @include flexbox;
+  width: 60%;
+  @include breakpoints_desktop {
+    width: 30%;
+    margin-bottom: 10px;
+  }
+}
+
+.footer_logo {
+  @include flexbox;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.footer-logo {
+  @include flexbox;
+  width: 200px;
+  height: auto;
+  max-width: 100%;
+}
+
+.adresse {
+  color: $white;
+}
+
+.copyright {
+  @include flexbox;
+  flex-direction: column;
+  width: 90%;
+  color: $white;
+  margin-bottom: 10px;
+  @include breakpoints_desktop {
+    width: 60%;
+  }
+}
+
+.conditions {
+  margin-top: 10px;
+  color: $white;
+}
+
+.copy {
+  width: 100%;
+  margin-top: 20px;
+  @include breakpoints_desktop {
+    width: unset;
+  }
+}
+
+.rs_align {
+  @include flexbox;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 20px;
+  @include breakpoints_desktop {
+    position: absolute;
+    left: 0;
+    width: 20%;
+  }
+}
+
+.retrouvez-moi {
+  color: $white;
+}
+
+.reseaux_sociaux {
+  @include flexbox;
+}
+
+.reseaux_sociaux a {
+  margin: 5px;
+}
+
+.paragraph_footer {
+  font-size: 14px;
+  font-weight: 300;
+  color: $white;
+}
+
+.footer_github {
+  margin-top: 5px;
+  border: 2px solid $white;
+  background-color: $white;
+  border-radius: 100px;
+  transform: scale(1);
+  transition: transform 0.3s ease-in-out, border-color 0.3s ease-in-out;
+  &:hover {
+    transform: none;
+    border-color: #08b7a2;
+    @include breakpoints_desktop {
+      transform: scale(1.2);
+    }
+  }
+}
+
+.footer_linkedin {
+  margin-top: 5px;
+  border: 2px solid $white;
+  background-color: $white;
+  border-radius: 100px;
+  transform: scale(1);
+  transition: transform 0.3s ease-in-out, border-color 0.3s ease-in-out;
+  &:hover {
+    transform: none;
+    border-color: #08b7a2;
+    @include breakpoints_desktop {
+      transform: scale(1.2);
+    }
+  }
+}
+
+.footer_gmail {
+  margin-top: 5px;
+  border: 2px solid $white;
+  background: rgb(218, 218, 218);
+  border-radius: 100px;
+  transform: scale(1);
+  transition: transform 0.3s ease-in-out, border-color 0.3s ease-in-out;
+  &:hover {
+    transform: none;
+    border-color: #08b7a2;
+    @include breakpoints_desktop {
+      transform: scale(1.2);
+    }
+  }
+}
+
+.dummy_div {
+  width: 20%;
+}

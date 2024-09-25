@@ -1,0 +1,255 @@
+.projets {
+  padding-top: 110px;
+  text-align: center;
+  &__cartes {
+    @include flexbox;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    @include breakpoints_desktop {
+      flex-direction: unset;
+    }
+  }
+  &__containeur {
+    @include flexbox;
+    margin-top: 50px;
+    padding: 0;
+    max-width: 90%;
+    width: 340px;
+    height: auto;
+    border-radius: 5px;
+    background: linear-gradient(to bottom left, #444444ac 30%, #939393ac 100%);
+    @include breakpoints_desktop {
+      width: 41%;
+      height: 220px;
+    }
+    @include breakpoints_large {
+      width: 90%;
+    }
+  }
+  &__carte {
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px 2px rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: auto;
+    @include breakpoints_desktop {
+      flex-direction: row;
+      height: 220px;
+    }
+  }
+  &__image {
+    width: 100%;
+    height: 180px;
+    @include breakpoints_desktop {
+      width: 50%;
+      height: 220px;
+    }
+  }
+  &__img {
+    width: 100%;
+    height: 180px;
+    border: 7px solid transparent;
+    border-radius: 10px;
+    @include breakpoints_desktop {
+      height: 220px;
+    }
+  }
+  &__description-containeur {
+    @include flexbox;
+    flex-direction: column;
+    width: 100%;
+    height: 180px;
+    padding: 20px;
+    background: transparent;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    @include breakpoints_desktop {
+      display: block;
+      flex-direction: unset;
+      width: 50%;
+    }
+  }
+  &__titre {
+    color: $white;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-top: -50px;
+    text-transform: uppercase;
+    text-align: left;
+    @include breakpoints_desktop {
+      margin: 0px;
+    }
+  }
+  &__description {
+    color: $white;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-top: 5px;
+    margin-bottom: 23px;
+    font-weight: 400;
+    text-align: center;
+    @include breakpoints_desktop {
+      text-align: left;
+    }
+  }
+  & button {
+    position: absolute;
+    @include flexbox;
+    top: 70%;
+    left: auto;
+    max-width: 100%;
+    width: 50%;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 14px;
+    text-transform: uppercase;
+    @include breakpoints_desktop {
+      width: 40.7%;
+      top: 59.3%;
+      left: 52%;
+    }
+  }
+  &__open-btn {
+    border-width: 0;
+  }
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: white;
+  transition: 1000ms ease-in-out;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  &__img {
+    border-radius: 13px 13px 13px 13px;
+    margin-top: 150px;
+  }
+  &__titre {
+    color: $black;
+  }
+}
+
+.nuit .popup {
+  background-color: #151d2a;
+  transition: 1000ms ease-in-out;
+  &__titre {
+    color: $white;
+  }
+}
+
+.popup img {
+  max-width: 40%;
+}
+
+.popup button {
+  position: absolute;
+  display: block;
+  cursor: pointer;
+  width: 22%;
+  padding: 6px;
+  @include breakpoints_desktop {
+    margin-top: 140px;
+    margin-left: -60px;
+    width: 6%;
+  }
+}
+
+body.popup-open {
+  overflow: hidden;
+}
+
+.photo {
+  height: 180px;
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+.projet-photo {
+  width: 100%;
+}
+
+.bouton {
+  color: #ffffff;
+  padding: 0.8rem;
+  font-size: 14px;
+  text-transform: uppercase;
+  border-radius: 4px;
+  font-weight: 400;
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: transparent;
+}
+
+.bouton:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+.cards {
+  display: none;
+  flex-direction: row;
+  width: 100%;
+  margin-left: 0;
+  flex-wrap: wrap;
+  list-style: none;
+  margin-top: 10px;
+  padding: 0;
+  @include breakpoints_desktop {
+    width: 95%;
+    flex-direction: unset;
+  }
+}
+
+.cards_item {
+  display: none;
+  width: 90%;
+  padding: 30px 0px 0px 0px;
+  @include breakpoints_desktop {
+    width: 33.3333%;
+    padding: 40px 40px 25px 0px;
+  }
+}
+
+.card {
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px 2px rgba(0, 0, 0, 0.6);
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.card_content {
+  padding: 1rem;
+  background: linear-gradient(to bottom left, #444444 30%, #939393 100%);
+}
+
+.card_title {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin: 0px;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.card_text {
+  color: $white;
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+  font-weight: 400;
+  text-align: left;
+}

@@ -1,0 +1,22 @@
+#scroll-top {
+  display: none;
+  @include breakpoints_desktop {
+    display: flex;
+    position: fixed;
+    bottom: 15px;
+    right: 18px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.242);
+    background-image: url(/assets/scroll-top.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    border-radius: 100px;
+    cursor: pointer;
+    z-index: 1;
+    visibility: hidden;
+  }
+}
+
+.nuit #scroll-top {
+  background-color: unset;
+}

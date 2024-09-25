@@ -1,0 +1,72 @@
+[data-theme="light"] {
+  --gradient-one: #30cfd0;
+  --gradient-two: #330867;
+  --bg-color: #ffffff;
+  --links: #000000;
+}
+
+[data-theme="dark"] {
+  --gradient-one: rgba(245, 107, 244, 0.79);
+  --gradient-two: #efad05;
+  --bg-color: #21232f;
+  --links: #ffffff;
+}
+
+$color-primaire: #9356dc;
+$color-secondaire: #ff79da;
+$color-tertiaire: #99e2d0;
+
+$white: white;
+$color-shadow: #bbb;
+$color-background: #f6f6f6;
+$black: black;
+$gray: #eaeaea;
+$color-form: #cbcbcb;
+$nuit: #14141442;
+$color-light-gray: #e2e2e2;
+$color-icons-fonctionnement: #7d7d7d;
+
+$background-form: linear-gradient($color-form -1%, $gray 7%);
+$background-linear-gradient: linear-gradient(
+      180deg,
+      #05e0c6 0%,
+      rgba(82, 101, 137, 0.64) 100%
+    )
+    padding-box,
+  linear-gradient(180deg, #05e0c6 0%, rgba(82, 101, 137, 0.64) 100%) border-box;
+
+$breakpoints_desktop: (
+  laptop: 992px,
+  desktop: 1280px,
+);
+
+$breakpoints_large: (
+  l: 425px,
+  lm: 767px
+);
+
+/* // Break Points for mediaQuery
+$breakpoints_small: (
+  s: 320px,
+  sm: 374px
+);
+
+$breakpoints_medium: (
+  m: 375px,
+  mm: 424px
+);
+
+$breakpoints_large: (
+  l: 425px,
+  lm: 767px
+);
+
+$breakpoints_tablette: (
+  t: 768px,
+  tt: 991px
+);
+
+$breakpoints_desktop: (
+  laptop: 992px,
+  desktop: 1199px
+);*/
