@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import styles from "../saas/style.css";
 import DarkModeToggle from "./DarkModeToggle";
 
@@ -8,7 +9,7 @@ const Header = () => {
       <nav className="navbar">
         <div className="navbar-logo">
           <Link href="index.html" aria-label="Accueil">
-            <img
+            <Image
               className="logo"
               src="./assets/ald-black.webp"
               alt="logo Abdul le Dev"

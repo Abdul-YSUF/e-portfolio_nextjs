@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -7,7 +8,7 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer_logo-div">
         <a href="/" className="footer_logo" aria-label="Accueil">
-          <img
+          <Image
             className="footer-logo"
             src="/assets/abdul-intro-white.webp"
             alt="logo Abdul le Dev"
@@ -23,7 +24,7 @@ const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img
+            <Image
               className="footer_github"
               src="/assets/github.svg"
               alt="GitHub logo"
@@ -34,14 +35,14 @@ const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img
+            <Image
               className="footer_linkedin"
               src="/assets/linkedin.svg"
               alt="Linkedin Logo"
             />
           </a>
           <a href="mailto:abdulledev@gmail.com" target="_blank">
-            <img
+            <Image
               className="footer_gmail"
               src="/assets/Gmail_icon.svg"
               alt="Logo Gmail"
