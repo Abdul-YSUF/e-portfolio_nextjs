@@ -11,8 +11,10 @@ const Header = () => {
           <Link href="index.html" aria-label="Accueil">
             <Image
               className="logo"
-              src="./assets/ald-black.webp"
+              src="/assets/ald-black.webp"
               alt="logo Abdul le Dev"
+              width={240}
+              height={50}
             />
           </Link>
         </div>

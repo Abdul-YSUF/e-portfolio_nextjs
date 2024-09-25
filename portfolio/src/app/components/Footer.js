@@ -12,6 +12,8 @@ const Footer = () => {
             className="footer-logo"
             src="/assets/abdul-intro-white.webp"
             alt="logo Abdul le Dev"
+            width={240}
+            height={50}
           />
         </a>
       </div>
@@ -28,6 +30,8 @@ const Footer = () => {
               className="footer_github"
               src="/assets/github.svg"
               alt="GitHub logo"
+              width={35}
+              height={35}
             />
           </a>
           <a
@@ -39,6 +43,8 @@ const Footer = () => {
               className="footer_linkedin"
               src="/assets/linkedin.svg"
               alt="Linkedin Logo"
+              width={35}
+              height={35}
             />
           </a>
           <a href="mailto:abdulledev@gmail.com" target="_blank">
@@ -46,6 +52,8 @@ const Footer = () => {
               className="footer_gmail"
               src="/assets/Gmail_icon.svg"
               alt="Logo Gmail"
+              width={35}
+              height={35}
             />
           </a>
         </div>
