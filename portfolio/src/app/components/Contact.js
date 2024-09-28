@@ -15,7 +15,7 @@ export default function ContactForm() {
   const [recaptchaToken, setRecaptchaToken] = useState(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const recaptchaSiteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
+  const recaptchaSiteKey = "6LcJGVEqAAAAAESM8_1zh3pHflzU-YqA-nSCC88U";
 
   // Gérer les changements dans les champs du formulaire
   const handleChange = (e) => {

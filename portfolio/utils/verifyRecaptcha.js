@@ -2,7 +2,7 @@
 import fetch from 'node-fetch';
 
 export async function verifyRecaptcha(recaptchaToken) {
-  const secretKey = process.env.RECAPTCHA_SECRET_KEY;
+  const secretKey = "6LcJGVEqAAAAAAyQz4X7Nfv2qe8DGLuRg5b1hur7";
 
   const response = await fetch(`https://www.google.com/recaptcha/api/siteverify`, {
     method: 'POST',

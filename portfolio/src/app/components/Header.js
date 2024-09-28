@@ -8,7 +8,7 @@ const Header = () => {
     <header className="header">
       <nav className="navbar">
         <div className="navbar-logo">
-          <Link href="index.html" aria-label="Accueil">
+          <Link href="#" aria-label="Accueil">
             <Image
               className="logo"
               src="/assets/ald-black.webp"
