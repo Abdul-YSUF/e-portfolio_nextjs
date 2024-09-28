@@ -1,6 +1,4 @@
 import { verifyRecaptcha } from '../utils/verifyRecaptcha'; // Utility function for reCAPTCHA verification
-import fetch from 'node-fetch';
-require('dotenv').config();
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {
