@@ -5,29 +5,29 @@ const DarkModeToggle = () => {
   const [isNight, setIsNight] = useState(false);
 
   useEffect(() => {
-    // Check if the theme is stored in localStorage
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme === "nuit") {
-      setIsNight(true);
-      document.body.classList.add("nuit");
-    } else {
-      document.body.classList.remove("nuit");
+    if (typeof window !== "undefined") {
+      try {
+        const savedTheme = localStorage.getItem("theme");
+        if (savedTheme === "nuit") {
+          setIsNight(true);
+          document.body.classList.add("nuit");
+        } else {
+          document.body.classList.remove("nuit");
+        }
+      } catch (error) {
+        console.error("Erreur d'accès localStorage", error);
+      }
     }
   }, []);
 
   useEffect(() => {
-    // Update theme-related content when `isNight` changes
     const logo = document.querySelector(".logo");
-    /*const intro = document.getElementById("intro-logo");*/
-    const texte = document.querySelector(".titre_mode");
+
+    if (logo) {
+      logo.src = isNight ? "/assets/ald-white.webp" : "/assets/ald-black.webp";
+    }
 
     document.body.classList.toggle("nuit", isNight);
-    texte.textContent = isNight ? "Mode Nuit" : "Mode Jour";
-    logo.src = isNight ? "/assets/ald-white.webp" : "/assets/ald-black.webp";
-    /*intro.src = isNight
-      ? "/assets/abdul-intro-white.webp"
-      : "/assets/abdul-intro-black.webp";*/
-
     localStorage.setItem("theme", isNight ? "nuit" : "jour");
   }, [isNight]);
 
@@ -37,13 +37,15 @@ const DarkModeToggle = () => {
 
   return (
     <div className="container">
-      <h2 className="titre_mode">Mode Jour</h2>
+      <h2 className="titre_mode">{isNight ? "Mode Nuit" : "Mode Jour"}</h2>
       <input
         className="checkbox"
         type="checkbox"
         id="toggle"
         checked={isNight}
         onChange={handleToggle}
+        role="switch"
+        aria-checked={isNight}
       />
       <label
         htmlFor="toggle"

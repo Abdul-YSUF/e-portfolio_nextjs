@@ -1,4 +1,5 @@
 import Header from "./components/Header";
+import Accueil from "./components/Accueil";
 import About from "./components/About";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
@@ -9,6 +10,9 @@ export default function Home() {
   return (
     <>
       <Header />
+      <Accueil />
+      <About />
+      <Contact />
       <Footer />
     </>
   );

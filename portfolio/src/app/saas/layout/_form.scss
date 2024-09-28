@@ -194,3 +194,21 @@
 .nuit .emailto {
   color: $white;
 }
+
+.erreur {
+  color: #e74c3c; /* Bright red color for error messages */
+  font-size: 0.875rem; /* Slightly smaller font size */
+  margin-top: 0.25rem; /* Space above the error message */
+  margin-bottom: 0.5rem; /* Space below the error message */
+  padding: 0.5rem; /* Padding around the message */
+  background-color: rgba(231, 76, 60, 0.1); /* Light red background for contrast */
+  border: 1px solid #e74c3c; /* Red border */
+  border-radius: 4px; /* Slightly rounded corners */
+  transition: opacity 0.3s; /* Smooth transition for any opacity changes */
+}
+
+/* Optionally, add a focus style to inputs with errors */
+input.erreur, textarea.erreur {
+  border: 2px solid #e74c3c; /* Red border to indicate error on the input */
+  background-color: rgba(231, 76, 60, 0.05); /* Light red background on error */
+}
