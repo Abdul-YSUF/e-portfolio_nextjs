@@ -122,6 +122,14 @@ export default function ContactForm() {
       setIsSubmitting(true);
 
       try {
+          // Execute reCAPTCHA v3 and get the token
+      const recaptchaToken = await executeRecaptcha();
+
+      if (!recaptchaToken) {
+        setStatus("Erreur avec reCAPTCHA. Veuillez réessayer.");
+        setIsSubmitting(false);
+        return;
+      }
         const response = await fetch("/api/submit-form", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -144,16 +152,25 @@ export default function ContactForm() {
       } finally {
         setIsSubmitting(false);
       }
-    } else if (!recaptchaToken) {
-      setStatus("Veuillez valider le reCAPTCHA.");
-    }
-  };
-
-  // Stocker le token reCAPTCHA lorsque l'utilisateur coche la case
-  const handleRecaptchaChange = (token) => {
-    setRecaptchaToken(token);
-  };
-
+    };
+  
+    // Function to execute reCAPTCHA v3 and get token
+    const executeRecaptcha = () => {
+      return new Promise((resolve) => {
+        window.grecaptcha.ready(() => {
+          window.grecaptcha
+            .execute(recaptchaSiteKey, { action: "submit" })
+            .then((token) => {
+              resolve(token); // Return the reCAPTCHA token
+            })
+            .catch((error) => {
+              console.error("reCAPTCHA error:", error);
+              resolve(null); // Return null if reCAPTCHA fails
+            });
+        });
+      });
+    };  
+  }
   // Gérer le succès de la soumission
   const handleSuccess = () => {
     setStatus("Votre formulaire a été soumis avec succès !");
@@ -265,11 +282,7 @@ export default function ContactForm() {
             </p>
           )}
 
-          <ReCAPTCHA
-            sitekey={recaptchaSiteKey}
-            onChange={handleRecaptchaChange}
-          />
-
+      
           <button
             id="buttonEnvoi"
             className="button_denvoi input_nuit"
@@ -282,6 +295,9 @@ export default function ContactForm() {
       </div>
 
       <p>{status}</p>
+      <script
+        src={`https://www.google.com/recaptcha/api.js?render=${recaptchaSiteKey}`}
+      ></script>
     </div>
   );
 }
