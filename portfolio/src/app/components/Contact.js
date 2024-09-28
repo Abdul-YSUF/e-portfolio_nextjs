@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import ReCAPTCHA from "react-google-recaptcha";
+import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -9,15 +9,13 @@ export default function ContactForm() {
     phone: "",
     message: "",
   });
-
   const [errors, setErrors] = useState({});
   const [status, setStatus] = useState("");
-  const [recaptchaToken, setRecaptchaToken] = useState(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const recaptchaSiteKey = "6LcJGVEqAAAAAESM8_1zh3pHflzU-YqA-nSCC88U";
+  const { executeRecaptcha } = useGoogleReCaptcha();  // Get recaptcha v3 handler
 
-  // Gérer les changements dans les champs du formulaire
+  // Handle input change
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -30,52 +28,36 @@ export default function ContactForm() {
     });
   };
 
-  // Gérer la validation lors de la perte de focus (blur)
+  // Handle field blur validation
   const handleBlur = (e) => {
     const { name } = e.target;
     validateField(name);
   };
 
-  // Fonction pour valider les champs individuellement
+  // Validate a single field
   const validateField = (fieldName) => {
     let fieldErrors = { ...errors };
 
-    if (fieldName === "name") {
-      if (!/^[a-zA-ZÀ-ÿ\s'-]+$/.test(formData.name)) {
-        fieldErrors.name = "⚠️ Veuillez entrer un nom valide.";
-      } else {
-        fieldErrors.name = "";
-      }
+    if (fieldName === "name" && !/^[a-zA-ZÀ-ÿ\s'-]+$/.test(formData.name)) {
+      fieldErrors.name = "⚠️ Veuillez entrer un nom valide.";
     }
 
-    if (fieldName === "email") {
-      if (!/^\S+@\S+\.\S+$/.test(formData.email)) {
-        fieldErrors.email = "⚠️ Veuillez entrer une adresse email valide.";
-      } else {
-        fieldErrors.email = "";
-      }
+    if (fieldName === "email" && !/^\S+@\S+\.\S+$/.test(formData.email)) {
+      fieldErrors.email = "⚠️ Veuillez entrer une adresse email valide.";
     }
 
-    if (fieldName === "phone") {
-      if (!/^(\+33|0)[1-9](\d{2}){4}$/.test(formData.phone)) {
-        fieldErrors.phone = "⚠️ Veuillez entrer un numéro de téléphone valide.";
-      } else {
-        fieldErrors.phone = "";
-      }
+    if (fieldName === "phone" && !/^(\+33|0)[1-9](\d{2}){4}$/.test(formData.phone)) {
+      fieldErrors.phone = "⚠️ Veuillez entrer un numéro de téléphone valide.";
     }
 
-    if (fieldName === "message") {
-      if (formData.message.trim().length < 25) {
-        fieldErrors.message = "⚠️ Veuillez entrer au moins 25 caractères.";
-      } else {
-        fieldErrors.message = "";
-      }
+    if (fieldName === "message" && formData.message.trim().length < 25) {
+      fieldErrors.message = "⚠️ Veuillez entrer au moins 25 caractères.";
     }
 
     setErrors(fieldErrors);
   };
 
-  // Valider l'ensemble du formulaire avant soumission
+  // Validate the whole form before submitting
   const validateForm = () => {
     let valid = true;
     let formErrors = {};
@@ -104,74 +86,53 @@ export default function ContactForm() {
     return valid;
   };
 
-  // Gérer la soumission du formulaire
+  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Check for empty fields first
-    if (Object.values(formData).some((value) => !value)) {
-      setStatus("Tous les champs doivent être remplis.");
-      return;
-    }
-
-    // Validation formulaire
     const isValid = validateForm();
 
-    if (isValid && recaptchaToken) {
-      setStatus("Envoi en cours...");
-      setIsSubmitting(true);
-
-      try {
-          // Execute reCAPTCHA v3 and get the token
-      const recaptchaToken = await executeRecaptcha();
-
-      if (!recaptchaToken) {
-        setStatus("Erreur avec reCAPTCHA. Veuillez réessayer.");
-        setIsSubmitting(false);
+    if (isValid) {
+      if (!executeRecaptcha) {
+        setStatus("Erreur : reCAPTCHA n'est pas encore disponible.");
         return;
       }
-        const response = await fetch("/api/submit-form", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            ...formData,
-            recaptchaToken, // Inclure le token reCAPTCHA dans la requête
-          }),
-        });
 
-        if (response.ok) {
-          handleSuccess();
-        } else {
-          const errorData = await response.json();
-          console.error("Erreur de server:", response.status, errorData);
+      // Obtain the reCAPTCHA token from reCAPTCHA v3
+      const recaptchaToken = await executeRecaptcha();
+
+      if (recaptchaToken) {
+        setStatus("Envoi en cours...");
+        setIsSubmitting(true);
+
+        try {
+          const response = await fetch("/api/submit-form", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              ...formData,
+              recaptchaToken, // Include reCAPTCHA token in the request
+            }),
+          });
+
+          if (response.ok) {
+            handleSuccess();
+          } else {
+            const errorData = await response.json();
+            console.error("Erreur de serveur:", response.status, errorData);
+            handleError();
+          }
+        } catch (error) {
+          console.error("Erreur lors de la soumission du formulaire :", error);
           handleError();
+        } finally {
+          setIsSubmitting(false);
         }
-      } catch (error) {
-        console.error("Erreur lors de la soumission du formulaire :", error);
-        handleError();
-      } finally {
-        setIsSubmitting(false);
       }
-    };
-  
-    // Function to execute reCAPTCHA v3 and get token
-    const executeRecaptcha = () => {
-      return new Promise((resolve) => {
-        window.grecaptcha.ready(() => {
-          window.grecaptcha
-            .execute(recaptchaSiteKey, { action: "submit" })
-            .then((token) => {
-              resolve(token); // Return the reCAPTCHA token
-            })
-            .catch((error) => {
-              console.error("reCAPTCHA error:", error);
-              resolve(null); // Return null if reCAPTCHA fails
-            });
-        });
-      });
-    };  
-  }
-  // Gérer le succès de la soumission
+    }
+  };
+
+  // Handle form submission success
   const handleSuccess = () => {
     setStatus("Votre formulaire a été soumis avec succès !");
     setFormData({ name: "", email: "", phone: "", message: "" });
@@ -181,7 +142,7 @@ export default function ContactForm() {
     }, 4000);
   };
 
-  // Gérer l'erreur lors de la soumission
+  // Handle form submission error
   const handleError = () => {
     setStatus("Erreur lors de la soumission du formulaire.");
   };
@@ -248,7 +209,7 @@ export default function ContactForm() {
           <input
             id="phone"
             className="telephone input_nuit"
-            type="number"
+            type="text"
             name="phone"
             placeholder="Votre numéro de téléphone"
             value={formData.phone}
@@ -282,7 +243,6 @@ export default function ContactForm() {
             </p>
           )}
 
-      
           <button
             id="buttonEnvoi"
             className="button_denvoi input_nuit"
@@ -295,9 +255,6 @@ export default function ContactForm() {
       </div>
 
       <p>{status}</p>
-      <script
-        src={`https://www.google.com/recaptcha/api.js?render=${recaptchaSiteKey}`}
-      ></script>
     </div>
   );
 }
