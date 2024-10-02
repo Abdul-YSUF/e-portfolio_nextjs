@@ -16,7 +16,6 @@ export default function ContactForm() {
 
     const handleRecaptchaVerify = (token) => {
         setRecaptchaToken(token); // Store the token from reCAPTCHA
-        console.log("reCAPTCHA Token:", token);
     };
 
     // Handle form input changes
@@ -87,33 +86,48 @@ export default function ContactForm() {
         return valid;
     };
 
-    // Handle form submission
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const isValid = validateForm(); // Validate the whole form
 
-        if (!isValid || !recaptchaToken) return; // Ensure form is valid and reCAPTCHA token is available
+        // Validez tous les champs avant d'envoyer
+        const isValid = validateForm();
+        if (!isValid) {
+            setStatus("Veuillez corriger les erreurs dans le formulaire.");
+            return;
+        }
+
+        if (!recaptchaToken) {
+            setStatus("reCAPTCHA non vérifié. Veuillez réessayer.");
+            return;
+        }
 
         setIsSubmitting(true);
 
         try {
             const response = await fetch("/api/submit-form", {
                 method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ ...formData, recaptchaToken }), // Include reCAPTCHA token
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    ...formData,
+                    recaptchaToken,
+                }),
             });
 
             const result = await response.json();
             if (response.ok) {
-                handleSuccess();
+                handleSuccess(); // Appeler la fonction pour gérer le succès
             } else {
                 setStatus(`Erreur : ${result.message}`);
             }
         } catch (error) {
-            setStatus("Échec de l'envoi. Veuillez réessayer.");
+            setStatus("Échec de la soumission. Veuillez réessayer.");
+            console.error("Erreur de soumission :", error); // Pour déboguer
         }
+
         setIsSubmitting(false);
-    };
+    };    
 
     // Handle success of submission
     const handleSuccess = () => {
