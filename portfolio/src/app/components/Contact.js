@@ -1,260 +1,216 @@
-"use client";
-import { useState } from "react";
-import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
+"use client"; // This indicates that it's a client-side component
+import React, { useState } from "react"; // Import React and hooks
+import ReCAPTCHA from "./GoogleReCaptchaProvider"; // Import the reCAPTCHA component
 
 export default function ContactForm() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    message: "",
-  });
-  const [errors, setErrors] = useState({});
-  const [status, setStatus] = useState("");
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const { executeRecaptcha } = useGoogleReCaptcha();  // Get recaptcha v3 handler
-
-  // Handle input change
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
+    const [formData, setFormData] = useState({
+        name: "",
+        email: "",
+        phone: "",
+        message: "",
     });
-    setErrors({
-      ...errors,
-      [name]: "",
-    });
-  };
+    const [errors, setErrors] = useState({});
+    const [status, setStatus] = useState("");
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [recaptchaToken, setRecaptchaToken] = useState(null);
 
-  // Handle field blur validation
-  const handleBlur = (e) => {
-    const { name } = e.target;
-    validateField(name);
-  };
+    const handleRecaptchaVerify = (token) => {
+        setRecaptchaToken(token); // Store the token from reCAPTCHA
+        console.log("reCAPTCHA Token:", token);
+    };
 
-  // Validate a single field
-  const validateField = (fieldName) => {
-    let fieldErrors = { ...errors };
+    // Handle form input changes
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({
+            ...formData,
+            [name]: value,
+        });
+        setErrors({
+            ...errors,
+            [name]: "",
+        });
+    };
 
-    if (fieldName === "name" && !/^[a-zA-ZÀ-ÿ\s'-]+$/.test(formData.name)) {
-      fieldErrors.name = "⚠️ Veuillez entrer un nom valide.";
-    }
+    // Handle validation on blur
+    const handleBlur = (e) => {
+        const { name } = e.target; // Get the name of the input field
+        validateForm(name); // Validate only the field that lost focus
+    };
 
-    if (fieldName === "email" && !/^\S+@\S+\.\S+$/.test(formData.email)) {
-      fieldErrors.email = "⚠️ Veuillez entrer une adresse email valide.";
-    }
+    // Validate the entire form or a specific field
+    const validateForm = (fieldToValidate = null) => {
+        let valid = true;
+        let formErrors = { ...errors }; // Keep current errors
 
-    if (fieldName === "phone" && !/^(\+33|0)[1-9](\d{2}){4}$/.test(formData.phone)) {
-      fieldErrors.phone = "⚠️ Veuillez entrer un numéro de téléphone valide.";
-    }
+        // Name validation
+        if (!fieldToValidate || fieldToValidate === "name") {
+            if (!/^[a-zA-ZÀ-ÿ\s'-]+$/.test(formData.name)) {
+                formErrors.name = "⚠️ Veuillez entrer un nom valide.";
+                valid = false;
+            } else {
+                formErrors.name = "";
+            }
+        }
 
-    if (fieldName === "message" && formData.message.trim().length < 25) {
-      fieldErrors.message = "⚠️ Veuillez entrer au moins 25 caractères.";
-    }
+        // Email validation
+        if (!fieldToValidate || fieldToValidate === "email") {
+            if (!/^\S+@\S+\.\S+$/.test(formData.email)) {
+                formErrors.email = "⚠️ Veuillez entrer une adresse email valide.";
+                valid = false;
+            } else {
+                formErrors.email = "";
+            }
+        }
 
-    setErrors(fieldErrors);
-  };
+        // Phone validation
+        if (!fieldToValidate || fieldToValidate === "phone") {
+            if (!/^(\+33|0)[1-9](\d{2}){4}$/.test(formData.phone)) {
+                formErrors.phone = "⚠️ Veuillez entrer un numéro de téléphone valide.";
+                valid = false;
+            } else {
+                formErrors.phone = "";
+            }
+        }
 
-  // Validate the whole form before submitting
-  const validateForm = () => {
-    let valid = true;
-    let formErrors = {};
+        // Message validation
+        if (!fieldToValidate || fieldToValidate === "message") {
+            if (formData.message.trim().length < 25) {
+                formErrors.message = "⚠️ Veuillez entrer au moins 25 caractères.";
+                valid = false;
+            } else {
+                formErrors.message = "";
+            }
+        }
 
-    if (!/^[a-zA-ZÀ-ÿ\s'-]+$/.test(formData.name)) {
-      formErrors.name = "⚠️ Veuillez entrer un nom valide.";
-      valid = false;
-    }
+        setErrors(formErrors);
+        return valid;
+    };
 
-    if (!/^\S+@\S+\.\S+$/.test(formData.email)) {
-      formErrors.email = "⚠️ Veuillez entrer une adresse email valide.";
-      valid = false;
-    }
+    // Handle form submission
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        const isValid = validateForm(); // Validate the whole form
 
-    if (!/^(\+33|0)[1-9](\d{2}){4}$/.test(formData.phone)) {
-      formErrors.phone = "⚠️ Veuillez entrer un numéro de téléphone valide.";
-      valid = false;
-    }
+        if (!isValid || !recaptchaToken) return; // Ensure form is valid and reCAPTCHA token is available
 
-    if (formData.message.trim().length < 25) {
-      formErrors.message = "⚠️ Veuillez entrer au moins 25 caractères.";
-      valid = false;
-    }
-
-    setErrors(formErrors);
-    return valid;
-  };
-
-  // Handle form submission
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    const isValid = validateForm();
-
-    if (isValid) {
-      if (!executeRecaptcha) {
-        setStatus("Erreur : reCAPTCHA n'est pas encore disponible.");
-        return;
-      }
-
-      // Obtain the reCAPTCHA token from reCAPTCHA v3
-      const recaptchaToken = await executeRecaptcha();
-
-      if (recaptchaToken) {
-        setStatus("Envoi en cours...");
         setIsSubmitting(true);
 
         try {
-          const response = await fetch("/api/submit-form", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-              ...formData,
-              recaptchaToken, // Include reCAPTCHA token in the request
-            }),
-          });
+            const response = await fetch("/api/submit-form", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ ...formData, recaptchaToken }), // Include reCAPTCHA token
+            });
 
-          if (response.ok) {
-            handleSuccess();
-          } else {
-            const errorData = await response.json();
-            console.error("Erreur de serveur:", response.status, errorData);
-            handleError();
-          }
+            const result = await response.json();
+            if (response.ok) {
+                handleSuccess();
+            } else {
+                setStatus(`Erreur : ${result.message}`);
+            }
         } catch (error) {
-          console.error("Erreur lors de la soumission du formulaire :", error);
-          handleError();
-        } finally {
-          setIsSubmitting(false);
+            setStatus("Échec de l'envoi. Veuillez réessayer.");
         }
-      }
-    }
-  };
+        setIsSubmitting(false);
+    };
 
-  // Handle form submission success
-  const handleSuccess = () => {
-    setStatus("Votre formulaire a été soumis avec succès !");
-    setFormData({ name: "", email: "", phone: "", message: "" });
+    // Handle success of submission
+    const handleSuccess = () => {
+        setStatus("Votre formulaire a été soumis avec succès !");
+        setFormData({ name: "", email: "", phone: "", message: "" });
+        setRecaptchaToken(null); // Clear the token after submission
 
-    setTimeout(() => {
-      setStatus("");
-    }, 4000);
-  };
+        setTimeout(() => {
+            setStatus("");
+        }, 4000);
+    };
 
-  // Handle form submission error
-  const handleError = () => {
-    setStatus("Erreur lors de la soumission du formulaire.");
-  };
+    return (
+        <div className="section_5" id="formulaire">
+            <strong className="stitre">Formulaire de contact</strong>
+            <div className="div_titre">
+                <p className="titre_form">
+                    Contactez-moi pour toute question ou proposition via le formulaire de contact ci-dessous
+                </p>
+            </div>
 
-  return (
-    <div className="section_5" id="formulaire">
-      <strong className="stitre">Formulaire de contact</strong>
-      <div className="div_titre">
-        <p className="titre_form">
-          Contactez-moi pour toute question ou proposition via le formulaire de
-          contact ci-dessous
-        </p>
-      </div>
+            <div className="form_contact" id="contact">
+                <video className="contact_img" autoPlay loop muted playsInline>
+                    <source src="./assets/contact-image.webm" type="video/webm" />
+                </video>
 
-      <div className="form_contact" id="contact">
-        <video className="contact_img" autoPlay loop muted playsInline>
-          <source src="./assets/contact-image.webm" type="video/webm" />
-        </video>
+                <form className="form" onSubmit={handleSubmit}>
+                    <label className="label_form" htmlFor="name">Nom et Prénom</label>
+                    <input
+                        id="name"
+                        className="nom_de_contact input_nuit"
+                        type="text"
+                        name="name"
+                        placeholder="Votre nom et prénom"
+                        value={formData.name}
+                        onChange={handleChange}
+                        onBlur={handleBlur} // Validation on blur
+                        required
+                    />
+                    {errors.name && <p className="error error-msg" role="alert">{errors.name}</p>}
 
-        <form className="form" onSubmit={handleSubmit}>
-          <label className="label_form" htmlFor="name">
-            Nom et Prénom
-          </label>
-          <input
-            id="name"
-            className="nom_de_contact input_nuit"
-            type="text"
-            name="name"
-            placeholder="Votre nom et prénom"
-            value={formData.name}
-            onChange={handleChange}
-            onBlur={handleBlur}
-            required
-          />
-          {errors.name && (
-            <p className="error error-msg" role="alert">
-              {errors.name}
-            </p>
-          )}
+                    <label className="label_form" htmlFor="email">Adresse email</label>
+                    <input
+                        id="email"
+                        className="email input_nuit"
+                        type="email"
+                        name="email"
+                        placeholder="Votre adresse email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        onBlur={handleBlur} // Validation on blur
+                        required
+                    />
+                    {errors.email && <p className="error error-msg" role="alert">{errors.email}</p>}
 
-          <label className="label_form" htmlFor="email">
-            Adresse email
-          </label>
-          <input
-            id="email"
-            className="email input_nuit"
-            type="email"
-            name="email"
-            placeholder="Votre adresse email"
-            value={formData.email}
-            onChange={handleChange}
-            onBlur={handleBlur}
-            required
-          />
-          {errors.email && (
-            <p className="error error-msg" role="alert">
-              {errors.email}
-            </p>
-          )}
+                    <label className="label_form" htmlFor="phone">Numéro de Téléphone</label>
+                    <input
+                        id="phone"
+                        className="telephone input_nuit"
+                        type="text"
+                        name="phone"
+                        placeholder="Votre numéro de téléphone"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        onBlur={handleBlur} // Validation on blur
+                        required
+                    />
+                    {errors.phone && <p className="error error-msg" role="alert">{errors.phone}</p>}
 
-          <label className="label_form" htmlFor="phone">
-            Numéro de Téléphone
-          </label>
-          <input
-            id="phone"
-            className="telephone input_nuit"
-            type="text"
-            name="phone"
-            placeholder="Votre numéro de téléphone"
-            value={formData.phone}
-            onChange={handleChange}
-            onBlur={handleBlur}
-            required
-          />
-          {errors.phone && (
-            <p className="error error-msg" role="alert">
-              {errors.phone}
-            </p>
-          )}
+                    <label className="label_form" htmlFor="message">Ecrivez-moi vos messages</label>
+                    <textarea
+                        id="message"
+                        className="message input_nuit"
+                        name="message"
+                        placeholder="Vos messages"
+                        value={formData.message}
+                        onChange={handleChange}
+                        onBlur={handleBlur} // Validation on blur
+                        required
+                        minLength="25"
+                    ></textarea>
+                    {errors.message && <p className="error error-msg" role="alert">{errors.message}</p>}
 
-          <label className="label_form" htmlFor="message">
-            Ecrivez-moi vos messages
-          </label>
-          <textarea
-            id="message"
-            className="message input_nuit"
-            name="message"
-            placeholder="Vos messages"
-            value={formData.message}
-            onChange={handleChange}
-            onBlur={handleBlur}
-            required
-            minLength="25"
-          ></textarea>
-          {errors.message && (
-            <p className="error error-msg" role="alert">
-              {errors.message}
-            </p>
-          )}
+                    <ReCAPTCHA onVerify={handleRecaptchaVerify} />
 
-          <button
-            id="buttonEnvoi"
-            className="button_denvoi input_nuit"
-            type="submit"
-            disabled={isSubmitting}
-          >
-            {isSubmitting ? "Envoi en cours..." : "Envoyez"}
-          </button>
-        </form>
-      </div>
+                    <button
+                        id="buttonEnvoi"
+                        className="button_denvoi input_nuit"
+                        type="submit"
+                        disabled={isSubmitting}
+                    >
+                        {isSubmitting ? "Envoi en cours..." : "Envoyez"}
+                    </button>
+                </form>
+            </div>
 
-      <p>{status}</p>
-    </div>
-  );
+            <p>{status}</p>
+        </div>
+    );
 }
