@@ -2308,11 +2308,11 @@ body.popup-open {
   width: 20%;
 }
 
-#scroll-top {
+.scroll-top {
   display: none;
 }
 @media screen and (min-width: 992px) {
-  #scroll-top {
+  .scroll-top {
     display: flex;
     position: fixed;
     bottom: 15px;
@@ -2329,7 +2329,7 @@ body.popup-open {
   }
 }
 
-.nuit #scroll-top {
+.nuit .scroll-top {
   background-color: unset;
 }
 

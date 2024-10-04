@@ -1,4 +1,4 @@
-#scroll-top {
+.scroll-top {
   display: none;
   @include breakpoints_desktop {
     display: flex;
@@ -17,6 +17,6 @@
   }
 }
 
-.nuit #scroll-top {
+.nuit .scroll-top {
   background-color: unset;
 }

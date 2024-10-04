@@ -3,36 +3,36 @@ import { useEffect, useState } from "react";
 
 const DarkModeToggle = () => {
   const [isNight, setIsNight] = useState(false);
+  const [logoSrc, setLogoSrc] = useState("/assets/ald-black.webp");
+  const [introSrc, setIntroSrc] = useState("/assets/abdul-intro-black.webp");
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      try {
-        const savedTheme = localStorage.getItem("theme");
-        if (savedTheme === "nuit") {
-          setIsNight(true);
-          document.body.classList.add("nuit");
-        } else {
-          document.body.classList.remove("nuit");
-        }
-      } catch (error) {
-        console.error("Erreur d'accès localStorage", error);
-      }
+    // Récupérer le thème sauvegardé dans localStorage
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "nuit") {
+      setIsNight(true);
+      document.body.classList.add("nuit");
+    } else {
+      document.body.classList.remove("nuit");
     }
   }, []);
 
   useEffect(() => {
-    const logo = document.querySelector(".logo");
+    // Mettre à jour les logos et l'image d'introduction en fonction du thème actuel
+    setLogoSrc(isNight ? "/assets/ald-white.webp" : "/assets/ald-black.webp");
+    setIntroSrc(
+      isNight
+        ? "/assets/abdul-intro-white.webp"
+        : "/assets/abdul-intro-black.webp"
+    );
 
-    if (logo) {
-      logo.src = isNight ? "/assets/ald-white.webp" : "/assets/ald-black.webp";
-    }
-
+    // Basculer la classe du corps et sauvegarder la préférence du thème
     document.body.classList.toggle("nuit", isNight);
     localStorage.setItem("theme", isNight ? "nuit" : "jour");
   }, [isNight]);
 
   const handleToggle = () => {
-    setIsNight(!isNight); // Toggle between day and night modes
+    setIsNight((prevIsNight) => !prevIsNight); // Bascule entre le mode jour et nuit
   };
 
   return (

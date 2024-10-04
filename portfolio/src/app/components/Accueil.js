@@ -1,26 +1,21 @@
 import React from "react";
-import Image from "next/image";
 
 export default function Introduction() {
   return (
     <section className="introduction">
       <div className="introduction__presentation">
         <h3 className="introduction__titre">Bienvenue dans mon site web</h3>
-        <Image
+        <img
           className="introduction__logo-mobile"
           src="/assets/4962136_2597613.svg"
           alt="logo Abdul le Dev"
-          width={200}
-          height={50}
         />
         <div className="introduction__container-logo">
-          <Image
+          <img
             id="intro-logo"
             className="introduction__logo"
             src="/assets/abdul-intro-black.webp"
             alt="Logo Introduction"
-            width={200}
-            height={170}
           />
         </div>
         <strong className="introduction__texte">
@@ -43,12 +38,10 @@ export default function Introduction() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Image
+                <img
                   className="barre__logo-1"
                   src="/assets/github.svg"
                   alt="GitHub logo"
-                  width={33}
-                  height={33}
                 />
               </a>
             </li>
@@ -58,23 +51,19 @@ export default function Introduction() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Image
+                <img
                   className="barre__logo-2"
                   src="/assets/linkedin.svg"
                   alt="LinkedIn logo"
-                  width={33}
-                  height={33}
                 />
               </a>
             </li>
             <li className="barre_vertical-content">
               <a href="mailto:abdulledev@gmail.com">
-                <Image
+                <img
                   className="barre__logo-3"
                   src="/assets/Gmail_icon.svg"
                   alt="Gmail logo"
-                  width={33}
-                  height={33}
                 />
               </a>
             </li>
@@ -100,12 +89,10 @@ export default function Introduction() {
       </div>
 
       <div className="bienvenue">
-        <Image
+        <img
           className="bienvenue__source"
           src="/assets/4962136_2597613.svg"
           alt="Logo de bienvenue"
-          width={600}
-          height={600}
         />
       </div>
     </section>

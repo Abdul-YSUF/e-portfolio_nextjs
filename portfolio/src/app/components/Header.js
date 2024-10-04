@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import DarkModeToggle from "./DarkModeToggle";
 
 const Header = () => {
@@ -7,19 +6,17 @@ const Header = () => {
     <header className="header">
       <nav className="navbar">
         <div className="navbar-logo">
-          <Link href="#" aria-label="Accueil">
-            <Image
+          <Link href="#index" aria-label="Accueil">
+            <img
               className="logo"
               src="/assets/ald-black.webp"
               alt="logo Abdul le Dev"
-              width={240}
-              height={50}
             />
           </Link>
         </div>
         <ul className="menu-items">
           <li className="navbar_li">
-            <a href="#about">Qui suis-je</a>
+            <a href="#qui_suis-je">Qui suis-je</a>
           </li>
           <li className="navbar_li">
             <a href="#skills">Compétences</a>
@@ -28,7 +25,7 @@ const Header = () => {
             <a href="#projects">Projets</a>
           </li>
           <li className="navbar_li">
-            <a href="#contact">Contact</a>
+            <a href="#formulaire">Contact</a>
           </li>
           <li className="navbar_li">
             <DarkModeToggle />
