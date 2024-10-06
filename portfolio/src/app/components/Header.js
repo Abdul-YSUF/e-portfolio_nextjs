@@ -5,6 +5,18 @@ const Header = () => {
   return (
     <header className="header">
       <nav className="navbar">
+        <input
+          type="checkbox"
+          name="#"
+          id="#"
+          aria-label="Activer la navigation"
+          hidden
+        />
+        <div className="hamburger-lines" aria-hidden="true">
+          <span className="line line1"></span>
+          <span className="line line2"></span>
+          <span className="line line3"></span>
+        </div>
         <div className="navbar-logo">
           <Link href="#index" aria-label="Accueil">
             <img
@@ -22,7 +34,7 @@ const Header = () => {
             <a href="#skills">Compétences</a>
           </li>
           <li className="navbar_li">
-            <a href="#projects">Projets</a>
+            <a href="#projets">Projets</a>
           </li>
           <li className="navbar_li">
             <a href="#formulaire">Contact</a>
