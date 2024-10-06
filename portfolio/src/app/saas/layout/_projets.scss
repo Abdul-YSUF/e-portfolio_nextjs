@@ -1,3 +1,8 @@
+.projets {
+  padding-top: 110px;
+  text-align: center;
+}
+
 .carrousel {
   position: relative;
   display: flex;
@@ -20,21 +25,30 @@
   position: relative;
 }
 
+.carrousel_left,
+.carrousel_right {
+  display: none;
+  @include breakpoints_desktop {
+    display: unset;
+  }
+}
+
 .center {
   z-index: 2;
 }
 
 .computer-frame {
   position: relative;
-  width: 450px;
-  height: 450px;
+  width: 500px;
+  height: 500px;
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include flexbox;
   margin-top: 20px;
+  @include breakpoints_desktop {
+    width: 450px;
+    height: 450px;
+  }
 }
-
 .project-image-wrapper {
   position: absolute;
   top: 10.1%;
@@ -49,13 +63,17 @@
 }
 
 .project-title {
-  margin-top: 157px;
   font-size: 18px;
   font-weight: bold;
   text-align: center;
   z-index: 4;
   color: #ffffff;
+  margin-top: 174px;
+  @include breakpoints_desktop {
+    margin-top: 157px;
+  }
 }
+
 .project-title-left,
 .project-title-right {
   margin-top: 10px;
@@ -84,6 +102,7 @@
 .arrow_right {
   right: 6%;
 }
+
 .arrow-wrapper {
   background: #151d2a;
   border-radius: 50%;
@@ -92,6 +111,7 @@
   align-items: center;
   justify-content: center;
 }
+
 .arrow-wrapper img {
   width: 20px;
   height: 20px;

@@ -42,7 +42,7 @@ const Carrousel = ({ projects }) => {
 
       <div className="carousel-container">
         {/* Previous slide */}
-        <div className="carrousel_img">
+        <div className="carrousel_img carrousel_left">
           <Image
             src={projects[getPreviousIndex()].image}
             alt={projects[getPreviousIndex()].title}
@@ -81,7 +81,7 @@ const Carrousel = ({ projects }) => {
           </div>
         </div>
 
-        <div className="carrousel_img">
+        <div className="carrousel_img carrousel_right">
           <Image
             src={projects[getNextIndex()].image}
             alt={projects[getNextIndex()].title}
