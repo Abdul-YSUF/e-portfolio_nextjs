@@ -133,7 +133,7 @@ export default function ContactForm() {
 
   return (
     <div className="section_5" id="formulaire">
-      <strong className="stitre">Formulaire de contact</strong>
+      <h2 className="stitre">Formulaire de contact</h2>
       <div className="div_titre">
         <p className="titre_form">
           Contactez-moi pour toute question ou proposition via le formulaire de

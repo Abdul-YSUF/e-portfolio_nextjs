@@ -3,7 +3,7 @@
   @include breakpoints_desktop {
     display: flex;
     position: fixed;
-    bottom: 15px;
+    bottom: 90px;
     right: 18px;
     padding: 20px;
     background-color: rgba(0, 0, 0, 0.242);
@@ -13,8 +13,13 @@
     border-radius: 100px;
     cursor: pointer;
     z-index: 1;
-    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
   }
+}
+
+.scroll-top.visible {
+  opacity: 1;
 }
 
 .nuit .scroll-top {

@@ -7,8 +7,7 @@ const Header = () => {
       <nav className="navbar">
         <input
           type="checkbox"
-          name="#"
-          id="#"
+          id="menu-toggle"
           aria-label="Activer la navigation"
           hidden
         />
@@ -22,22 +21,22 @@ const Header = () => {
             <img
               className="logo"
               src="/assets/ald-black.webp"
-              alt="logo Abdul le Dev"
+              alt="Logo Abdul le Dev"
             />
           </Link>
         </div>
         <ul className="menu-items">
           <li className="navbar_li">
-            <a href="#qui_suis-je">Qui suis-je</a>
+            <Link href="#qui_suis-je">Qui suis-je</Link>
           </li>
           <li className="navbar_li">
-            <a href="#skills">Compétences</a>
+            <Link href="#skills">Compétences</Link>
           </li>
           <li className="navbar_li">
-            <a href="#projets">Projets</a>
+            <Link href="#projets">Projets</Link>
           </li>
           <li className="navbar_li">
-            <a href="#formulaire">Contact</a>
+            <Link href="#formulaire">Contact</Link>
           </li>
           <li className="navbar_li">
             <DarkModeToggle />

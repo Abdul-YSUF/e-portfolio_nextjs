@@ -32,9 +32,13 @@ const ScrollToTop = () => {
   return (
     <>
       {isVisible && (
-        <button onClick={scrollToTop}>
-          <img src="/assets/scroll-top.svg" alt="Scroll to Top" className="scroll-top" />
-        </button>
+        <div
+          className="scroll-top visible"
+          onClick={scrollToTop}
+          aria-label="Retour en haut"
+          role="button"
+          tabIndex="0"
+        ></div>
       )}
     </>
   );

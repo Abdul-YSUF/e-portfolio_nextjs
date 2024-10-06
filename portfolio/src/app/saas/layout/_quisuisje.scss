@@ -21,6 +21,7 @@
 
 .texte {
   @include flexbox;
+  flex-direction: column;
   margin-left: 0;
   text-align: center;
   width: 90%;
@@ -33,6 +34,10 @@
     margin-top: 30px;
     padding: unset;
   }
+}
+
+.texte p {
+  margin-bottom: 15px;
 }
 
 .jour .texte {

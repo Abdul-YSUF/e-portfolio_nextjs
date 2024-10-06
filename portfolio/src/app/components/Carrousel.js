@@ -28,24 +28,28 @@ const Carrousel = ({ projects }) => {
   return (
     <div className="carrousel">
       {projects?.length > 1 && (
-        <div className="arrow arrow_left" onClick={previousSlide}>
+        <div
+          className="arrow arrow_left"
+          onClick={previousSlide}
+          aria-label="Diapositive Précédente"
+          role="button"
+          tabIndex="0"
+        >
           <div className="arrow-wrapper">
             <Image
               src="/assets/arrow_left.webp"
-              alt="Previous Slide"
+              alt="Diapositive Précédente"
               width={25}
               height={25}
             />
           </div>
         </div>
       )}
-
       <div className="carousel-container">
-        {/* Previous slide */}
         <div className="carrousel_img carrousel_left">
           <Image
             src={projects[getPreviousIndex()].image}
-            alt={projects[getPreviousIndex()].title}
+            alt={projects[getPreviousIndex()].altMsg}
             width={250}
             height={150}
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 450px"
@@ -55,12 +59,11 @@ const Carrousel = ({ projects }) => {
             {projects[getPreviousIndex()].title}
           </h3>
         </div>
-
         <div className="carrousel_img center">
           <div className="computer-frame">
             <Image
               src="/assets/desktop_ordinateur.webp"
-              alt="Computer Frame"
+              alt="Cadre d'Ordinateur qui s'affiche l'image principal un projet"
               fill
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 450px"
               style={{ objectFit: "contain" }}
@@ -70,7 +73,7 @@ const Carrousel = ({ projects }) => {
             <div className="project-image-wrapper">
               <Image
                 src={projects[slide].image}
-                alt={projects[slide].title}
+                alt={projects[slide].altMsg}
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 450px"
                 style={{ objectFit: "fill" }}
@@ -80,11 +83,10 @@ const Carrousel = ({ projects }) => {
             </div>
           </div>
         </div>
-
         <div className="carrousel_img carrousel_right">
           <Image
             src={projects[getNextIndex()].image}
-            alt={projects[getNextIndex()].title}
+            alt={projects[getNextIndex()].altMsg}
             width={250}
             height={150}
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 450px"
@@ -95,13 +97,18 @@ const Carrousel = ({ projects }) => {
           </h3>
         </div>
       </div>
-
       {projects?.length > 1 && (
-        <div className="arrow arrow_right" onClick={nextSlide}>
+        <div
+          className="arrow arrow_right"
+          onClick={nextSlide}
+          aria-label="Diapositive Suivante"
+          role="button"
+          tabIndex="0"
+        >
           <div className="arrow-wrapper">
             <Image
               src="/assets/arrow_right.webp"
-              alt="Next Slide"
+              alt="Diapositive Suivante"
               width={25}
               height={25}
             />

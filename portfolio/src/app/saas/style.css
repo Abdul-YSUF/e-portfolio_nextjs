@@ -1231,6 +1231,7 @@ input.erreur, textarea.erreur {
   justify-content: center;
   text-align: center;
   align-items: center;
+  flex-direction: column;
   margin-left: 0;
   text-align: center;
   width: 90%;
@@ -1245,6 +1246,10 @@ input.erreur, textarea.erreur {
     margin-top: 30px;
     padding: unset;
   }
+}
+
+.texte p {
+  margin-bottom: 15px;
 }
 
 .jour .texte {
@@ -1693,7 +1698,7 @@ input.erreur, textarea.erreur {
   font-size: 18px;
   font-weight: bold;
   text-align: center;
-  z-index: 4;
+  z-index: 500;
   color: #ffffff;
   margin-top: 174px;
 }
@@ -1930,7 +1935,7 @@ input.erreur, textarea.erreur {
   .scroll-top {
     display: flex;
     position: fixed;
-    bottom: 15px;
+    bottom: 90px;
     right: 18px;
     padding: 20px;
     background-color: rgba(0, 0, 0, 0.242);
@@ -1940,8 +1945,13 @@ input.erreur, textarea.erreur {
     border-radius: 100px;
     cursor: pointer;
     z-index: 1;
-    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
   }
+}
+
+.scroll-top.visible {
+  opacity: 1;
 }
 
 .nuit .scroll-top {

@@ -16,20 +16,25 @@ const skills = [
 ];
 
 const Skills = () => {
-  const [progressValues, setProgressValues] = useState(Array(skills.length).fill(0));
+  const [progressValues, setProgressValues] = useState(
+    Array(skills.length).fill(0)
+  );
   const [hasAnimated, setHasAnimated] = useState(false);
   const competencesDetailsRef = useRef(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting && !hasAnimated) {
-          animateSkills();
-          entry.target.classList.add("scroll-animation");
-          setHasAnimated(true);
-        }
-      });
-    }, { threshold: 0.5 });
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !hasAnimated) {
+            animateSkills();
+            entry.target.classList.add("scroll-animation");
+            setHasAnimated(true);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
 
     if (competencesDetailsRef.current) {
       observer.observe(competencesDetailsRef.current);
@@ -43,7 +48,7 @@ const Skills = () => {
   }, [hasAnimated]);
 
   const animateSkills = () => {
-    const speed = 25; // Change this value to adjust the speed (lower is faster)
+    const speed = 25;
 
     skills.forEach((skill, index) => {
       const endValue = skill.value;
@@ -51,30 +56,30 @@ const Skills = () => {
 
       const incrementProgress = () => {
         if (startValue < endValue) {
-          startValue += Math.ceil(endValue / (1000 / speed)); // Increment based on the speed
-          if (startValue > endValue) startValue = endValue; // Ensure we don't exceed the end value
+          startValue += Math.ceil(endValue / (1000 / speed));
+          if (startValue > endValue) startValue = endValue;
 
           setProgressValues((prevValues) => {
             const newValues = [...prevValues];
             newValues[index] = startValue;
             return newValues;
           });
-
-          // Use requestAnimationFrame for smoother animations
           requestAnimationFrame(incrementProgress);
         }
       };
 
-      incrementProgress(); // Start the animation
+      incrementProgress();
     });
   };
 
   return (
     <section id="skills" className="competences">
-      <strong className="competences__titre">Compétences</strong>
+      <h2 className="competences__titre">Compétences</h2>
       <div className="competences__div">
-        <div className="competences__details animation scroll-animation" ref={competencesDetailsRef}>
-          {/* Competences Un */}
+        <div
+          className="competences__details animation scroll-animation"
+          ref={competencesDetailsRef}
+        >
           <div className="competences__un">
             <ul className="competences__barre">
               {skills.slice(0, 5).map((skill, index) => (
@@ -85,7 +90,9 @@ const Skills = () => {
                       <div
                         className="circular-progress"
                         style={{
-                          background: `conic-gradient(${skill.color} ${progressValues[index] * 3.6}deg, rgb(197, 197, 197) 0deg)`,
+                          background: `conic-gradient(${skill.color} ${
+                            progressValues[index] * 3.6
+                          }deg, rgb(197, 197, 197) 0deg)`,
                         }}
                       >
                         <span className="progress-value percent">
@@ -107,19 +114,22 @@ const Skills = () => {
               ))}
             </ul>
           </div>
-
-          {/* Competences Deux */}
           <div className="competences__deux">
             <ul className="competences__barre">
               {skills.slice(5).map((skill, index) => (
-                <li className="competences__li" key={`${skill.name}-${index + 5}`}>
+                <li
+                  className="competences__li"
+                  key={`${skill.name}-${index + 5}`}
+                >
                   <div className="progressbar-title">
                     <h3 className="skill">{skill.name}</h3>
                     <div className="containeur">
                       <div
                         className="circular-progress"
                         style={{
-                          background: `conic-gradient(${skill.color} ${progressValues[index + 5] * 3.6}deg, rgb(197, 197, 197) 0deg)`,
+                          background: `conic-gradient(${skill.color} ${
+                            progressValues[index + 5] * 3.6
+                          }deg, rgb(197, 197, 197) 0deg)`,
                         }}
                       >
                         <span className="progress-value percent">

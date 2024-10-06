@@ -4,7 +4,7 @@ export default function AboutMe() {
   return (
     <section className="section_2" id="qui_suis-je">
       <div className="section_2-container">
-        <strong className="stitre">Qui suis-je</strong>
+        <h2 className="stitre">Qui suis-je</h2>
         <div className="qui_suis-je">
           <div className="about-me animation scroll-animation">
             <img
@@ -13,40 +13,38 @@ export default function AboutMe() {
               alt="Dessin animé d'un homme qui travail sur son ordinateur"
             />
           </div>
-          <p className="texte">
-            Un développeur intégrateur web passionné à votre service !
-            <br />
-            <br />
-            Vous cherchez un développeur web fiable et enthousiaste pour donner
-            vie à vos projets digitaux ? Ne cherchez plus !
-            <br />
-            <br />
-            Je m'appelle Abdul, développeur web polyvalent avec un fort intérêt
-            pour la programmation. Je possède une solide expérience dans la
-            création de sites web de A à Z, en veillant à répondre aux besoins
-            spécifiques de chaque client.
-            <br />
-            <br />
-            Mon expertise s'étend à tous les aspects du développement web,
-            depuis la définition du produit jusqu'à la mise en ligne et
-            l'optimisation SEO.
-            <br />
-            <br />
-            Je suis également passionné par le design d'interface et j'aime
-            créer des sites web visuellement attrayants et intuitifs.
-            <br />
-            <br />
-            Mon objectif est de vous fournir des solutions web sur mesure qui
-            répondent à vos besoins et à vos objectifs commerciaux.
-            <br />
-            <br />
-            En plus de mes compétences techniques, je suis également une
-            personne curieuse, créative et facile à vivre. Je suis toujours à
-            l'affût des nouvelles technologies et je suis impatient de relever
-            de nouveaux défis.
-            <br />
-            <br />
-          </p>
+          <div className="texte">
+            <p>Un développeur intégrateur web passionné à votre service !</p>
+            <p>
+              Vous cherchez un développeur web fiable et enthousiaste pour
+              donner vie à vos projets digitaux ? Ne cherchez plus !
+            </p>
+            <p>
+              Je m'appelle Abdul, développeur web polyvalent avec un fort
+              intérêt pour la programmation. Je possède une solide expérience
+              dans la création de sites web de A à Z, en veillant à répondre aux
+              besoins spécifiques de chaque client.
+            </p>
+            <p>
+              Mon expertise s'étend à tous les aspects du développement web,
+              depuis la définition du produit jusqu'à la mise en ligne et
+              l'optimisation SEO.
+            </p>
+            <p>
+              Je suis également passionné par le design d'interface et j'aime
+              créer des sites web visuellement attrayants et intuitifs.
+            </p>
+            <p>
+              Mon objectif est de vous fournir des solutions web sur mesure qui
+              répondent à vos besoins et à vos objectifs commerciaux.
+            </p>
+            <p>
+              En plus de mes compétences techniques, je suis également une
+              personne curieuse, créative et facile à vivre. Je suis toujours à
+              l'affût des nouvelles technologies et je suis impatient de relever
+              de nouveaux défis.
+            </p>
+          </div>
         </div>
       </div>
     </section>

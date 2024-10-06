@@ -4,18 +4,13 @@ export default function Introduction() {
   return (
     <section className="introduction">
       <div className="introduction__presentation">
-        <h3 className="introduction__titre">Bienvenue dans mon site web</h3>
-        <img
-          className="introduction__logo-mobile"
-          src="/assets/4962136_2597613.svg"
-          alt="logo Abdul le Dev"
-        />
+        <h1 className="introduction__titre">Bienvenue dans mon site web</h1>
         <div className="introduction__container-logo">
           <img
             id="intro-logo"
             className="introduction__logo"
             src="/assets/abdul-intro-black.webp"
-            alt="Logo Introduction"
+            alt="Logo Abdul le Dev"
           />
         </div>
         <strong className="introduction__texte">
@@ -23,8 +18,8 @@ export default function Introduction() {
           numérique.
         </strong>
         <div className="introduction__contact-container">
-          <a href="#formulaire">
-            <h4 className="introduction__font-contact">Contact</h4>
+          <a href="#formulaire" aria-label="Aller à la section contact">
+            <span className="introduction__font-contact">Contact</span>
           </a>
         </div>
       </div>
@@ -37,11 +32,12 @@ export default function Introduction() {
                 href="https://github.com/Abdul-YSUF?tab=repositories"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="GitHub Abdul le Dev"
               >
                 <img
                   className="barre__logo-1"
                   src="/assets/github.svg"
-                  alt="GitHub logo"
+                  alt="Logo GitHub"
                 />
               </a>
             </li>
@@ -50,20 +46,21 @@ export default function Introduction() {
                 href="https://www.linkedin.com/in/abdul-fahad-ysuf-970887235/"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="LinkedIn Abdul le Dev"
               >
                 <img
                   className="barre__logo-2"
                   src="/assets/linkedin.svg"
-                  alt="LinkedIn logo"
+                  alt="Logo LinkedIn"
                 />
               </a>
             </li>
             <li className="barre_vertical-content">
-              <a href="mailto:abdulledev@gmail.com">
+              <a href="mailto:abdulledev@gmail.com" aria-label="Envoyer un email à Abdul le Dev">
                 <img
                   className="barre__logo-3"
                   src="/assets/Gmail_icon.svg"
-                  alt="Gmail logo"
+                  alt="Logo Gmail"
                 />
               </a>
             </li>
@@ -73,7 +70,7 @@ export default function Introduction() {
         <a
           href="#qui_suis-je"
           className="souris"
-          aria-label="scroll down button"
+          aria-label="Bouton pour faire défiler vers la section Qui suis-je"
         >
           <div className="mouse_scroll" id="mouse_scroll">
             <div className="mouse">
@@ -92,7 +89,7 @@ export default function Introduction() {
         <img
           className="bienvenue__source"
           src="/assets/4962136_2597613.svg"
-          alt="Logo de bienvenue"
+          alt="Illustration d'un homme qui travaille sur son ordinateur avec plusieurs langages de programmation"
         />
       </div>
     </section>
