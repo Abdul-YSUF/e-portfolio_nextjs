@@ -1,7 +1,10 @@
+"use client";
 import Link from "next/link";
-import DarkModeToggle from "./DarkModeToggle";
+import useDarkMode from "./DarkModeToggle";
 
-const Header = () => {
+export default function Header() {
+  const { isNight, logoSrc, toggleTheme } = useDarkMode();
+
   return (
     <header className="header">
       <nav className="navbar">
@@ -20,7 +23,7 @@ const Header = () => {
           <Link href="#index" aria-label="Accueil">
             <img
               className="logo"
-              src="/assets/ald-black.webp"
+              src={logoSrc}
               alt="Logo Abdul le Dev"
             />
           </Link>
@@ -39,12 +42,19 @@ const Header = () => {
             <Link href="#formulaire">Contact</Link>
           </li>
           <li className="navbar_li">
-            <DarkModeToggle />
+            <button
+              className="toggle-button"
+              onClick={toggleTheme}
+              aria-label="Toggle dark mode"
+            >
+              <img
+                src={isNight ? "/assets/sun.webp" : "/assets/moon.webp"}
+                alt={isNight ? "Mode Clair" : "Mode Sombre"}
+              />
+            </button>
           </li>
         </ul>
       </nav>
     </header>
   );
-};
-
-export default Header;
+}

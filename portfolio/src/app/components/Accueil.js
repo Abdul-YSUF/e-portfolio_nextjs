@@ -1,6 +1,9 @@
+"use client";
 import React from "react";
+import useDarkMode from "./DarkModeToggle";
 
 export default function Introduction() {
+  const { introSrc } = useDarkMode();
   return (
     <section className="introduction">
       <div className="introduction__presentation">
@@ -9,7 +12,7 @@ export default function Introduction() {
           <img
             id="intro-logo"
             className="introduction__logo"
-            src="/assets/abdul-intro-black.webp"
+            src={introSrc}
             alt="Logo Abdul le Dev"
           />
         </div>
@@ -56,7 +59,10 @@ export default function Introduction() {
               </a>
             </li>
             <li className="barre_vertical-content">
-              <a href="mailto:abdulledev@gmail.com" aria-label="Envoyer un email à Abdul le Dev">
+              <a
+                href="mailto:abdulledev@gmail.com"
+                aria-label="Envoyer un email à Abdul le Dev"
+              >
                 <img
                   className="barre__logo-3"
                   src="/assets/Gmail_icon.svg"
