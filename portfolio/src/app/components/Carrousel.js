@@ -10,7 +10,7 @@ const Carrousel = ({ projects }) => {
   useEffect(() => {
     const interval = setInterval(() => {
       nextSlide();
-    }, 3000);
+    }, 4000);
 
     return () => clearInterval(interval);
   }, [slide]);
@@ -58,7 +58,10 @@ const Carrousel = ({ projects }) => {
         </div>
       )}
       <div className="carousel-container">
-        <div className="carrousel_img carrousel_left">
+        <div
+          className="carrousel_img carrousel_left"
+          onClick={() => openPopup(projects[getPreviousIndex()])}
+        >
           <Image
             src={projects[getPreviousIndex()].image}
             alt={projects[getPreviousIndex()].altMsg}
@@ -82,7 +85,10 @@ const Carrousel = ({ projects }) => {
               priority
             />
             <h3 className="project-title">{projects[slide].title}</h3>
-            <div className="project-image-wrapper" onClick={() => openPopup(projects[slide])}>
+            <div
+              className="project-image-wrapper"
+              onClick={() => openPopup(projects[slide])}
+            >
               <Image
                 src={projects[slide].image}
                 alt={projects[slide].altMsg}
@@ -95,7 +101,10 @@ const Carrousel = ({ projects }) => {
             </div>
           </div>
         </div>
-        <div className="carrousel_img carrousel_right">
+        <div
+          className="carrousel_img carrousel_right"
+          onClick={() => openPopup(projects[getNextIndex()])}
+        >
           <Image
             src={projects[getNextIndex()].image}
             alt={projects[getNextIndex()].altMsg}
@@ -127,9 +136,7 @@ const Carrousel = ({ projects }) => {
           </div>
         </div>
       )}
-      {isPopupOpen && (
-        <Popup project={selectedProject} onClose={closePopup} />
-      )}
+      {isPopupOpen && <Popup project={selectedProject} onClose={closePopup} />}
     </div>
   );
 };
@@ -140,10 +147,14 @@ const Popup = ({ project, onClose }) => {
   return (
     <div className="popup-overlay">
       <div className="popup-content">
-        <button onClick={onClose} aria-label="Fermer la popup" className="close-button">
+        <button
+          onClick={onClose}
+          aria-label="Fermer la popup"
+          className="close-button"
+        >
           &times;
         </button>
-        <h2>{project.title}</h2>
+        <h2 className="project-text">{project.title}</h2>
         <Image
           src={project.image}
           alt={project.altMsg}
@@ -151,7 +162,8 @@ const Popup = ({ project, onClose }) => {
           height={300}
           style={{ objectFit: "contain" }}
         />
-        <p>{project.description}</p> {/* Assurez-vous que 'description' est dans vos données */}
+        <p className="project-description">{project.description}</p>{" "}
+        {/* Assurez-vous que 'description' est dans vos données */}
       </div>
     </div>
   );

@@ -1,15 +1,11 @@
-[data-theme="light"] {
-  --gradient-one: #30cfd0;
-  --gradient-two: #330867;
-  --bg-color: #ffffff;
-  --links: #000000;
+:root {
+  --color-text: #000;
+  --color-bg: #fff;
 }
 
-[data-theme="dark"] {
-  --gradient-one: rgba(245, 107, 244, 0.79);
-  --gradient-two: #efad05;
-  --bg-color: #21232f;
-  --links: #ffffff;
+.nuit {
+  --color-text: #fff;
+  --color-bg: #151d2a;
 }
 
 $color-primaire: #9356dc;
@@ -44,29 +40,3 @@ $breakpoints_large: (
   l: 425px,
   lm: 767px
 );
-
-/* // Break Points for mediaQuery
-$breakpoints_small: (
-  s: 320px,
-  sm: 374px
-);
-
-$breakpoints_medium: (
-  m: 375px,
-  mm: 424px
-);
-
-$breakpoints_large: (
-  l: 425px,
-  lm: 767px
-);
-
-$breakpoints_tablette: (
-  t: 768px,
-  tt: 991px
-);
-
-$breakpoints_desktop: (
-  laptop: 992px,
-  desktop: 1199px
-);*/

@@ -36,6 +36,7 @@
     display: unset;
     border: 1px solid $black;
     border-radius: 5px;
+    cursor: pointer;
   }
 }
 
@@ -43,7 +44,6 @@
   z-index: 2;
   @include flexbox;
   @include breakpoints_desktop {
-
   }
 }
 
@@ -78,7 +78,7 @@
   font-weight: bold;
   text-align: center;
   z-index: 500;
-  color: #ffffff;
+  color: $white;
   margin-top: 105px;
   @include breakpoints_desktop {
     margin-top: 157px;
@@ -91,12 +91,7 @@
   font-size: 18px;
   font-weight: bold;
   text-align: center;
-  color: #000000;
-}
-
-.nuit .project-title-left,
-.nuit .project-title-right {
-  color: #ffffff;
+  color: var(--color-text);
 }
 
 .arrow {
@@ -144,7 +139,7 @@
 }
 
 .popup-content {
-  background: white;
+  background: var(--color-bg);
   padding: 20px;
   border-radius: 10px;
   position: relative;
@@ -155,9 +150,16 @@
 .close-button {
   position: absolute;
   top: 10px;
-  right: 10px;
+  right: 20px;
   background: transparent;
   border: none;
-  font-size: 20px;
+  font-size: 40px;
+  color: var(--color-text);
   cursor: pointer;
+}
+
+.project-text,
+.project-description {
+  color: var(--color-text);
+  background: var(--color-bg);
 }

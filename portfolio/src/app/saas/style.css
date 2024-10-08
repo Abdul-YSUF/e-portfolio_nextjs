@@ -1,44 +1,15 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800&display=swap");
-[data-theme=light] {
-  --gradient-one: #30cfd0;
-  --gradient-two: #330867;
-  --bg-color: #ffffff;
-  --links: #000000;
+:root {
+  --color-text: #000;
+  --color-bg: #fff;
 }
 
-[data-theme=dark] {
-  --gradient-one: rgba(245, 107, 244, 0.79);
-  --gradient-two: #efad05;
-  --bg-color: #21232f;
-  --links: #ffffff;
+.nuit {
+  --color-text: #fff;
+  --color-bg: #151d2a;
 }
 
-/* // Break Points for mediaQuery
-$breakpoints_small: (
-  s: 320px,
-  sm: 374px
-);
-
-$breakpoints_medium: (
-  m: 375px,
-  mm: 424px
-);
-
-$breakpoints_large: (
-  l: 425px,
-  lm: 767px
-);
-
-$breakpoints_tablette: (
-  t: 768px,
-  tt: 991px
-);
-
-$breakpoints_desktop: (
-  laptop: 992px,
-  desktop: 1199px
-);*/
 @keyframes mouse_scroll {
   0% {
     opacity: 0;
@@ -690,21 +661,21 @@ li.navbar_li {
 }
 
 .erreur {
-  color: #e74c3c; /* Bright red color for error messages */
-  font-size: 0.875rem; /* Slightly smaller font size */
-  margin-top: 0.25rem; /* Space above the error message */
-  margin-bottom: 0.5rem; /* Space below the error message */
-  padding: 0.5rem; /* Padding around the message */
-  background-color: rgba(231, 76, 60, 0.1); /* Light red background for contrast */
-  border: 1px solid #e74c3c; /* Red border */
-  border-radius: 4px; /* Slightly rounded corners */
-  transition: opacity 0.3s; /* Smooth transition for any opacity changes */
+  color: #e74c3c;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  background-color: rgba(231, 76, 60, 0.1);
+  border: 1px solid #e74c3c;
+  border-radius: 4px;
+  transition: opacity 0.3s;
 }
 
 /* Optionally, add a focus style to inputs with errors */
 input.erreur, textarea.erreur {
-  border: 2px solid #e74c3c; /* Red border to indicate error on the input */
-  background-color: rgba(231, 76, 60, 0.05); /* Light red background on error */
+  border: 2px solid #e74c3c;
+  background-color: rgba(231, 76, 60, 0.05);
 }
 
 .introduction {
@@ -897,7 +868,7 @@ input.erreur, textarea.erreur {
   background-color: white;
   border-radius: 100px;
   transform: scale(1);
-  transition: transform 0.3s ease-in-out, border 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, border 0.3s ease-in-out, background 0.3s ease-in-out;
 }
 .barre__logo-3:hover {
   transform: scale(1.2);
@@ -1178,18 +1149,6 @@ input.erreur, textarea.erreur {
   }
 }
 
-/*.border_blue {
-  display: flex;
-  border: 10px solid rgb(8, 169, 223);
-  border-radius: 500px;
-  margin-left: 0;
-  margin: auto;
-  animation: none;
-  @include breakpoints_desktop {
-    margin-top: 10px;
-    margin-left: 80px;
-  }
-}*/
 .about-me {
   width: 250px;
   height: auto;
@@ -1532,6 +1491,7 @@ input.erreur, textarea.erreur {
     display: unset;
     border: 1px solid black;
     border-radius: 5px;
+    cursor: pointer;
   }
 }
 
@@ -1580,7 +1540,7 @@ input.erreur, textarea.erreur {
   font-weight: bold;
   text-align: center;
   z-index: 500;
-  color: #ffffff;
+  color: white;
   margin-top: 105px;
 }
 @media screen and (min-width: 992px) {
@@ -1595,12 +1555,7 @@ input.erreur, textarea.erreur {
   font-size: 18px;
   font-weight: bold;
   text-align: center;
-  color: #000000;
-}
-
-.nuit .project-title-left,
-.nuit .project-title-right {
-  color: #ffffff;
+  color: var(--color-text);
 }
 
 .arrow {
@@ -1658,7 +1613,7 @@ input.erreur, textarea.erreur {
 }
 
 .popup-content {
-  background: white;
+  background: var(--color-bg);
   padding: 20px;
   border-radius: 10px;
   position: relative;
@@ -1669,11 +1624,18 @@ input.erreur, textarea.erreur {
 .close-button {
   position: absolute;
   top: 10px;
-  right: 10px;
+  right: 20px;
   background: transparent;
   border: none;
-  font-size: 20px;
+  font-size: 40px;
+  color: var(--color-text);
   cursor: pointer;
+}
+
+.project-text,
+.project-description {
+  color: var(--color-text);
+  background: var(--color-bg);
 }
 
 .footer {
