@@ -4,6 +4,8 @@ import Image from "next/image";
 
 const Carrousel = ({ projects }) => {
   const [slide, setSlide] = useState(0);
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [selectedProject, setSelectedProject] = useState(null);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -24,6 +26,16 @@ const Carrousel = ({ projects }) => {
   const getPreviousIndex = () =>
     slide === 0 ? projects.length - 1 : slide - 1;
   const getNextIndex = () => (slide === projects.length - 1 ? 0 : slide + 1);
+
+  const openPopup = (project) => {
+    setSelectedProject(project);
+    setIsPopupOpen(true);
+  };
+
+  const closePopup = () => {
+    setIsPopupOpen(false);
+    setSelectedProject(null);
+  };
 
   return (
     <div className="carrousel">
@@ -70,7 +82,7 @@ const Carrousel = ({ projects }) => {
               priority
             />
             <h3 className="project-title">{projects[slide].title}</h3>
-            <div className="project-image-wrapper">
+            <div className="project-image-wrapper" onClick={() => openPopup(projects[slide])}>
               <Image
                 src={projects[slide].image}
                 alt={projects[slide].altMsg}
@@ -115,6 +127,32 @@ const Carrousel = ({ projects }) => {
           </div>
         </div>
       )}
+      {isPopupOpen && (
+        <Popup project={selectedProject} onClose={closePopup} />
+      )}
+    </div>
+  );
+};
+
+const Popup = ({ project, onClose }) => {
+  if (!project) return null;
+
+  return (
+    <div className="popup-overlay">
+      <div className="popup-content">
+        <button onClick={onClose} aria-label="Fermer la popup" className="close-button">
+          &times;
+        </button>
+        <h2>{project.title}</h2>
+        <Image
+          src={project.image}
+          alt={project.altMsg}
+          width={400}
+          height={300}
+          style={{ objectFit: "contain" }}
+        />
+        <p>{project.description}</p> {/* Assurez-vous que 'description' est dans vos données */}
+      </div>
     </div>
   );
 };

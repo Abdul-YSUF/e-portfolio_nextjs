@@ -131,7 +131,6 @@ $breakpoints_desktop: (
   width: 100%;
   max-width: 1280px;
   background: white;
-  transition: 1000ms ease-in-out;
   color: #000;
   height: 80px;
   z-index: 10000;
@@ -139,7 +138,6 @@ $breakpoints_desktop: (
 
 .nuit .header {
   background: #151d2a;
-  transition: 1000ms ease-in-out;
 }
 
 .navbar {
@@ -224,6 +222,13 @@ $breakpoints_desktop: (
   opacity: 0;
   cursor: pointer;
 }
+@media screen and (min-width: 992px) {
+  .navbar input[type=checkbox] {
+    opacity: 0;
+    cursor: default;
+    pointer-events: none;
+  }
+}
 
 li.navbar_li {
   display: flex;
@@ -248,7 +253,6 @@ li.navbar_li {
   transform: translate(380%);
   flex-direction: column;
   transition: transform 0.5s ease-in-out;
-  transition: 1000ms ease-in-out;
   box-shadow: 0px 0px 10px 5px #aaa;
 }
 @media screen and (min-width: 992px) {
@@ -378,7 +382,12 @@ li.navbar_li {
   background: transparent;
   padding: 0;
   cursor: pointer;
-  margin-top: 10px;
+  margin-top: 11px;
+}
+@media screen and (min-width: 992px) {
+  .toggle-button {
+    margin-left: 40px;
+  }
 }
 
 .toggle-button img {
@@ -1481,22 +1490,24 @@ input.erreur, textarea.erreur {
 .carrousel {
   position: relative;
   display: flex;
-  align-items: center;
   justify-content: center;
+  text-align: center;
+  align-items: center;
   overflow: hidden;
   width: 100%;
 }
 
 .carousel-container {
   display: flex;
-  align-items: center;
   justify-content: center;
+  text-align: center;
+  align-items: center;
   width: 100%;
   position: relative;
 }
 
 .carrousel_img {
-  margin: 0 10px;
+  margin: 0 5px;
   position: relative;
 }
 
@@ -1511,14 +1522,30 @@ input.erreur, textarea.erreur {
   }
 }
 
-.center {
-  z-index: 2;
+.carrousel_left img,
+.carrousel_right img {
+  display: none;
+}
+@media screen and (min-width: 992px) {
+  .carrousel_left img,
+  .carrousel_right img {
+    display: unset;
+    border: 1px solid black;
+    border-radius: 5px;
+  }
 }
 
+.center {
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
 .computer-frame {
   position: relative;
-  width: 500px;
-  height: 500px;
+  width: 300px;
+  height: 300px;
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -1540,6 +1567,7 @@ input.erreur, textarea.erreur {
   width: 91.5%;
   height: 48.1%;
   z-index: 1;
+  cursor: pointer;
 }
 
 .project-image {
@@ -1553,7 +1581,7 @@ input.erreur, textarea.erreur {
   text-align: center;
   z-index: 500;
   color: #ffffff;
-  margin-top: 174px;
+  margin-top: 105px;
 }
 @media screen and (min-width: 992px) {
   .project-title {
@@ -1583,25 +1611,69 @@ input.erreur, textarea.erreur {
 }
 
 .arrow_left {
-  left: 6%;
+  left: 3%;
+}
+@media screen and (min-width: 992px) {
+  .arrow_left {
+    left: 6%;
+  }
 }
 
 .arrow_right {
-  right: 6%;
+  right: 3%;
+}
+@media screen and (min-width: 992px) {
+  .arrow_right {
+    right: 6%;
+  }
 }
 
 .arrow-wrapper {
-  background: #151d2a;
+  background: rgba(0, 0, 0, 0.6274509804);
   border-radius: 50%;
   padding: 10px;
   display: flex;
-  align-items: center;
   justify-content: center;
+  text-align: center;
+  align-items: center;
 }
 
 .arrow-wrapper img {
   width: 20px;
   height: 20px;
+}
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  position: relative;
+  max-width: 500px;
+  width: 90%;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
 }
 
 .footer {

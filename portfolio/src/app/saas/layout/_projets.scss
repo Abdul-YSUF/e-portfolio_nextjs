@@ -5,23 +5,19 @@
 
 .carrousel {
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include flexbox;
   overflow: hidden;
   width: 100%;
 }
 
 .carousel-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include flexbox;
   width: 100%;
   position: relative;
 }
 
 .carrousel_img {
-  margin: 0 10px;
+  margin: 0 5px;
   position: relative;
 }
 
@@ -33,14 +29,28 @@
   }
 }
 
+.carrousel_left img,
+.carrousel_right img {
+  display: none;
+  @include breakpoints_desktop {
+    display: unset;
+    border: 1px solid $black;
+    border-radius: 5px;
+  }
+}
+
 .center {
   z-index: 2;
+  @include flexbox;
+  @include breakpoints_desktop {
+
+  }
 }
 
 .computer-frame {
   position: relative;
-  width: 500px;
-  height: 500px;
+  width: 300px;
+  height: 300px;
   overflow: hidden;
   @include flexbox;
   margin-top: 20px;
@@ -56,6 +66,7 @@
   width: 91.5%;
   height: 48.1%;
   z-index: 1;
+  cursor: pointer;
 }
 
 .project-image {
@@ -68,7 +79,7 @@
   text-align: center;
   z-index: 500;
   color: #ffffff;
-  margin-top: 174px;
+  margin-top: 105px;
   @include breakpoints_desktop {
     margin-top: 157px;
   }
@@ -96,23 +107,57 @@
 }
 
 .arrow_left {
-  left: 6%;
+  left: 3%;
+  @include breakpoints_desktop {
+    left: 6%;
+  }
 }
 
 .arrow_right {
-  right: 6%;
+  right: 3%;
+  @include breakpoints_desktop {
+    right: 6%;
+  }
 }
 
 .arrow-wrapper {
-  background: #151d2a;
+  background: #000000a0;
   border-radius: 50%;
   padding: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include flexbox;
 }
 
 .arrow-wrapper img {
   width: 20px;
   height: 20px;
+}
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  @include flexbox;
+  z-index: 1000;
+}
+
+.popup-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  position: relative;
+  max-width: 500px;
+  width: 90%;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
 }

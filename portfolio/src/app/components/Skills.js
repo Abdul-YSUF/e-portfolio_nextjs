@@ -3,16 +3,16 @@
 import { useEffect, useRef, useState } from "react";
 
 const skills = [
-  { name: "HTML / CSS", color: "#c0191b", value: 80 },
-  { name: "SASS / Bootstrap / SEO", color: "#11b1ff", value: 75 },
-  { name: "JS / Node.js", color: "#9b59b6", value: 65 },
-  { name: "PHP / PHP MyAdmin", color: "#ffaa00", value: 55 },
-  { name: "React.js / React Router", color: "#27ae60", value: 60 },
-  { name: "MongoDB / MySQL", color: "#c0392b", value: 70 },
-  { name: "API REST / Postman", color: "#1199ff", value: 65 },
+  { name: "HTML / CSS", color: "#c0191b", value: 85 },
+  { name: "SASS / Bootstrap / SEO", color: "#11b1ff", value: 80 },
+  { name: "JS / Node.js / Next.js", color: "#9b59b6", value: 70 },
+  { name: "PHP / PHP MyAdmin", color: "#ffaa00", value: 60 },
+  { name: "React.js / React Router", color: "#27ae60", value: 70 },
+  { name: "MongoDB / MySQL", color: "#c0392b", value: 75 },
+  { name: "API REST / Postman", color: "#1199ff", value: 70 },
   { name: "GitHub", color: "#9b59b6", value: 80 },
-  { name: "WordPress / Local", color: "#ffa500", value: 75 },
-  { name: "Adobe Photoshop", color: "#27ae60", value: 55 },
+  { name: "WordPress", color: "#ffa500", value: 75 },
+  { name: "Adobe Photoshop", color: "#27ae60", value: 60 },
 ];
 
 const Skills = () => {

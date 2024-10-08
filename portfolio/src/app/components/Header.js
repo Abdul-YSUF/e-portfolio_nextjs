@@ -21,11 +21,7 @@ export default function Header() {
         </div>
         <div className="navbar-logo">
           <Link href="#index" aria-label="Accueil">
-            <img
-              className="logo"
-              src={logoSrc}
-              alt="Logo Abdul le Dev"
-            />
+            <img className="logo" src={logoSrc} alt="Logo Abdul le Dev" />
           </Link>
         </div>
         <ul className="menu-items">

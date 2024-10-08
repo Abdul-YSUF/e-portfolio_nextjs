@@ -5,7 +5,6 @@
   width: 100%;
   max-width: 1280px;
   background: $white;
-  transition: 1000ms ease-in-out;
   color: #000;
   height: 80px;
   z-index: 10000;
@@ -13,7 +12,6 @@
 
 .nuit .header {
   background: #151d2a;
-  transition: 1000ms ease-in-out;
 }
 
 .navbar {
@@ -81,6 +79,11 @@
   z-index: 5;
   opacity: 0;
   cursor: pointer;
+  @include breakpoints_desktop {
+  opacity: 0;
+  cursor: default;
+  pointer-events: none;
+  }
 }
 
 li.navbar_li {
@@ -103,7 +106,6 @@ li.navbar_li {
   transform: translate(380%);
   flex-direction: column;
   transition: transform 0.5s ease-in-out;
-  transition: 1000ms ease-in-out;
   box-shadow: 0px 0px 10px 5px #aaa;
   @include breakpoints_desktop {
     position: unset;
@@ -213,7 +215,10 @@ li.navbar_li {
   background: transparent;
   padding: 0;
   cursor: pointer;
-  margin-top: 10px;
+  margin-top: 11px;
+  @include breakpoints_desktop {
+    margin-left: 40px;
+  }
 }
 
 .toggle-button img {

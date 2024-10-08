@@ -8,6 +8,11 @@ export default function Introduction() {
     <section className="introduction">
       <div className="introduction__presentation">
         <h1 className="introduction__titre">Bienvenue dans mon site web</h1>
+        <img
+          className="introduction__logo-mobile"
+          src="/assets/4962136_2597613.svg"
+          alt="logo Abdul le Dev"
+        />
         <div className="introduction__container-logo">
           <img
             id="intro-logo"
