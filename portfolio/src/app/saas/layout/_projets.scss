@@ -34,8 +34,16 @@
   display: none;
   @include breakpoints_desktop {
     display: unset;
-    border: 1px solid $black;
-    border-radius: 5px;
+    background: transparent;
+    border: 5px solid;
+    border-image: linear-gradient(
+        45deg,
+        rgba(192, 54, 154, 1),
+        rgba(97, 0, 255, 0.89),
+        rgba(46, 137, 13, 0.89)
+      )
+      1;
+    padding: 10px;
     cursor: pointer;
   }
 }
@@ -59,6 +67,7 @@
     height: 450px;
   }
 }
+
 .project-image-wrapper {
   position: absolute;
   top: 10.1%;
@@ -135,31 +144,88 @@
   bottom: 0;
   background: rgba(0, 0, 0, 0.7);
   @include flexbox;
-  z-index: 1000;
+  z-index: 4;
 }
 
 .popup-content {
   background: var(--color-bg);
-  padding: 20px;
   border-radius: 10px;
   position: relative;
-  max-width: 500px;
-  width: 90%;
+  width: 100%;
+  height: 80%;
+  margin-top: 80px;
+  @include flexbox;
+  flex-direction: column;
+  @include breakpoints_desktop {
+    width: 90%;
+    height: 80%;
+    margin-top: 80px;
+  }
 }
 
 .close-button {
   position: absolute;
-  top: 10px;
+  bottom: 10px;
   right: 20px;
   background: transparent;
   border: none;
   font-size: 40px;
   color: var(--color-text);
   cursor: pointer;
+  @include breakpoints_desktop {
+    top: 10px;
+    right: 20px;
+  }
 }
 
 .project-text,
 .project-description {
   color: var(--color-text);
-  background: var(--color-bg);
+}
+
+.project-text {
+  margin-top: -100px;
+  @include breakpoints_desktop {
+    margin-top: 40px;
+  }
+}
+
+.project-description {
+  margin-top: 260px;
+  width: 90%;
+  @include breakpoints_desktop {
+    margin-top: 330px;
+    width: 80%;
+  }
+}
+
+.popup-frame {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  overflow: hidden;
+  @include flexbox;
+  margin-top: -100px;
+  @include breakpoints_desktop {
+    width: 500px;
+    height: 500px;
+    margin-top: -80px;
+    margin-left: 20px;
+  }
+}
+
+.popup-image-wrapper {
+  position: absolute;
+  top: 33.5%;
+  left: 16.7%;
+  width: 200px;
+  height: 125.5px;
+  z-index: 1;
+  cursor: pointer;
+  @include breakpoints_desktop {
+    top: 28.1%;
+    left: 16.7%;
+    width: 333px;
+    height: 207.5px;
+  }
 }

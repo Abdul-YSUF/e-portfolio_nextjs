@@ -20,7 +20,7 @@ export default function Header() {
           <span className="line line3"></span>
         </div>
         <div className="navbar-logo">
-          <Link href="#index" aria-label="Accueil">
+          <Link href="/" aria-label="Accueil">
             <img className="logo" src={logoSrc} alt="Logo Abdul le Dev" />
           </Link>
         </div>

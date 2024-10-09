@@ -18,7 +18,7 @@ export default function Introduction() {
             id="intro-logo"
             className="introduction__logo"
             src={introSrc}
-            alt="Logo Abdul le Dev"
+            alt="Grand logo Abdul le Dev"
           />
         </div>
         <strong className="introduction__texte">

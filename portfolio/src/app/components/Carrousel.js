@@ -155,15 +155,26 @@ const Popup = ({ project, onClose }) => {
           &times;
         </button>
         <h2 className="project-text">{project.title}</h2>
-        <Image
-          src={project.image}
-          alt={project.altMsg}
-          width={400}
-          height={300}
-          style={{ objectFit: "contain" }}
-        />
-        <p className="project-description">{project.description}</p>{" "}
-        {/* Assurez-vous que 'description' est dans vos données */}
+        <div className="popup-frame">
+          <Image
+            src="/assets/ordinateur_portable.webp"
+            alt="Cadre d'Ordinateur portable qui s'affiche l'image principale d'un projet"
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 450px"
+            style={{ objectFit: "contain" }}
+            priority
+          />
+          <div className="popup-image-wrapper">
+            <Image
+              src={project.image}
+              alt={project.altMsg}
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 450px"
+              style={{ objectFit: "fill" }}
+            />
+          </div>
+          <p className="project-description">{project.description}</p>
+        </div>
       </div>
     </div>
   );
