@@ -12,10 +12,12 @@ export default function ContactForm() {
   const [errors, setErrors] = useState({});
   const [status, setStatus] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [recaptchaToken, setRecaptchaToken] = useState(null);
+  const [recaptchaToken, setRecaptchaToken] = useState(null); // Etat pour le token reCAPTCHA
 
+  // Ajout de la fonction pour gérer la vérification du reCAPTCHA
   const handleRecaptchaVerify = (token) => {
     setRecaptchaToken(token);
+    console.log("reCAPTCHA Token:", token); // Affiche le token dans la console
   };
 
   const handleChange = (e) => {
@@ -103,7 +105,7 @@ export default function ContactForm() {
         },
         body: JSON.stringify({
           ...formData,
-          recaptchaToken,
+          recaptchaToken, // Inclusion du token reCAPTCHA ici
         }),
       });
 
