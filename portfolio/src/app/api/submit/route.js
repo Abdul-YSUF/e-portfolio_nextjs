@@ -2,7 +2,7 @@ import nodemailer from 'nodemailer';
 
 // Fonction pour vérifier le reCAPTCHA
 async function verifyRecaptcha(token) {
-  const secretKey = process.env.RECAPTCHA_SECRET_KEY; // Remplacez par votre clé secrète
+  const secretKey = "6Lfu8V0qAAAAAPyjMksfDbrmX3vl9AZxw6bk4bLP";
   const response = await fetch(`https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${token}`, {
       method: 'POST',
   });
