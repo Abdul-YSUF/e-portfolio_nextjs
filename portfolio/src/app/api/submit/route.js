@@ -40,7 +40,7 @@ export async function POST(req, res) {
 
 // Fonction pour vérifier le reCAPTCHA
 async function verifyRecaptcha(token) {
-  const secretKey = process.env.RECAPTCHA_SECRET_KEY; // Utilisez votre clé secrète
+  const secretKey = "6Lfu8V0qAAAAAPyjMksfDbrmX3vl9AZxw6bk4bLP"; // Utilisez votre clé secrète
   const response = await fetch(`https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${token}`, {
       method: 'POST',
   });
