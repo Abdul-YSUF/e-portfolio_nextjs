@@ -6,7 +6,7 @@ const GoogleReCaptchaProvider = ({ onVerify }) => {
     useEffect(() => {
         const loadReCAPTCHA = () => {
             const script = document.createElement("script");
-            script.src = `https://www.google.com/recaptcha/api.js?render=process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY`; // Remplacez par votre clé de site
+            script.src = `https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`;
             script.onload = () => {
                 setRecaptchaLoaded(true);
                 console.log("Script reCAPTCHA chargé");
