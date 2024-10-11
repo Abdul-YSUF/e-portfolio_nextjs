@@ -6,7 +6,7 @@ const GoogleReCaptchaProvider = ({ onVerify }) => {
     useEffect(() => {
         const loadReCAPTCHA = () => {
             const script = document.createElement("script");
-            script.src = `https://www.google.com/recaptcha/api.js?render=6Lfu8V0qAAAAAK1__GMxKj44cRTDf09AMGjuOF5i`;
+            script.src = `https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`;
             script.onload = () => {
                 setRecaptchaLoaded(true);
                 console.log("Script reCAPTCHA chargé");
@@ -22,7 +22,7 @@ const GoogleReCaptchaProvider = ({ onVerify }) => {
             window.grecaptcha.ready(async () => {
                 try {
                     console.log("Exécution de reCAPTCHA en cours");
-                    const token = await window.grecaptcha.execute("6Lfu8V0qAAAAAK1__GMxKj44cRTDf09AMGjuOF5i", { action: "submit" });
+                    const token = await window.grecaptcha.execute(process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY, { action: "submit" });
                     onVerify(token);
                 } catch (error) {
                     console.error("Erreur lors de l'exécution de reCAPTCHA :", error);
