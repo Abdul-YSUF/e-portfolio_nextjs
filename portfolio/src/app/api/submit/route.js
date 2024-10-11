@@ -7,7 +7,6 @@ async function verifyRecaptcha(token) {
       method: 'POST',
   });
   const data = await response.json();
-  console.log("Réponse reCAPTCHA :", data); 
   return data.success;
 }
 
