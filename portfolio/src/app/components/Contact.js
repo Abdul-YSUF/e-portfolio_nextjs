@@ -12,12 +12,11 @@ export default function ContactForm() {
   const [errors, setErrors] = useState({});
   const [status, setStatus] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [recaptchaToken, setRecaptchaToken] = useState(null); // Etat pour le token reCAPTCHA
+  const [recaptchaToken, setRecaptchaToken] = useState(null);
 
   // Ajout de la fonction pour gérer la vérification du reCAPTCHA
   const handleRecaptchaVerify = (token) => {
     setRecaptchaToken(token);
-    console.log("reCAPTCHA Token:", token); // Affiche le token dans la console
   };
 
   const handleChange = (e) => {
@@ -69,8 +68,8 @@ export default function ContactForm() {
     }
 
     if (!fieldToValidate || fieldToValidate === "message") {
-      if (formData.message.trim().length < 25) {
-        formErrors.message = "⚠️ Veuillez entrer au moins 25 caractères.";
+      if (formData.message.trim().length < 10) {
+        formErrors.message = "⚠️ Veuillez entrer au moins 10 caractères.";
         valid = false;
       } else {
         formErrors.message = "";
@@ -224,7 +223,7 @@ export default function ContactForm() {
             onChange={handleChange}
             onBlur={handleBlur}
             required
-            minLength="25"
+            minLength="10"
           ></textarea>
           {errors.message && (
             <p className="error error-msg" role="alert">

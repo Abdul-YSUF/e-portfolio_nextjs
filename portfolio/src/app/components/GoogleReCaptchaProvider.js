@@ -9,7 +9,6 @@ const GoogleReCaptchaProvider = ({ onVerify }) => {
             script.src = `https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`;
             script.onload = () => {
                 setRecaptchaLoaded(true);
-                console.log("Script reCAPTCHA chargé");
             };
             document.body.appendChild(script);
         };
@@ -21,7 +20,6 @@ const GoogleReCaptchaProvider = ({ onVerify }) => {
         if (recaptchaLoaded && window.grecaptcha) {
             window.grecaptcha.ready(async () => {
                 try {
-                    console.log("Exécution de reCAPTCHA en cours");
                     const token = await window.grecaptcha.execute(process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY, { action: "submit" });
                     onVerify(token);
                 } catch (error) {
@@ -40,7 +38,7 @@ const GoogleReCaptchaProvider = ({ onVerify }) => {
         }
     }, [recaptchaLoaded]);
 
-    return null; // Aucun bouton, tout se fait automatiquement
+    return null;
 };
 
 export default GoogleReCaptchaProvider;
