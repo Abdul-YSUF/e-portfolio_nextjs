@@ -1,0 +1,57 @@
+.calendly-overlay {
+  margin-top: 80px;
+}
+
+.calendly-overlay .calendly-popup {
+  margin-top: 30px;
+  @include breakpoints_desktop {
+    margin-top: -15px;
+    height: 900px !important;
+    max-height: unset;
+  }
+}
+
+.calendly_div {
+  background: linear-gradient(var(--color-bg), var(--color-bg)) padding-box,
+    linear-gradient(to right, rgba(97, 0, 255, 0.89), rgb(171, 48, 39))
+      border-box;
+  border: 2px solid transparent;
+  border-radius: 15px;
+  margin-top: 50px;
+  padding: 20px;
+  width: 90%;
+  @include breakpoints_desktop {
+    width: unset;
+  }
+}
+
+.nuit .calendly_div {
+  background: linear-gradient(#151d2a, #151d2a) padding-box,
+    linear-gradient(to right, rgba(192, 187, 54, 1), rgba(97, 0, 255, 0.89))
+      border-box;
+  border: 2px solid transparent;
+  border-radius: 15px;
+}
+
+.calendly_titre {
+  color: var(--color-text);
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+
+.calendly_sous-titre {
+  color: var(--color-text);
+}
+
+.calendly_link {
+  font-size: 13px;
+  margin-top: 20px;
+  @include breakpoints_desktop {
+    font-size: unset;
+  }
+}
+
+.font_emoji {
+  font-size: 18px;
+  margin-left: 5px;
+}

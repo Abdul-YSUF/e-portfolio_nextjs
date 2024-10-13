@@ -3,11 +3,16 @@
 :root {
   --color-text: #000;
   --color-bg: #fff;
+  --color-border1: rgba(97, 0, 255, 0.89);
+  --color-border2: rgb(171, 48, 39);
+  --color-border3: linear-gradient(to right, rgba(97, 0, 255, 0.89), rgb(171, 48, 39));
 }
 
 .nuit {
   --color-text: #fff;
-  --color-bg: #3b3e42;
+  --color-bg: #151d2a;
+  --color-border1: rgba(192, 187, 54, 1);
+  --color-border2: rgba(97, 0, 255, 0.89);
 }
 
 @keyframes mouse_scroll {
@@ -480,7 +485,7 @@ li.navbar_li {
 @media screen and (min-width: 992px) {
   .form_contact {
     flex-direction: row;
-    margin-top: 30px;
+    margin-top: 0px;
   }
 }
 
@@ -505,17 +510,24 @@ li.navbar_li {
     width: 40%;
     max-width: unset;
     margin-left: 100px;
-    margin-top: 37px;
+    margin-top: 40px;
   }
 }
 
 .form input,
 .form textarea {
-  background: transparent;
-  border: 2px solid;
-  -o-border-image: linear-gradient(45deg, rgb(192, 54, 154), rgba(97, 0, 255, 0.89), rgba(46, 137, 13, 0.89)) 1;
-     border-image: linear-gradient(45deg, rgb(192, 54, 154), rgba(97, 0, 255, 0.89), rgba(46, 137, 13, 0.89)) 1;
+  background: linear-gradient(white, white) padding-box, linear-gradient(to right, rgba(97, 0, 255, 0.89), rgb(171, 48, 39)) border-box;
+  border: 2px solid transparent;
+  border-radius: 15px;
+  color: black;
   margin-bottom: 15px;
+}
+
+.ou {
+  margin-top: 30px;
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--color-text);
 }
 
 .div_titre {
@@ -523,12 +535,17 @@ li.navbar_li {
   justify-content: center;
   text-align: center;
   align-items: center;
-  margin-top: 40px;
+  margin-top: 30px;
 }
 
 .titre_form {
   width: 90%;
   font-size: 18px;
+}
+@media screen and (min-width: 992px) {
+  .titre_form {
+    width: 100%;
+  }
 }
 
 .nuit .titre_form {
@@ -583,10 +600,8 @@ li.navbar_li {
   align-items: center;
   margin-left: 0;
   width: auto;
-  background: transparent;
-  border: 4px solid;
-  -o-border-image: linear-gradient(45deg, rgb(192, 54, 154), rgba(97, 0, 255, 0.89), rgba(46, 137, 13, 0.89)) 1;
-     border-image: linear-gradient(45deg, rgb(192, 54, 154), rgba(97, 0, 255, 0.89), rgba(46, 137, 13, 0.89)) 1;
+  background: linear-gradient(white, white) padding-box, linear-gradient(to right, rgba(97, 0, 255, 0.89), rgb(171, 48, 39)) border-box;
+  border: 4px solid transparent;
   border-radius: 15px;
   padding: 10px;
   cursor: pointer;
@@ -600,7 +615,7 @@ li.navbar_li {
 }
 
 .nuit .button_denvoi {
-  background: linear-gradient(#151d2a, #151d2a) padding-box, linear-gradient(to right, rgb(192, 54, 170), rgba(137, 95, 13, 0.89)) border-box;
+  background: linear-gradient(#151d2a, #151d2a) padding-box, linear-gradient(to right, rgb(192, 187, 54), rgba(97, 0, 255, 0.89)) border-box;
   border: 4px solid transparent;
   color: white;
   transition: background 1000ms ease-in-out;
@@ -685,7 +700,8 @@ li.navbar_li {
 }
 
 /* Optionally, add a focus style to inputs with errors */
-input.erreur, textarea.erreur {
+input.erreur,
+textarea.erreur {
   border: 2px solid #e74c3c;
   background-color: rgba(231, 76, 60, 0.05);
 }
@@ -1502,9 +1518,9 @@ input.erreur, textarea.erreur {
   .carrousel_right img {
     display: unset;
     background: transparent;
-    border: 5px solid;
-    -o-border-image: linear-gradient(45deg, rgb(192, 54, 154), rgba(97, 0, 255, 0.89), rgba(46, 137, 13, 0.89)) 1;
-       border-image: linear-gradient(45deg, rgb(192, 54, 154), rgba(97, 0, 255, 0.89), rgba(46, 137, 13, 0.89)) 1;
+    border: 2px solid;
+    -o-border-image: linear-gradient(to right, var(--color-border1), var(--color-border2)) 1;
+       border-image: linear-gradient(to right, var(--color-border1), var(--color-border2)) 1;
     padding: 10px;
     cursor: pointer;
   }
@@ -1561,6 +1577,7 @@ input.erreur, textarea.erreur {
 @media screen and (min-width: 992px) {
   .project-title {
     margin-top: 157px;
+    background: rgb(112, 112, 112);
   }
 }
 
@@ -1661,6 +1678,7 @@ input.erreur, textarea.erreur {
 @media screen and (min-width: 992px) {
   .close-button {
     top: 10px;
+    bottom: unset;
     right: 20px;
   }
 }
@@ -1705,7 +1723,7 @@ input.erreur, textarea.erreur {
   .popup-frame {
     width: 500px;
     height: 500px;
-    margin-top: -80px;
+    margin-top: -105px;
     margin-left: 20px;
   }
 }
@@ -2022,4 +2040,136 @@ strong {
 .scroll-animation {
   opacity: 1;
   transform: translateX(0);
+}
+
+.services {
+  display: none;
+  padding: 100px 0;
+  text-align: center;
+}
+
+.services-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 50px;
+}
+
+.service-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 250px;
+  height: 300px;
+  border-radius: 15px;
+  padding: 20px;
+  color: white;
+  text-align: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+.service-card:hover {
+  transform: scale(1.05);
+}
+.service-card h3 {
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+}
+.service-card p {
+  font-size: 1rem;
+  color: #f0f0f0;
+}
+
+.ui-ux {
+  background: linear-gradient(to bottom right, #d8a57d, #e0c3fc);
+}
+
+.xd {
+  background: linear-gradient(to bottom right, #ff758c, #ff7eb3);
+}
+
+.figma {
+  background: linear-gradient(to bottom right, #ff9a9e, #fad0c4);
+}
+
+.wordpress {
+  background: linear-gradient(to bottom right, #a18cd1, #fbc2eb);
+}
+
+.shopify {
+  background: linear-gradient(to bottom right, #ffecd2, #fcb69f);
+}
+
+.canva {
+  background: linear-gradient(to bottom right, #5ee7df, #b490ca);
+}
+
+.web-designing {
+  background: linear-gradient(to bottom right, #d4fc79, #96e6a1);
+}
+
+.web-development {
+  background: linear-gradient(to bottom right, #667eea, #764ba2);
+}
+
+.calendly-overlay {
+  margin-top: 80px;
+}
+
+.calendly-overlay .calendly-popup {
+  margin-top: 30px;
+}
+@media screen and (min-width: 992px) {
+  .calendly-overlay .calendly-popup {
+    margin-top: -15px;
+    height: 900px !important;
+    max-height: unset;
+  }
+}
+
+.calendly_div {
+  background: linear-gradient(var(--color-bg), var(--color-bg)) padding-box, linear-gradient(to right, rgba(97, 0, 255, 0.89), rgb(171, 48, 39)) border-box;
+  border: 2px solid transparent;
+  border-radius: 15px;
+  margin-top: 50px;
+  padding: 20px;
+  width: 90%;
+}
+@media screen and (min-width: 992px) {
+  .calendly_div {
+    width: unset;
+  }
+}
+
+.nuit .calendly_div {
+  background: linear-gradient(#151d2a, #151d2a) padding-box, linear-gradient(to right, rgb(192, 187, 54), rgba(97, 0, 255, 0.89)) border-box;
+  border: 2px solid transparent;
+  border-radius: 15px;
+}
+
+.calendly_titre {
+  color: var(--color-text);
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+
+.calendly_sous-titre {
+  color: var(--color-text);
+}
+
+.calendly_link {
+  font-size: 13px;
+  margin-top: 20px;
+}
+@media screen and (min-width: 992px) {
+  .calendly_link {
+    font-size: unset;
+  }
+}
+
+.font_emoji {
+  font-size: 18px;
+  margin-left: 5px;
 }/*# sourceMappingURL=style.css.map */

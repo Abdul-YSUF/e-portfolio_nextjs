@@ -11,7 +11,7 @@
   width: 100%;
   @include breakpoints_desktop {
     flex-direction: row;
-    margin-top: 30px;
+    margin-top: 0px;
   }
 }
 
@@ -34,32 +34,39 @@
     width: 40%;
     max-width: unset;
     margin-left: 100px;
-    margin-top: 37px;
+    margin-top: 40px;
   }
 }
 
 .form input,
 .form textarea {
-  background: transparent;
-  border: 2px solid;
-  border-image: linear-gradient(
-      45deg,
-      rgba(192, 54, 154, 1),
-      rgba(97, 0, 255, 0.89),
-      rgba(46, 137, 13, 0.89)
-    )
-    1;
-    margin-bottom: 15px;
+  background: linear-gradient($white, $white) padding-box,
+    linear-gradient(to right, rgba(97, 0, 255, 0.89), rgb(171, 48, 39))
+      border-box;
+  border: 2px solid transparent;
+  border-radius: 15px;
+  color: black;
+  margin-bottom: 15px;
+}
+
+.ou {
+  margin-top: 30px;
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--color-text);
 }
 
 .div_titre {
   @include flexbox;
-  margin-top: 40px;
+  margin-top: 30px;
 }
 
 .titre_form {
   width: 90%;
   font-size: 18px;
+  @include breakpoints_desktop {
+    width: 100%;
+  }
 }
 
 .nuit .titre_form {
@@ -109,15 +116,10 @@
   @include flexbox;
   margin-left: 0;
   width: auto;
-  background: transparent;
-  border: 4px solid;
-  border-image: linear-gradient(
-      45deg,
-      rgba(192, 54, 154, 1),
-      rgba(97, 0, 255, 0.89),
-      rgba(46, 137, 13, 0.89)
-    )
-    1;
+  background: linear-gradient($white, $white) padding-box,
+    linear-gradient(to right, rgba(97, 0, 255, 0.89), rgb(171, 48, 39))
+      border-box;
+  border: 4px solid transparent;
   border-radius: 15px;
   padding: 10px;
   cursor: pointer;
@@ -130,7 +132,7 @@
 
 .nuit .button_denvoi {
   background: linear-gradient(#151d2a, #151d2a) padding-box,
-    linear-gradient(to right, rgba(192, 54, 170, 1), rgba(137, 95, 13, 0.89))
+    linear-gradient(to right, rgba(192, 187, 54, 1), rgba(97, 0, 255, 0.89))
       border-box;
   border: 4px solid transparent;
   color: $white;
@@ -209,7 +211,8 @@
 }
 
 /* Optionally, add a focus style to inputs with errors */
-input.erreur, textarea.erreur {
+input.erreur,
+textarea.erreur {
   border: 2px solid #e74c3c;
   background-color: rgba(231, 76, 60, 0.05);
 }

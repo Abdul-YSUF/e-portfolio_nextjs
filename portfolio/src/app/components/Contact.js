@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import ReCAPTCHA from "./GoogleReCaptchaProvider";
+import Calendly from "./Calendly";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -135,6 +136,8 @@ export default function ContactForm() {
   return (
     <div className="section_5" id="formulaire">
       <h2 className="stitre">Formulaire de contact</h2>
+      <Calendly />
+      <p className="ou">Ou</p>
       <div className="div_titre">
         <p className="titre_form">
           Contactez-moi pour toute question ou proposition via le formulaire de

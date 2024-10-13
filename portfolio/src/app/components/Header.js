@@ -35,6 +35,9 @@ export default function Header() {
             <Link href="#projets">Projets</Link>
           </li>
           <li className="navbar_li">
+            <Link href="#services">Services</Link>
+          </li>
+          <li className="navbar_li">
             <Link href="#formulaire">Contact</Link>
           </li>
           <li className="navbar_li">

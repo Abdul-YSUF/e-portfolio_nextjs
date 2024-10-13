@@ -1,11 +1,16 @@
 :root {
   --color-text: #000;
   --color-bg: #fff;
+  --color-border1: rgba(97, 0, 255, 0.89);
+  --color-border2: rgb(171, 48, 39);
+  --color-border3: linear-gradient(to right, rgba(97, 0, 255, 0.89), rgb(171, 48, 39));
 }
 
 .nuit {
   --color-text: #fff;
-  --color-bg: #3b3e42;
+  --color-bg: #151d2a;
+  --color-border1: rgba(192, 187, 54, 1);
+  --color-border2: rgba(97, 0, 255, 0.89);
 }
 
 $color-primaire: #9356dc;
