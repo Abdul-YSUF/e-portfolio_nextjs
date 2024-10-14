@@ -2123,13 +2123,18 @@ strong {
 }
 @media screen and (min-width: 992px) {
   .calendly-overlay .calendly-popup {
-    margin-top: -15px;
+    margin-top: -17px;
     height: 900px !important;
     max-height: unset;
   }
 }
 
 .calendly_div {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
   background: linear-gradient(var(--color-bg), var(--color-bg)) padding-box, linear-gradient(to right, rgba(97, 0, 255, 0.89), rgb(171, 48, 39)) border-box;
   border: 2px solid transparent;
   border-radius: 15px;
@@ -2160,6 +2165,10 @@ strong {
 }
 
 .calendly_link {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
   font-size: 13px;
   margin-top: 20px;
 }

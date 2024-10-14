@@ -5,13 +5,15 @@
 .calendly-overlay .calendly-popup {
   margin-top: 30px;
   @include breakpoints_desktop {
-    margin-top: -15px;
+    margin-top: -17px;
     height: 900px !important;
     max-height: unset;
   }
 }
 
 .calendly_div {
+  @include flexbox;
+  flex-direction: column;
   background: linear-gradient(var(--color-bg), var(--color-bg)) padding-box,
     linear-gradient(to right, rgba(97, 0, 255, 0.89), rgb(171, 48, 39))
       border-box;
@@ -44,6 +46,7 @@
 }
 
 .calendly_link {
+  @include flexbox;
   font-size: 13px;
   margin-top: 20px;
   @include breakpoints_desktop {
