@@ -56,19 +56,19 @@
   height: 300px;
   overflow: hidden;
   @include flexbox;
-  margin-top: 20px;
+  margin-top: 10px;
   @include breakpoints_desktop {
-    width: 450px;
-    height: 450px;
+    width: 520px;
+    height: 520px;
   }
 }
 
 .project-image-wrapper {
   position: absolute;
-  top: 10.1%;
-  left: 4.3%;
-  width: 91.5%;
-  height: 48.1%;
+  top: 9.9%;
+  left: 4.2%;
+  width: 91.6%;
+  height: 48.7%;
   z-index: 1;
   cursor: pointer;
 }
@@ -85,8 +85,8 @@
   color: $white;
   margin-top: 105px;
   @include breakpoints_desktop {
-    margin-top: 157px;
-    background: rgb(112, 112, 112);
+    margin-top: 182px;
+    background: rgba(112, 112, 112, 0.167);
   }
 }
 
@@ -109,14 +109,14 @@
 .arrow_left {
   left: 3%;
   @include breakpoints_desktop {
-    left: 6%;
+    left: 5%;
   }
 }
 
 .arrow_right {
   right: 3%;
   @include breakpoints_desktop {
-    right: 6%;
+    right: 5%;
   }
 }
 

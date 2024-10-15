@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import { motion } from "framer-motion"; // Importer Framer Motion
 
 const Carrousel = ({ projects }) => {
   const [slide, setSlide] = useState(0);
@@ -62,23 +63,30 @@ const Carrousel = ({ projects }) => {
           className="carrousel_img carrousel_left"
           onClick={() => openPopup(projects[getPreviousIndex()])}
         >
-          <Image
-            src={projects[getPreviousIndex()].image}
-            alt={projects[getPreviousIndex()].altMsg}
-            width={250}
-            height={150}
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 450px"
-            style={{ objectFit: "fill" }}
-          />
-          <h3 className="project-title-left">
-            {projects[getPreviousIndex()].title}
-          </h3>
+          <motion.div
+            initial={{ opacity: 0, x: -100 }} // État initial
+            animate={{ opacity: 1, x: 0 }} // État animé
+            exit={{ opacity: 0, x: -100 }} // État lors de la sortie
+            transition={{ duration: 0.5 }} // Durée de la transition
+          >
+            <Image
+              src={projects[getPreviousIndex()].image}
+              alt={projects[getPreviousIndex()].altMsg}
+              width={250}
+              height={150}
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 450px"
+              style={{ objectFit: "fill" }}
+            />
+            <h3 className="project-title-left">
+              {projects[getPreviousIndex()].title}
+            </h3>
+          </motion.div>
         </div>
         <div className="carrousel_img center">
           <div className="computer-frame">
             <Image
               src="/assets/desktop_ordinateur.webp"
-              alt="Cadre d'Ordinateur qui s'affiche l'image principal un projet"
+              alt="Cadre d'Ordinateur qui s'affiche l'image principale un projet"
               fill
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 450px"
               style={{ objectFit: "contain" }}
@@ -89,15 +97,23 @@ const Carrousel = ({ projects }) => {
               className="project-image-wrapper"
               onClick={() => openPopup(projects[slide])}
             >
-              <Image
-                src={projects[slide].image}
-                alt={projects[slide].altMsg}
-                fill
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 450px"
-                style={{ objectFit: "fill" }}
-                className="project-image"
-                priority
-              />
+              <motion.div
+                initial={{ opacity: 0 }} // État initial
+                animate={{ opacity: 1 }} // État animé
+                exit={{ opacity: 0 }} // État lors de la sortie
+                transition={{ duration: 0.5 }} // Durée de la transition
+                key={projects[slide].image} // Ajout d'une clé pour gérer la sortie
+              >
+                <Image
+                  src={projects[slide].image}
+                  alt={projects[slide].altMsg}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 450px"
+                  style={{ objectFit: "fill" }}
+                  className="project-image"
+                  priority
+                />
+              </motion.div>
             </div>
           </div>
         </div>
@@ -105,17 +121,24 @@ const Carrousel = ({ projects }) => {
           className="carrousel_img carrousel_right"
           onClick={() => openPopup(projects[getNextIndex()])}
         >
-          <Image
-            src={projects[getNextIndex()].image}
-            alt={projects[getNextIndex()].altMsg}
-            width={250}
-            height={150}
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 450px"
-            style={{ objectFit: "fill" }}
-          />
-          <h3 className="project-title-right">
-            {projects[getNextIndex()].title}
-          </h3>
+          <motion.div
+            initial={{ opacity: 0, x: 100 }} // État initial
+            animate={{ opacity: 1, x: 0 }} // État animé
+            exit={{ opacity: 0, x: 100 }} // État lors de la sortie
+            transition={{ duration: 0.5 }} // Durée de la transition
+          >
+            <Image
+              src={projects[getNextIndex()].image}
+              alt={projects[getNextIndex()].altMsg}
+              width={250}
+              height={150}
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 450px"
+              style={{ objectFit: "fill" }}
+            />
+            <h3 className="project-title-right">
+              {projects[getNextIndex()].title}
+            </h3>
+          </motion.div>
         </div>
       </div>
       {projects?.length > 1 && (
