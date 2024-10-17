@@ -1,44 +1,44 @@
 "use client";
 import Link from "next/link";
+import { useState } from "react";
 import useDarkMode from "./DarkModeToggle";
 
 export default function Header() {
   const { isNight, logoSrc, toggleTheme } = useDarkMode();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
   return (
     <header className="header">
       <nav className="navbar">
-        <input
-          type="checkbox"
-          id="menu-toggle"
-          aria-label="Activer la navigation"
-          hidden
-        />
-        <div className="hamburger-lines" aria-hidden="true">
-          <span className="line line1"></span>
-          <span className="line line2"></span>
-          <span className="line line3"></span>
+        <div className="hamburger-lines" onClick={toggleMenu} aria-hidden="true">
+          <span className={`line line1 ${isMenuOpen ? "open" : ""}`}></span>
+          <span className={`line line2 ${isMenuOpen ? "open" : ""}`}></span>
+          <span className={`line line3 ${isMenuOpen ? "open" : ""}`}></span>
         </div>
         <div className="navbar-logo">
           <Link href="/" aria-label="Accueil">
             <img className="logo" src={logoSrc} alt="Logo Abdul le Dev" />
           </Link>
         </div>
-        <ul className="menu-items">
+        <ul className={`menu-items ${isMenuOpen ? "open" : ""}`}>
           <li className="navbar_li">
-            <Link href="#qui_suis-je">Qui suis-je</Link>
+            <Link href="#qui_suis-je" onClick={() => setIsMenuOpen(false)}>Qui suis-je</Link>
           </li>
           <li className="navbar_li">
-            <Link href="#skills">Compétences</Link>
+            <Link href="#skills" onClick={() => setIsMenuOpen(false)}>Compétences</Link>
           </li>
           <li className="navbar_li">
-            <Link href="#projets">Projets</Link>
+            <Link href="#projets" onClick={() => setIsMenuOpen(false)}>Projets</Link>
           </li>
           <li className="navbar_li">
-            <Link href="#services">Services</Link>
+            <Link href="#services" onClick={() => setIsMenuOpen(false)}>Services</Link>
           </li>
           <li className="navbar_li">
-            <Link href="#formulaire">Contact</Link>
+            <Link href="#formulaire" onClick={() => setIsMenuOpen(false)}>Contact</Link>
           </li>
           <li className="navbar_li">
             <button

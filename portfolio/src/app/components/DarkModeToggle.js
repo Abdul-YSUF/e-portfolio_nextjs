@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 export default function useDarkMode() {
   const [isNight, setIsNight] = useState(false);
   const [logoSrc, setLogoSrc] = useState("/assets/ald-black.webp");
-  const [introSrc, setIntroSrc] = useState("/assets/abdul-intro-black.webp");
 
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme");
@@ -18,11 +17,6 @@ export default function useDarkMode() {
 
   useEffect(() => {
     setLogoSrc(isNight ? "/assets/ald-white.webp" : "/assets/ald-black.webp");
-    setIntroSrc(
-      isNight
-        ? "/assets/abdul-intro-white.webp"
-        : "/assets/abdul-intro-black.webp"
-    );
     document.body.classList.toggle("nuit", isNight);
     localStorage.setItem("theme", isNight ? "nuit" : "jour");
   }, [isNight]);
@@ -31,5 +25,5 @@ export default function useDarkMode() {
     setIsNight((prevIsNight) => !prevIsNight);
   };
 
-  return { isNight, logoSrc, introSrc, toggleTheme };
+  return { isNight, logoSrc, toggleTheme };
 }

@@ -4,7 +4,9 @@
   background: linear-gradient(180deg, #222222 0%, rgba(77, 77, 77, 0) 100%);
   margin-top: 80px;
   @include breakpoints_desktop {
-
+    flex-direction: row;
+    justify-content: space-around;
+    height: 180px;
   }
 }
 
@@ -16,8 +18,10 @@
   @include flexbox;
   width: 60%;
   @include breakpoints_desktop {
-    width: 30%;
-    margin-bottom: 10px;
+    order: 2;
+    width: unset;
+    margin-left: 35px;
+    margin-bottom: 20px;
   }
 }
 
@@ -25,6 +29,9 @@
   @include flexbox;
   width: 100%;
   margin-top: 30px;
+  @include breakpoints_desktop {
+    margin-top: 10px;
+  }
 }
 
 .footer-logo {
@@ -32,6 +39,9 @@
   width: 200px;
   height: auto;
   max-width: 100%;
+  @include breakpoints_desktop {
+    width: 240px;
+  }
 }
 
 .adresse {
@@ -45,20 +55,28 @@
   color: $white;
   margin-bottom: 10px;
   @include breakpoints_desktop {
-    width: 60%;
+    order: 3;
+    width: unset;
+    margin-bottom: 0;
   }
 }
 
 .conditions {
   margin-top: 10px;
   color: $white;
+  @include breakpoints_desktop {
+    margin-bottom: 0;
+  }
 }
 
 .copy {
   width: 100%;
-  margin-top: 20px;
+  margin-top: 10px;
   @include breakpoints_desktop {
-    width: unset;
+    position: absolute;
+    margin-top: 160px;
+    margin-bottom: 10px;
+    @include flexbox;
   }
 }
 
@@ -68,9 +86,8 @@
   width: 100%;
   margin-top: 20px;
   @include breakpoints_desktop {
-    position: absolute;
-    left: 0;
-    width: 20%;
+   order: 1;
+   width: unset;
   }
 }
 

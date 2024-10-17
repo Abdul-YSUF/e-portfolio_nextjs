@@ -4,14 +4,9 @@
   position: fixed;
   width: 100%;
   max-width: 1280px;
-  background: $white;
-  color: #000;
+  background: var(--color-bg);
   height: 80px;
   z-index: 10000;
-}
-
-.nuit .header {
-  background: #151d2a;
 }
 
 .navbar {
@@ -33,6 +28,7 @@
   width: 60%;
   @include breakpoints_desktop {
     width: 30%;
+    align-items: center;
   }
 }
 
@@ -48,51 +44,58 @@
   @include breakpoints_desktop {
     width: 240px;
     top: 20px;
-    left: 45px;
+    left: 40px;
   }
 }
 
-.header input[type="checkbox"],
-.header .hamburger-lines,
-.navbar_reseau {
+.navbar input[type="checkbox"] {
+  display: none;
+}
+
+.navbar .hamburger-lines {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 23px;
+  width: 35px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 2;
+  cursor: pointer;
   @include breakpoints_desktop {
     display: none;
   }
 }
 
-.navbar input[type="checkbox"],
-.navbar .hamburger-lines,
-.navbar_reseau {
-  display: block;
-  @include breakpoints_desktop {
-    display: unset;
-  }
+.navbar .hamburger-lines .line1,
+.navbar .hamburger-lines .line2,
+.navbar .hamburger-lines .line3 {
+  height: 3px;
+  background: #333;
+  border-radius: 10px;
+  transition: transform 0.4s ease-in-out;
 }
 
-.navbar input[type="checkbox"] {
-  position: absolute;
-  display: block;
-  height: 32px;
-  width: 35px;
-  top: 15.5px;
-  right: 20px;
-  z-index: 5;
-  opacity: 0;
-  cursor: pointer;
-  @include breakpoints_desktop {
-  opacity: 0;
-  cursor: default;
-  pointer-events: none;
-  }
+.nuit .navbar .hamburger-lines .line {
+  background: $white;
 }
 
-li.navbar_li {
-  @include flexbox;
-  padding: 0px;
+.navbar .hamburger-lines .line2 {
+  width: 45px;
+  margin-left: -5px;
 }
 
-.navbar_li a {
-  padding: 10px 15px 0 15px;
+.line1.open {
+  transform: rotate(-45deg) translateY(14px);
+}
+
+.line2.open {
+  transform: scaleY(0);
+}
+
+.line3.open {
+  transform: rotate(45deg) translateY(-14.3px);
 }
 
 .header .menu-items {
@@ -100,17 +103,16 @@ li.navbar_li {
   position: absolute;
   right: 0;
   padding-top: 90px;
-  background: $white;
+  background: var(--color-bg);
   height: 1200px;
   max-width: 100%;
-  transform: translate(380%);
+  transform: translateX(100%);
   flex-direction: column;
   transition: transform 0.5s ease-in-out;
-  box-shadow: 0px 0px 10px 5px #aaa;
   @include breakpoints_desktop {
     position: unset;
     padding-top: unset;
-    height: unset;
+    height: 60px;
     max-width: unset;
     transform: unset;
     transition: transform unset;
@@ -119,21 +121,18 @@ li.navbar_li {
   }
 }
 
-.nuit .header .menu-items {
-  background: #151d2a;
-}
-
 .nuit .menu-items a {
   color: white;
 }
 
 .menu-items {
   display: flex;
-  margin: -10px 0px 0px 0px;
+  margin: -10px 0 0 0;
   width: 100%;
   @include breakpoints_desktop {
     @include flexbox;
-    margin: 0px 0px 0px 90px;
+    margin: 0;
+    width: 70%;
   }
 }
 
@@ -152,8 +151,15 @@ li.navbar_li {
 .menu-items a:hover {
   color: #08b7a2;
   transition: none;
+}
+
+.menu-items.open {
+  transform: translateX(0);
+}
+
+.navbar_li {
   @include breakpoints_desktop {
-    transition: color 0.3s ease-in-out;
+    margin-top: 10px;
   }
 }
 
@@ -166,7 +172,9 @@ li.navbar_li {
   }
 }
 
-.navbar_github {
+.navbar_github,
+.navbar_linkedin,
+.navbar_Gmail {
   background: $white;
   width: 100%;
   margin-top: 5px;
@@ -174,36 +182,11 @@ li.navbar_li {
   border-radius: 100px;
 }
 
-.navbar_linkedin {
-  margin-top: 5px;
-  border: 2px solid;
-  background: $white;
-  border-radius: 100px;
-}
-
-.navbar_Gmail {
-  margin-top: 5px;
-  border: 2px solid;
-  background: $white;
-  border-radius: 100px;
-}
-
-.navbar_github:hover {
-  transform: none;
-  @include breakpoints_desktop {
-    transform: scale(1.2);
-  }
-}
-
-.navbar_linkedin:hover {
-  transform: none;
-  @include breakpoints_desktop {
-    transform: scale(1.2);
-  }
-}
-
+.navbar_github:hover,
+.navbar_linkedin:hover,
 .navbar_Gmail:hover {
   transform: none;
+
   @include breakpoints_desktop {
     transform: scale(1.2);
   }
@@ -217,7 +200,7 @@ li.navbar_li {
   cursor: pointer;
   margin-top: 11px;
   @include breakpoints_desktop {
-    margin-left: 40px;
+    margin-top: 4px;
   }
 }
 
@@ -227,49 +210,16 @@ li.navbar_li {
   height: 50px;
 }
 
+.menu-items a.active {
+  border-bottom: 5px solid #08b7a2;
+  font-weight: bold;
+  color: #08b7a2;
+}
+
+// Media queries pour mobile
 @media (max-width: 991px) {
   .navbar .hamburger-lines {
-    display: block;
-    height: 23px;
-    width: 35px;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    z-index: 2;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-
-  .navbar .hamburger-lines .line {
-    display: block;
-    height: 4px;
-    width: 100%;
-    border-radius: 10px;
-    background: #333;
-  }
-
-  .nuit .navbar .hamburger-lines .line {
-    background: $white;
-  }
-
-  .navbar .hamburger-lines .line1 {
-    height: 3px;
-    transform-origin: right;
-    transition: transform 0.4s ease-in-out;
-  }
-
-  .navbar .hamburger-lines .line2 {
-    width: 45px;
-    margin-left: -5px;
-    height: 3px;
-    transition: transform 0.2s ease-in-out;
-  }
-
-  .navbar .hamburger-lines .line3 {
-    height: 3px;
-    transform-origin: right;
-    transition: transform 0.4s ease-in-out;
   }
 
   .header .menu-items li {
@@ -279,26 +229,21 @@ li.navbar_li {
     font-weight: 500;
   }
 
-  .navbar input[type="checkbox"]:checked ~ .menu-items {
-    transform: translateX(0);
-  }
-
-  .navbar input[type="checkbox"]:checked ~ .hamburger-lines .line1 {
-    transform: rotate(-35deg);
-  }
-
-  .navbar input[type="checkbox"]:checked ~ .hamburger-lines .line2 {
-    transform: scaleY(0);
-  }
-
-  .navbar input[type="checkbox"]:checked ~ .hamburger-lines .line3 {
-    transform: rotate(35deg);
-  }
-
   .navbar_reseau {
     gap: 15px;
   }
 
+  .navbar_github,
+  .navbar_linkedin,
+  .navbar_Gmail {
+    width: 80%;
+  }
+
+  .menu-items li a {
+    font-size: 17px;
+  }
+
+  // Styles pour l'orientation paysage
   @media (orientation: landscape) {
     .header .menu-items {
       padding-top: 70px;
@@ -311,16 +256,6 @@ li.navbar_li {
 
     .navbar_reseau {
       gap: 5px;
-    }
-
-    .navbar_github,
-    .navbar_linkedin,
-    .navbar_Gmail {
-      width: 80%;
-    }
-
-    .menu-items li a {
-      font-size: 17px;
     }
   }
 }

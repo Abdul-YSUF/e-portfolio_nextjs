@@ -1,29 +1,22 @@
 "use client";
 import React from "react";
-import useDarkMode from "./DarkModeToggle";
 
 export default function Introduction() {
-  const { introSrc } = useDarkMode();
   return (
     <section className="introduction">
       <div className="introduction__presentation">
-        <h1 className="introduction__titre">Bienvenue dans mon site web</h1>
+        <h1 className="introduction__titre">Bienvenue dans mon portfolio !</h1>
         <img
           className="introduction__logo-mobile"
           src="/assets/4962136_2597613.svg"
           alt="logo Abdul le Dev"
         />
         <div className="introduction__container-logo">
-          <img
-            id="intro-logo"
-            className="introduction__logo"
-            src={introSrc}
-            alt="Grand logo Abdul le Dev"
-          />
+          <div id="intro-logo" className="introduction__logo"></div>
         </div>
         <strong className="introduction__texte">
-          Développeur intégrateur web, je concrétise vos idées en réalité
-          numérique.
+          Je suis un développeur intégrateur web passionné, dédié à transformer
+          vos idées en réalités numériques.
         </strong>
         <div className="introduction__contact-container">
           <a href="#formulaire" aria-label="Aller à la section contact">

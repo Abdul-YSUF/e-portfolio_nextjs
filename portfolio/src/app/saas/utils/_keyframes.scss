@@ -130,27 +130,6 @@
   }
 }
 
-@keyframes border_blue {
-  0% {
-    opacity: 1;
-    transform: rotateY(1turn);
-  }
-}
-
-@-webkit-keyframes border_blue {
-  100% {
-    opacity: 1;
-    transform: rotateY(1turn);
-  }
-}
-
-@-moz-keyframes border_blue {
-  100% {
-    opacity: 1;
-    transform: rotateY(1turn);
-  }
-}
-
 @-webkit-keyframes mouse-wheel {
   0% {
     opacity: 1;
@@ -271,10 +250,4 @@
   50% {
     background-size: 150% 150%;
   }
-}
-
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.02); }
-  100% { transform: scale(1); }
 }

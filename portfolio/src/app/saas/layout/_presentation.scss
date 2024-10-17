@@ -1,3 +1,5 @@
+$color-text: var(--color-text);
+
 .introduction {
   @include flexbox;
   flex-direction: column;
@@ -20,6 +22,7 @@
     width: 100%;
     font-size: 18px;
     font-weight: 600;
+    color: $color-text;
     @include breakpoints_desktop {
       width: 90%;
       font-size: 24px;
@@ -44,11 +47,16 @@
   &__logo {
     display: none;
     width: 100%;
-    margin: 0px 0 20px 0px;
+    margin: 0 0 20px 0;
     @include breakpoints_desktop {
       @include flexbox;
       width: 70%;
+      height: 200px;
       margin: 40px auto;
+      background-image: url('/assets/abdul-intro-black.webp');
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
     }
   }
   &__texte {
@@ -56,6 +64,7 @@
     width: 100%;
     font-size: 16px;
     font-weight: 600;
+    color: $color-text;
     @include breakpoints_desktop {
       font-size: 20px;
       width: 90%;
@@ -73,7 +82,6 @@
     margin-top: 30px;
     cursor: pointer;
     @include breakpoints_desktop {
-      position: none;
       width: 24%;
       border-radius: 8px;
       margin: 40px 0 0 35px;
@@ -91,15 +99,12 @@
   }
 }
 
-.nuit .introduction {
-  &__titre {
-    color: $white;
-  }
-  &__texte {
-    color: $white;
-  }
+// Mode nuit pour le logo
+.nuit .introduction__logo {
+  background-image: url('/assets/abdul-intro-white.webp');
 }
 
+// Barre latérale
 .barre_container {
   display: none;
   @include breakpoints_desktop {
@@ -112,7 +117,7 @@
   flex-direction: column;
   width: 10%;
   &__reseau-social {
-    border: 2px solid $black;
+    border: 2px solid $color-text;
     background: linear-gradient(
       to right,
       #3333337d 0%,
@@ -122,41 +127,19 @@
     border-radius: 40px;
     position: absolute;
     margin: -200px 0 0 70px;
-    padding: 20px 0px 20px 0px;
+    padding: 10px 5px;
     animation: mouse_scroll 3s;
   }
-  &__logo-1 {
-    border: 2px solid;
-    background: $white;
-    border-radius: 100px;
-    margin-top: 10px;
-    transform: scale(1);
-    transition: transform 0.3s ease-in-out, border 0.3s ease-in-out,
-      background 0.3s ease-in-out;
-    &:hover {
-      transform: scale(1.2);
-      border-color: #08b7a2;
-    }
-  }
-  &__logo-2 {
-    border: 2px solid;
-    background-color: $white;
-    border-radius: 100px;
-    transform: scale(1);
-    transition: transform 0.3s ease-in-out, border 0.3s ease-in-out,
-      background 0.3s ease-in-out;
-    &:hover {
-      transform: scale(1.2);
-      border-color: #08b7a2;
-    }
-  }
+  &__logo-1,
+  &__logo-2,
   &__logo-3 {
     border: 2px solid;
     background-color: $white;
     border-radius: 100px;
     transform: scale(1);
-    transition: transform 0.3s ease-in-out, border 0.3s ease-in-out,
-      background 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, border 0.3s ease-in-out, background 0.3s ease-in-out;
+    color: $color-text;
+    margin-top: 15px;
     &:hover {
       transform: scale(1.2);
       border-color: #08b7a2;
@@ -164,22 +147,12 @@
   }
 }
 
-.nuit .barre {
-  &__reseau-social {
-    border: 2px solid $white;
-  }
-  &__logo-1 {
-    color: $white;
-  }
-  &__logo-2 {
-    color: $white;
-  }
-  &__logo-3 {
-    background: rgb(218, 218, 218);
-    color: $white;
-  }
+// Mode nuit pour les logos
+.nuit .barre__logo-3 {
+  background: rgb(218, 218, 218);
 }
 
+// Section bienvenue
 .bienvenue {
   width: 90%;
   @include breakpoints_desktop {
@@ -193,11 +166,12 @@
     @include breakpoints_desktop {
       display: flex;
       width: 100%;
-      margin: 20px 0px 0px 0px;
+      margin: 20px 0 0;
     }
   }
 }
 
+// Souris de défilement
 .souris {
   display: none;
   @include breakpoints_desktop {
@@ -210,6 +184,7 @@
   }
 }
 
+// Animations du défilement
 .mouse_scroll {
   display: block;
   width: 24px;
@@ -224,102 +199,52 @@
 
 .m_scroll_arrows {
   display: block;
-  width: 5px;
-  height: 5px;
-  -ms-transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
-  transform: rotate(45deg);
-  margin: 0 0 3px 4px;
   width: 16px;
   height: 16px;
+  transform: rotate(45deg);
+  margin: 0 0 3px 4px;
+  border-right: 2px solid $color-text;
+  border-bottom: 2px solid $color-text;
 }
 
-.jour .m_scroll_arrows {
-  border-right: 2px solid $black;
-  border-bottom: 2px solid $black;
-}
-
-.nuit .m_scroll_arrows {
-  border-right: 2px solid $white;
-  border-bottom: 2px solid $white;
-}
-
-.un {
-  margin-top: 1px;
-}
-
+// Flèches de défilement avec animation
 .un,
 .deux,
 .trois {
-  -webkit-animation: mouse-scroll 1s infinite;
-  -moz-animation: mouse-scroll 1s infinite;
-  animation: mouse-scroll 1s infinite;
+  animation: mouse-scroll 1s infinite alternate;
+  -webkit-animation: mouse-scroll 1s infinite alternate;
+  -moz-animation: mouse-scroll 1s infinite alternate;
+  &.un {
+    animation-delay: 0.1s;
+    margin-top: 1px;
+  }
+  &.deux {
+    animation-delay: 0.2s;
+    margin-top: -6px;
+  }
+  &.trois {
+    animation-delay: 0.3s;
+    margin-top: -6px;
+  }
 }
 
-.un {
-  -webkit-animation-delay: 0.1s;
-  -moz-animation-delay: 0.1s;
-  -webkit-animation-direction: alternate;
-  animation-direction: alternate;
-  animation-delay: 0.1s;
-}
-
-.deux {
-  -webkit-animation-delay: 0.2s;
-  -moz-animation-delay: 0.2s;
-  -webkit-animation-direction: alternate;
-  animation-delay: 0.2s;
-  animation-direction: alternate;
-  margin-top: -6px;
-}
-
-.trois {
-  -webkit-animation-delay: 0.3s;
-  -moz-animation-delay: 0.3s;
-  -webkit-animation-direction: alternate;
-  animation-delay: 0.3s;
-  animation-direction: alternate;
-  margin-top: -6px;
-}
-
+// Styles de la souris
 .mouse {
-  height: 42px;
   width: 24px;
+  height: 42px;
   border-radius: 14px;
-  transform: none;
-  top: 170px;
-}
-
-.jour .mouse {
-  border: 2px solid $black;
-}
-
-.nuit .mouse {
-  border: 2px solid $white;
+  border: 2px solid $color-text;
 }
 
 .wheel {
-  height: 5px;
-  width: 2px;
+  height: 4px;
+  width: 4px;
   display: block;
   margin: 5px auto;
   position: relative;
-  height: 4px;
-  width: 4px;
-  -webkit-border-radius: 8px;
   border-radius: 8px;
-}
-
-.jour .wheel {
-  border: 2px solid $black;
-}
-
-.nuit .wheel {
-  border: 2px solid $white;
-}
-
-.wheel {
+  border: 2px solid $color-text;
+  animation: mouse-wheel 0.6s linear infinite;
   -webkit-animation: mouse-wheel 0.6s linear infinite;
   -moz-animation: mouse-wheel 0.6s linear infinite;
-  animation: mouse-wheel 0.6s linear infinite;
 }

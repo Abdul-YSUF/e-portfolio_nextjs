@@ -70,12 +70,12 @@ const Footer = () => {
         <a href="#" target="_blank" className="conditions">
           Conditions d'utilisation
         </a>
-        <div className="copy">
+      </div>
+      <div className="copy">
           <small className="paragraph_footer">
             © 2023-{currentYear} ABDUL LE DEV Portfolio. Tous droits réservés.
           </small>
         </div>
-      </div>
     </footer>
   );
 };
