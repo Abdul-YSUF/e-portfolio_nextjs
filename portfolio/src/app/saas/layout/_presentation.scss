@@ -133,12 +133,11 @@ $color-text: var(--color-text);
   &__logo-1,
   &__logo-2,
   &__logo-3 {
-    border: 2px solid;
+    border: 2px solid $color-text;
     background-color: $white;
     border-radius: 100px;
     transform: scale(1);
     transition: transform 0.3s ease-in-out, border 0.3s ease-in-out, background 0.3s ease-in-out;
-    color: $color-text;
     margin-top: 15px;
     &:hover {
       transform: scale(1.2);

@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Image from "next/image";
 
 export default function Introduction() {
   return (
@@ -35,10 +36,12 @@ export default function Introduction() {
                 rel="noopener noreferrer"
                 aria-label="GitHub Abdul le Dev"
               >
-                <img
+                <Image
                   className="barre__logo-1"
                   src="/assets/github.svg"
                   alt="Logo GitHub"
+                  width={33}
+                  height={33}
                 />
               </a>
             </li>
@@ -49,10 +52,12 @@ export default function Introduction() {
                 rel="noopener noreferrer"
                 aria-label="LinkedIn Abdul le Dev"
               >
-                <img
+                <Image
                   className="barre__logo-2"
                   src="/assets/linkedin.svg"
                   alt="Logo LinkedIn"
+                  width={33}
+                  height={33}
                 />
               </a>
             </li>
@@ -61,10 +66,12 @@ export default function Introduction() {
                 href="mailto:abdulledev@gmail.com"
                 aria-label="Envoyer un email à Abdul le Dev"
               >
-                <img
+                <Image
                   className="barre__logo-3"
                   src="/assets/Gmail_icon.svg"
                   alt="Logo Gmail"
+                  width={33}
+                  height={33}
                 />
               </a>
             </li>
@@ -90,10 +97,12 @@ export default function Introduction() {
       </div>
 
       <div className="bienvenue">
-        <img
+        <Image
           className="bienvenue__source"
           src="/assets/4962136_2597613.webp"
           alt="Illustration d'un homme qui travaille sur son ordinateur avec plusieurs langages de programmation"
+          width={575}
+          height={575}
         />
       </div>
     </section>

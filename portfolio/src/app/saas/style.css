@@ -786,12 +786,11 @@ textarea.erreur {
   animation: mouse_scroll 3s;
 }
 .barre__logo-1, .barre__logo-2, .barre__logo-3 {
-  border: 2px solid;
+  border: 2px solid var(--color-text);
   background-color: white;
   border-radius: 100px;
   transform: scale(1);
   transition: transform 0.3s ease-in-out, border 0.3s ease-in-out, background 0.3s ease-in-out;
-  color: var(--color-text);
   margin-top: 15px;
 }
 .barre__logo-1:hover, .barre__logo-2:hover, .barre__logo-3:hover {
