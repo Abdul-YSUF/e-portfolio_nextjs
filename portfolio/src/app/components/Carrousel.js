@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion"; // Importer Framer Motion
+import { motion } from "framer-motion";
 
 const Carrousel = ({ projects }) => {
   const [slide, setSlide] = useState(0);
@@ -54,6 +54,7 @@ const Carrousel = ({ projects }) => {
               alt="Diapositive Précédente"
               width={25}
               height={25}
+              loading="lazy"
             />
           </div>
         </div>
@@ -64,10 +65,10 @@ const Carrousel = ({ projects }) => {
           onClick={() => openPopup(projects[getPreviousIndex()])}
         >
           <motion.div
-            initial={{ opacity: 0, x: -100 }} // État initial
-            animate={{ opacity: 1, x: 0 }} // État animé
-            exit={{ opacity: 0, x: -100 }} // État lors de la sortie
-            transition={{ duration: 0.5 }} // Durée de la transition
+            initial={{ opacity: 0, x: -100 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -100 }}
+            transition={{ duration: 0.5 }}
           >
             <Image
               src={projects[getPreviousIndex()].image}
@@ -76,6 +77,7 @@ const Carrousel = ({ projects }) => {
               height={150}
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 450px"
               style={{ objectFit: "fill" }}
+              loading="lazy"
             />
             <h3 className="project-title-left">
               {projects[getPreviousIndex()].title}
@@ -98,11 +100,11 @@ const Carrousel = ({ projects }) => {
               onClick={() => openPopup(projects[slide])}
             >
               <motion.div
-                initial={{ opacity: 0 }} // État initial
-                animate={{ opacity: 1 }} // État animé
-                exit={{ opacity: 0 }} // État lors de la sortie
-                transition={{ duration: 0.5 }} // Durée de la transition
-                key={projects[slide].image} // Ajout d'une clé pour gérer la sortie
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.5 }}
+                key={projects[slide].image}
               >
                 <Image
                   src={projects[slide].image}
@@ -122,10 +124,10 @@ const Carrousel = ({ projects }) => {
           onClick={() => openPopup(projects[getNextIndex()])}
         >
           <motion.div
-            initial={{ opacity: 0, x: 100 }} // État initial
-            animate={{ opacity: 1, x: 0 }} // État animé
-            exit={{ opacity: 0, x: 100 }} // État lors de la sortie
-            transition={{ duration: 0.5 }} // Durée de la transition
+            initial={{ opacity: 0, x: 100 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: 100 }}
+            transition={{ duration: 0.5 }}
           >
             <Image
               src={projects[getNextIndex()].image}
@@ -134,6 +136,7 @@ const Carrousel = ({ projects }) => {
               height={150}
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 450px"
               style={{ objectFit: "fill" }}
+              loading="lazy"
             />
             <h3 className="project-title-right">
               {projects[getNextIndex()].title}
@@ -155,6 +158,7 @@ const Carrousel = ({ projects }) => {
               alt="Diapositive Suivante"
               width={25}
               height={25}
+              loading="lazy"
             />
           </div>
         </div>
