@@ -4,7 +4,6 @@ export const metadata = {
   title: "Mon Portfolio - Développeur Web",
   description:
     "Découvrez le portfolio d'Abdul, développeur web spécialisé en création de sites modernes et performants. Expertise en Frontend, Backend et solutions fullstack complètes.",
-  viewport: "width=device-width, initial-scale=1",
   icons: {
     icon: "/assets/abdul-le-dev-favicon-white.webp",
   },
