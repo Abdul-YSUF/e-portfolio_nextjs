@@ -1033,7 +1033,7 @@ textarea.erreur {
 }
 @media screen and (min-width: 992px) {
   .about-me {
-    width: 28%;
+    width: 360px;
     margin-top: 50px;
   }
 }
@@ -1043,6 +1043,11 @@ textarea.erreur {
   box-shadow: 0 0 0 10px rgb(8, 169, 223);
   border: 10px solid green;
   border-radius: 500px;
+}
+@media screen and (min-width: 992px) {
+  .me {
+    height: 360px;
+  }
 }
 
 .profil_img {

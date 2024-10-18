@@ -1,4 +1,4 @@
-import React from "react";
+import Image from "next/image";
 
 export default function AboutMe() {
   return (
@@ -6,11 +6,14 @@ export default function AboutMe() {
       <div className="section_2-container">
         <h2 className="stitre">Qui suis-je</h2>
         <div className="qui_suis-je">
-          <div className="about-me animation scroll-animation">
-            <img
+          <div className="about-me">
+            <Image
               className="me"
               src="/assets/3d-rendering-cartoon-like-man-working-computer.webp"
               alt="Dessin animé d'un homme qui travail sur son ordinateur"
+              width={250}
+              height={250}
+              priority
             />
           </div>
           <div className="texte">

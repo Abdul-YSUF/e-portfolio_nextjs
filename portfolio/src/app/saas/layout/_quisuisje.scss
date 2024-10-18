@@ -98,7 +98,7 @@
   max-width: 100%;
   margin-bottom: 35px;
   @include breakpoints_desktop {
-    width: 28%;
+    width: 360px;
     margin-top: 50px;
   }
 }
@@ -108,6 +108,9 @@
   box-shadow: 0 0 0 10px rgb(8, 169, 223);
   border: 10px solid green;
   border-radius: 500px;
+  @include breakpoints_desktop {
+    height: 360px;
+  }
 }
 
 .profil_img {
