@@ -8,7 +8,7 @@ export default function Introduction() {
         <h1 className="introduction__titre">Bienvenue dans mon portfolio !</h1>
         <img
           className="introduction__logo-mobile"
-          src="/assets/4962136_2597613.svg"
+          src="/assets/4962136_2597613.webp"
           alt="logo Abdul le Dev"
         />
         <div className="introduction__container-logo">
@@ -92,7 +92,7 @@ export default function Introduction() {
       <div className="bienvenue">
         <img
           className="bienvenue__source"
-          src="/assets/4962136_2597613.svg"
+          src="/assets/4962136_2597613.webp"
           alt="Illustration d'un homme qui travaille sur son ordinateur avec plusieurs langages de programmation"
         />
       </div>
