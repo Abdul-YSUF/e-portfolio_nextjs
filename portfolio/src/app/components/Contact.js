@@ -2,8 +2,15 @@
 import React, { useState } from "react";
 import ReCAPTCHA from "./GoogleReCaptchaProvider";
 import Calendly from "./Calendly";
+import Script from 'next/script';
 
 export default function ContactForm() {
+
+  const [isRecaptchaLoaded, setIsRecaptchaLoaded] = useState(false);
+  const handleLoadRecaptcha = () => {
+    setIsRecaptchaLoaded(true);
+  };
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -245,6 +252,13 @@ export default function ContactForm() {
             {isSubmitting ? "Envoi en cours..." : "Envoyez"}
           </button>
         </form>
+        {!isRecaptchaLoaded && (
+        <Script
+          src="https://www.google.com/recaptcha/api.js"
+          onLoad={handleLoadRecaptcha}
+          strategy="lazyOnload"
+        />
+      )}
       </div>
 
       <p>{status}</p>
