@@ -16,7 +16,7 @@ export default function Introduction() {
           height={200}
         />
         <div className="introduction__container-logo">
-          <div id="intro-logo" className="introduction__logo"></div>
+          <div id="intro-logo" className="introduction__logo" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 450px"></div>
         </div>
         <strong className="introduction__texte">
           Je suis un développeur intégrateur web passionné, dédié à transformer
