@@ -11,6 +11,7 @@ export default function Introduction() {
           className="introduction__logo-mobile"
           src="/assets/4962136_2597613.webp"
           alt="logo Abdul le Dev"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 450px"
           width={200}
           height={200}
         />
@@ -103,6 +104,7 @@ export default function Introduction() {
           className="bienvenue__source"
           src="/assets/4962136_2597613.webp"
           alt="Illustration d'un homme qui travaille sur son ordinateur avec plusieurs langages de programmation"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 450px"
           width={575}
           height={575}
         />
