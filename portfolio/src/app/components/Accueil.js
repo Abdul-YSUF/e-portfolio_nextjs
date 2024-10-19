@@ -7,10 +7,12 @@ export default function Introduction() {
     <section className="introduction">
       <div className="introduction__presentation">
         <h1 className="introduction__titre">Bienvenue dans mon portfolio !</h1>
-        <img
+        <Image
           className="introduction__logo-mobile"
           src="/assets/4962136_2597613.webp"
           alt="logo Abdul le Dev"
+          width={200}
+          height={200}
         />
         <div className="introduction__container-logo">
           <div id="intro-logo" className="introduction__logo"></div>
