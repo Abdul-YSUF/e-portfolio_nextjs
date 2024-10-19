@@ -11,6 +11,7 @@ const Footer = () => {
             className="footer-logo"
             src="/assets/abdul-intro-white.webp"
             alt="logo Abdul le Dev"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 450px"
             width={240}
             height={50}
             priority={true}
@@ -72,10 +73,10 @@ const Footer = () => {
         </a>
       </div>
       <div className="copy">
-          <small className="paragraph_footer">
-            © 2023-{currentYear} ABDUL LE DEV Portfolio. Tous droits réservés.
-          </small>
-        </div>
+        <small className="paragraph_footer">
+          © 2023-{currentYear} ABDUL LE DEV Portfolio. Tous droits réservés.
+        </small>
+      </div>
     </footer>
   );
 };
