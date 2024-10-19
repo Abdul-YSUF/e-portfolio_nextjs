@@ -17,12 +17,8 @@ html {
 }
 
 body {
-  background: radial-gradient(circle, #c7e360, #b59c84, #b4c4c7);
+  background: $color-body;
   animation: radialGradientAnimation 10s ease infinite;
-}
-
-.nuit {
-  background: #151d2a;
 }
 
 a {

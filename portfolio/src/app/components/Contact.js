@@ -261,7 +261,7 @@ export default function ContactForm() {
       )}
       </div>
 
-      <p>{status}</p>
+      <p className="status_msg">{status}</p>
     </div>
   );
 }

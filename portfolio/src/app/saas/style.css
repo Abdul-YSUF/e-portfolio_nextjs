@@ -3,6 +3,7 @@
 :root {
   --color-text: #000;
   --color-bg: #fff;
+  --color-body: radial-gradient(circle, #c7e360, #b59c84, #b4c4c7);
   --color-border1: rgba(97, 0, 255, 0.89);
   --color-border2: rgb(171, 48, 39);
   --color-border3: linear-gradient(to right, rgba(97, 0, 255, 0.89), rgb(171, 48, 39));
@@ -11,6 +12,7 @@
 .nuit {
   --color-text: #fff;
   --color-bg: #151d2a;
+  --color-body: #151d2a;
   --color-border1: rgba(192, 187, 54, 1);
   --color-border2: rgba(97, 0, 255, 0.89);
 }
@@ -262,7 +264,6 @@
   text-decoration: none;
   color: #444;
   font-weight: 500;
-  transition: color 0.3s ease-in-out;
 }
 
 .menu-items a:hover {
@@ -537,17 +538,13 @@
 
 .button_denvoi:hover {
   transform: none;
-  background: linear-gradient(white, white) padding-box, linear-gradient(to right, rgb(192, 54, 170), rgba(137, 95, 13, 0.89)) border-box;
+  background: linear-gradient(var(--color-bg), var(--color-bg)) padding-box, linear-gradient(to right, rgb(192, 54, 170), rgba(137, 95, 13, 0.89)) border-box;
   border: 4px solid transparent;
 }
 @media screen and (min-width: 992px) {
   .button_denvoi:hover {
     transform: scale(1.05);
   }
-}
-
-.nuit .button_denvoi:hover {
-  background: linear-gradient(#151d2a, #151d2a) padding-box, linear-gradient(to right, rgb(192, 54, 170), rgba(137, 95, 13, 0.89)) border-box;
 }
 
 .popup {
@@ -588,6 +585,7 @@
   flex-direction: column;
   width: 90%;
   margin-top: 40px;
+  color: var(--color-text);
 }
 @media screen and (min-width: 992px) {
   .emailto {
@@ -595,10 +593,6 @@
     flex-direction: unset;
     width: unset;
   }
-}
-
-.nuit .emailto {
-  color: white;
 }
 
 .erreur {
@@ -618,6 +612,14 @@ input.erreur,
 textarea.erreur {
   border: 2px solid #e74c3c;
   background-color: rgba(231, 76, 60, 0.05);
+}
+
+.status_msg {
+  color: var(--color-text);
+}
+
+.grecaptcha-badge {
+  background: var(--color-bg);
 }
 
 .introduction {
@@ -787,7 +789,7 @@ textarea.erreur {
 }
 .barre__logo-1, .barre__logo-2, .barre__logo-3 {
   border: 2px solid var(--color-text);
-  background-color: white;
+  background: white;
   border-radius: 100px;
   transform: scale(1);
   transition: transform 0.3s ease-in-out, border 0.3s ease-in-out, background 0.3s ease-in-out;
@@ -1883,12 +1885,8 @@ html {
 }
 
 body {
-  background: radial-gradient(circle, #c7e360, #b59c84, #b4c4c7);
+  background: var(--color-body);
   animation: radialGradientAnimation 10s ease infinite;
-}
-
-.nuit {
-  background: #151d2a;
 }
 
 a {

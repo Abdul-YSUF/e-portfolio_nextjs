@@ -1,6 +1,7 @@
 :root {
   --color-text: #000;
   --color-bg: #fff;
+  --color-body: radial-gradient(circle, #c7e360, #b59c84, #b4c4c7);
   --color-border1: rgba(97, 0, 255, 0.89);
   --color-border2: rgb(171, 48, 39);
   --color-border3: linear-gradient(to right, rgba(97, 0, 255, 0.89), rgb(171, 48, 39));
@@ -9,6 +10,7 @@
 .nuit {
   --color-text: #fff;
   --color-bg: #151d2a;
+  --color-body: #151d2a;
   --color-border1: rgba(192, 187, 54, 1);
   --color-border2: rgba(97, 0, 255, 0.89);
 }
@@ -26,6 +28,9 @@ $color-form: #cbcbcb;
 $nuit: #14141442;
 $color-light-gray: #e2e2e2;
 $color-icons-fonctionnement: #7d7d7d;
+$color-body: var(--color-body);
+$color-text: var(--color-text);
+$color-bg: var(--color-bg);
 
 $background-form: linear-gradient($color-form -1%, $gray 7%);
 $background-linear-gradient: linear-gradient(
