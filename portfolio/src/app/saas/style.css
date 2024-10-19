@@ -618,10 +618,6 @@ textarea.erreur {
   color: var(--color-text);
 }
 
-.grecaptcha-logo {
-  background: var(--color-bg);
-}
-
 .introduction {
   display: flex;
   justify-content: center;
@@ -1885,6 +1881,7 @@ html {
 }
 
 body {
+  font-family: "Lexend", sans-serif;
   background: var(--color-body);
   animation: radialGradientAnimation 10s ease infinite;
 }
