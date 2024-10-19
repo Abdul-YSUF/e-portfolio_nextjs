@@ -618,7 +618,7 @@ textarea.erreur {
   color: var(--color-text);
 }
 
-.grecaptcha-badge {
+.grecaptcha-logo {
   background: var(--color-bg);
 }
 
