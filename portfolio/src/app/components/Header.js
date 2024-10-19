@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import useDarkMode from "./DarkModeToggle";
+import Image from "next/image";
 
 export default function Header() {
   const { isNight, logoSrc, toggleTheme } = useDarkMode();
@@ -46,9 +47,11 @@ export default function Header() {
               onClick={toggleTheme}
               aria-label="Toggle dark mode"
             >
-              <img
+              <Image
                 src={isNight ? "/assets/sun.webp" : "/assets/moon.webp"}
                 alt={isNight ? "Mode Clair" : "Mode Sombre"}
+                width={100}
+                height={100}
               />
             </button>
           </li>
