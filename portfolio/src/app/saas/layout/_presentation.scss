@@ -51,7 +51,7 @@
       width: 70%;
       height: 200px;
       margin: 40px auto;
-      background-image: url('/assets/abdul-intro-black.webp');
+      background-image: $background-image;
       background-size: contain;
       background-position: center;
       background-repeat: no-repeat;
@@ -97,11 +97,6 @@
   }
 }
 
-// Mode nuit pour le logo
-.nuit .introduction__logo {
-  background-image: url('/assets/abdul-intro-white.webp');
-}
-
 // Barre latérale
 .barre_container {
   display: none;
@@ -116,12 +111,7 @@
   width: 10%;
   &__reseau-social {
     border: 2px solid $color-text;
-    background: linear-gradient(
-      to right,
-      #3333337d 0%,
-      rgba(192, 192, 192, 0.484) 50%,
-      #3333337d 100%
-    );
+    background: $background-border-reseau;
     border-radius: 40px;
     position: absolute;
     margin: -200px 0 0 70px;
@@ -135,7 +125,7 @@
     background: $white;
     border-radius: 100px;
     transform: scale(1);
-    transition: transform 0.3s ease-in-out, border 0.3s ease-in-out, background 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, border 0.3s ease-in-out;
     margin-top: 15px;
     &:hover {
       transform: scale(1.2);

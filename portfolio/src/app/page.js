@@ -1,22 +1,12 @@
-import dynamic from "next/dynamic";
 import Header from "./components/Header";
 import Accueil from "./components/Accueil";
 import About from "./components/About";
+import Skills from "./components/Skills";
+import Projects from "./components/Projects";
+import Services from "./components/Services";
+import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
-
-const DynamicSkills = dynamic(() => import("./components/Skills"), {
-  ssr: false,
-});
-const DynamicProjects = dynamic(() => import("./components/Projects"), {
-  ssr: false,
-});
-const DynamicServices = dynamic(() => import("./components/Services"), {
-  ssr: false,
-});
-const DynamicContact = dynamic(() => import("./components/Contact"), {
-  ssr: false,
-});
 
 export default function Home() {
   return (
@@ -24,10 +14,10 @@ export default function Home() {
       <Header />
       <Accueil />
       <About />
-      <DynamicSkills />
-      <DynamicProjects />
-      <DynamicServices />
-      <DynamicContact />
+      <Skills />
+      <Projects />
+      <Services />
+      <Contact />
       <Footer />
       <ScrollToTop />
     </>

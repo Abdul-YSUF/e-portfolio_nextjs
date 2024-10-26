@@ -4,7 +4,7 @@
   position: fixed;
   width: 100%;
   max-width: 1280px;
-  background: var(--color-bg);
+  background: $color-bg;
   height: 80px;
   z-index: 10000;
 }
@@ -103,7 +103,7 @@
   position: absolute;
   right: 0;
   padding-top: 90px;
-  background: var(--color-bg);
+  background: $color-bg;
   height: 1200px;
   max-width: 100%;
   transform: translateX(100%);
@@ -112,7 +112,7 @@
   @include breakpoints_desktop {
     position: unset;
     padding-top: unset;
-    height: 60px;
+    height: 75px;
     max-width: unset;
     transform: unset;
     transition: transform unset;
@@ -131,14 +131,18 @@
   width: 100%;
   @include breakpoints_desktop {
     @include flexbox;
-    margin: 0;
-    width: 70%;
+    margin: 0 20px 0 0;
+    width: auto;
   }
 }
 
 .menu-items li {
   list-style: none;
   font-size: 18px;
+  @include breakpoints_desktop {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
 
 .menu-items a {
@@ -159,6 +163,7 @@
 .navbar_li {
   @include breakpoints_desktop {
     margin-top: 10px;
+    white-space: nowrap;
   }
 }
 
@@ -205,8 +210,8 @@
 
 .toggle-button img {
   display: block;
-  width: 50px;
-  height: 50px;
+  width: 35px;
+  height: 35px;
 }
 
 .menu-items a.active {

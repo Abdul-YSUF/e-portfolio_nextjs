@@ -7,6 +7,7 @@
   --color-border1: rgba(97, 0, 255, 0.89);
   --color-border2: rgb(171, 48, 39);
   --color-border3: linear-gradient(to right, rgba(97, 0, 255, 0.89), rgb(171, 48, 39));
+  --background-image: url("/assets/abdul-intro-black.webp");
 }
 
 .nuit {
@@ -15,6 +16,8 @@
   --color-body: #151d2a;
   --color-border1: rgba(192, 187, 54, 1);
   --color-border2: rgba(97, 0, 255, 0.89);
+  --color-border3: linear-gradient(to right, rgba(192, 187, 54, 1), rgba(97, 0, 255, 0.89));
+  --background-image: url("/assets/abdul-intro-white.webp");
 }
 
 @keyframes mouse_scroll {
@@ -226,7 +229,7 @@
   .header .menu-items {
     position: unset;
     padding-top: unset;
-    height: 60px;
+    height: 75px;
     max-width: unset;
     transform: unset;
     transition: transform unset;
@@ -250,14 +253,20 @@
     justify-content: center;
     text-align: center;
     align-items: center;
-    margin: 0;
-    width: 70%;
+    margin: 0 20px 0 0;
+    width: auto;
   }
 }
 
 .menu-items li {
   list-style: none;
   font-size: 18px;
+}
+@media screen and (min-width: 992px) {
+  .menu-items li {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
 
 .menu-items a {
@@ -278,6 +287,7 @@
 @media screen and (min-width: 992px) {
   .navbar_li {
     margin-top: 10px;
+    white-space: nowrap;
   }
 }
 
@@ -334,8 +344,8 @@
 
 .toggle-button img {
   display: block;
-  width: 50px;
-  height: 50px;
+  width: 35px;
+  height: 35px;
 }
 
 .menu-items a.active {
@@ -693,7 +703,7 @@ textarea.erreur {
     width: 70%;
     height: 200px;
     margin: 40px auto;
-    background-image: url("/assets/abdul-intro-black.webp");
+    background-image: var(--background-image);
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -750,10 +760,6 @@ textarea.erreur {
   margin-left: -0.5px;
 }
 
-.nuit .introduction__logo {
-  background-image: url("/assets/abdul-intro-white.webp");
-}
-
 .barre_container {
   display: none;
 }
@@ -788,7 +794,7 @@ textarea.erreur {
   background: white;
   border-radius: 100px;
   transform: scale(1);
-  transition: transform 0.3s ease-in-out, border 0.3s ease-in-out, background 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, border 0.3s ease-in-out;
   margin-top: 15px;
 }
 .barre__logo-1:hover, .barre__logo-2:hover, .barre__logo-3:hover {

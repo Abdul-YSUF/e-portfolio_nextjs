@@ -5,6 +5,7 @@
   --color-border1: rgba(97, 0, 255, 0.89);
   --color-border2: rgb(171, 48, 39);
   --color-border3: linear-gradient(to right, rgba(97, 0, 255, 0.89), rgb(171, 48, 39));
+  --background-image: url("/assets/abdul-intro-black.webp");
 }
 
 .nuit {
@@ -13,6 +14,8 @@
   --color-body: #151d2a;
   --color-border1: rgba(192, 187, 54, 1);
   --color-border2: rgba(97, 0, 255, 0.89);
+  --color-border3: linear-gradient(to right, rgba(192, 187, 54, 1), rgba(97, 0, 255, 0.89));
+  --background-image: url("/assets/abdul-intro-white.webp");
 }
 
 $color-primaire: #9356dc;
@@ -31,6 +34,8 @@ $color-icons-fonctionnement: #7d7d7d;
 $color-body: var(--color-body);
 $color-text: var(--color-text);
 $color-bg: var(--color-bg);
+$color-border: var(--color-border3);
+$background-image: var(--background-image);
 
 $background-form: linear-gradient($color-form -1%, $gray 7%);
 $background-linear-gradient: linear-gradient(
@@ -40,6 +45,13 @@ $background-linear-gradient: linear-gradient(
     )
     padding-box,
   linear-gradient(180deg, #05e0c6 0%, rgba(82, 101, 137, 0.64) 100%) border-box;
+
+$background-border-reseau: linear-gradient(
+  to right,
+  #3333337d 0%,
+  rgba(192, 192, 192, 0.484) 50%,
+  #3333337d 100%
+);
 
 $breakpoints_desktop: (
   laptop: 992px,
