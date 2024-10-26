@@ -62,6 +62,43 @@ export default function Header() {
               Contact
             </Link>
           </li>
+          <li className="navbar_reseau" role="menuitem">
+            <Link
+              href="https://github.com/Abdul-YSUF?tab=repositories"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image
+                className="navbar_github"
+                src="/assets/github.svg"
+                alt="Logo GitHub"
+                width={33}
+                height={33}
+              />
+            </Link>
+            <Link
+              href="https://www.linkedin.com/in/abdul-fahad-ysuf-970887235/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image
+                className="navbar_linkedin"
+                src="/assets/linkedin.svg"
+                alt="Logo LinkedIn"
+                width={33}
+                height={33}
+              />
+            </Link>
+            <Link href="mailto:abdulledev@gmail.com">
+              <Image
+                className="navbar_Gmail"
+                src="/assets/Gmail_icon.svg"
+                alt="Logo Gmail"
+                width={33}
+                height={33}
+              />
+            </Link>
+          </li>
           <li className="navbar_li">
             <button
               className="toggle-button"

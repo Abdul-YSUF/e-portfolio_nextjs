@@ -17,7 +17,7 @@ export default function AboutMe() {
             />
           </div>
           <div className="texte">
-            <p>Un développeur intégrateur web passionné à votre service !</p>
+            <p>Un développeur web passionné à votre service !</p>
             <p>
               Vous cherchez un développeur web fiable et enthousiaste pour
               donner vie à vos projets digitaux ? Ne cherchez plus !

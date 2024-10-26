@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import Image from "next/image";
 
@@ -19,7 +18,7 @@ export default function Introduction() {
           <div id="intro-logo" className="introduction__logo" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 450px"></div>
         </div>
         <strong className="introduction__texte">
-          Je suis un développeur intégrateur web passionné, dédié à transformer
+          Je suis un développeur web passionné, dédié à transformer
           vos idées en réalités numériques.
         </strong>
         <div className="introduction__contact-container">

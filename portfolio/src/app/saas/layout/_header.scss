@@ -181,8 +181,9 @@
 .navbar_Gmail {
   background: $white;
   width: 100%;
+  height: 100%;
   margin-top: 5px;
-  border: 2px solid;
+  border: 2px solid $color-text;
   border-radius: 100px;
 }
 
@@ -190,7 +191,6 @@
 .navbar_linkedin:hover,
 .navbar_Gmail:hover {
   transform: none;
-
   @include breakpoints_desktop {
     transform: scale(1.2);
   }
@@ -227,8 +227,8 @@
   }
 
   .header .menu-items li {
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 15px;
+    margin-bottom: 15px;
     font-size: 20px;
     font-weight: 500;
   }
