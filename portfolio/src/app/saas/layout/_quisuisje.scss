@@ -12,11 +12,7 @@
 .stitre {
   font-size: 24px;
   font-weight: 600;
-  color: $black;
-}
-
-.nuit .stitre {
-  color: $white;
+  color: $color-text;
 }
 
 .texte {
@@ -38,48 +34,7 @@
 
 .texte p {
   margin-bottom: 15px;
-}
-
-.jour .texte {
-  color: black;
-}
-
-.nuit .texte {
-  color: white;
-}
-
-.téléchargement {
-  @include flexbox;
-  display: none;
-  margin-left: 0px;
-  margin-top: -20px;
-  width: auto;
-  height: 40px;
-  background: $background-linear-gradient;
-  border-radius: 8px;
-  color: $white;
-  cursor: pointer;
-  @include breakpoints_desktop {
-    margin-left: 540px;
-    margin-top: 30px;
-    width: 15%;
-  }
-}
-
-.téléchargement:hover {
-  background: #05e0c6;
-}
-
-.img_téléchargement {
-  width: 13.5%;
-  height: 30px;
-  margin-left: 2px;
-  margin-right: 0px;
-  @include breakpoints_desktop {
-    width: 14%;
-    margin-left: 10px;
-    margin-right: 5px;
-  }
+  color: $color-text;
 }
 
 .qui_suis-je {
@@ -105,7 +60,7 @@
 
 .me {
   width: 100%;
-  box-shadow: 0 0 0 10px rgb(8, 169, 223);
+  box-shadow: 0 0 0 10px #08a9df;
   border: 10px solid green;
   border-radius: 500px;
   @include breakpoints_desktop {

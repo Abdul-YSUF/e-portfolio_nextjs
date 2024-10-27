@@ -14,9 +14,7 @@
 .calendly_div {
   @include flexbox;
   flex-direction: column;
-  background: linear-gradient(var(--color-bg), var(--color-bg)) padding-box,
-    linear-gradient(to right, rgba(97, 0, 255, 0.89), rgb(171, 48, 39))
-      border-box;
+  background: $border-calendly;
   border: 2px solid transparent;
   border-radius: 15px;
   margin-top: 50px;
@@ -27,22 +25,14 @@
   }
 }
 
-.nuit .calendly_div {
-  background: linear-gradient(#151d2a, #151d2a) padding-box,
-    linear-gradient(to right, rgba(192, 187, 54, 1), rgba(97, 0, 255, 0.89))
-      border-box;
-  border: 2px solid transparent;
-  border-radius: 15px;
-}
-
 .calendly_titre {
-  color: var(--color-text);
+  color: $color-text;
   margin-top: 5px;
   margin-bottom: 15px;
 }
 
 .calendly_sous-titre {
-  color: var(--color-text);
+  color: $color-text;
 }
 
 .calendly_link {

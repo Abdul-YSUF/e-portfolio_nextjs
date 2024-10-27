@@ -69,31 +69,26 @@
       margin: auto;
     }
   }
-  &__contact-container {
-    position: relative;
-    @include flexbox;
-    width: 35%;
-    height: 35px;
-    left: 32%;
-    background: #d9d9d9;
-    border-radius: 30px;
-    margin-top: 30px;
+  &__font-contact {
+    display: inline-block;
+    padding: 0.5em 1.2em;
+    border-radius: 50px;
     cursor: pointer;
+    outline: none;
+    margin: 25px 10px 10px 10px;
+    color: $white;
+    background: $background-linear-gradient;
+    white-space: nowrap;
+    font-size: 17px;
     @include breakpoints_desktop {
-      width: 24%;
       border-radius: 8px;
-      margin: 40px 0 0 35px;
+      margin: 30px 0 0 0;
     }
     &:hover {
-      transform: none;
       @include breakpoints_desktop {
-        transform: scale(1.05);
+        background: #08b7a2;
       }
     }
-  }
-  &__font-contact {
-    font-size: 18px;
-    margin-left: -0.5px;
   }
 }
 
@@ -135,7 +130,7 @@
 }
 
 .nuit .barre__logo-3 {
-  background: rgb(218, 218, 218);
+  background: #dadada;
 }
 
 // Section bienvenue

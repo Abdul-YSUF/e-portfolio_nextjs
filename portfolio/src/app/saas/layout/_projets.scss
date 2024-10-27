@@ -36,8 +36,7 @@
     display: unset;
     background: transparent;
     border: 2px solid;
-    border-image: linear-gradient(to right, var(--color-border1), var(--color-border2))
-      1;
+    border-image: $color-border 1;
     padding: 10px;
     cursor: pointer;
   }
@@ -96,7 +95,7 @@
   font-size: 18px;
   font-weight: bold;
   text-align: center;
-  color: var(--color-text);
+  color: $color-text;
 }
 
 .arrow {
@@ -144,7 +143,7 @@
 }
 
 .popup-content {
-  background: var(--color-bg);
+  background: $color-bg;
   border-radius: 10px;
   position: relative;
   width: 100%;
@@ -166,7 +165,7 @@
   background: transparent;
   border: none;
   font-size: 40px;
-  color: var(--color-text);
+  color: $color-text;
   cursor: pointer;
   @include breakpoints_desktop {
     top: 10px;
@@ -177,7 +176,7 @@
 
 .project-text,
 .project-description {
-  color: var(--color-text);
+  color: $color-text;
 }
 
 .project-text {

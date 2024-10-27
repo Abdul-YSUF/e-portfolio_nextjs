@@ -1,20 +1,20 @@
 :root {
-  --color-text: #000;
-  --color-bg: #fff;
+  --color-text: black;
+  --color-bg: white;
   --color-body: radial-gradient(circle, #c7e360, #b59c84, #b4c4c7);
-  --color-border1: rgba(97, 0, 255, 0.89);
-  --color-border2: rgb(171, 48, 39);
-  --color-border3: linear-gradient(to right, rgba(97, 0, 255, 0.89), rgb(171, 48, 39));
+  --color-border1: #6100ffe3;
+  --color-border2: #ab3027;
+  --color-border: linear-gradient(to right, #6100ffe3, #ab3027);
   --background-image: url("/assets/abdul-intro-black.webp");
 }
 
 .nuit {
-  --color-text: #fff;
+  --color-text: white;
   --color-bg: #151d2a;
   --color-body: #151d2a;
-  --color-border1: rgba(192, 187, 54, 1);
-  --color-border2: rgba(97, 0, 255, 0.89);
-  --color-border3: linear-gradient(to right, rgba(192, 187, 54, 1), rgba(97, 0, 255, 0.89));
+  --color-border1: #c0bb36;
+  --color-border2: #6100ffe3;
+  --color-border: linear-gradient(to right, #c0bb36, #6100ffe3);
   --background-image: url("/assets/abdul-intro-white.webp");
 }
 
@@ -34,22 +34,18 @@ $color-icons-fonctionnement: #7d7d7d;
 $color-body: var(--color-body);
 $color-text: var(--color-text);
 $color-bg: var(--color-bg);
-$color-border: var(--color-border3);
+$color-border: var(--color-border);
 $background-image: var(--background-image);
-
+$border-calendly: linear-gradient($color-bg, $color-bg) padding-box,
+  $color-border border-box;
 $background-form: linear-gradient($color-form -1%, $gray 7%);
-$background-linear-gradient: linear-gradient(
-      180deg,
-      #05e0c6 0%,
-      rgba(82, 101, 137, 0.64) 100%
-    )
+$background-linear-gradient: linear-gradient(180deg, #05e0c6 0%, #526589a3 100%)
     padding-box,
-  linear-gradient(180deg, #05e0c6 0%, rgba(82, 101, 137, 0.64) 100%) border-box;
-
+  linear-gradient(180deg, #05e0c6 0%, #526589a3 100%) border-box;
 $background-border-reseau: linear-gradient(
   to right,
   #3333337d 0%,
-  rgba(192, 192, 192, 0.484) 50%,
+  #c0c0c07b 50%,
   #3333337d 100%
 );
 
@@ -60,5 +56,5 @@ $breakpoints_desktop: (
 
 $breakpoints_large: (
   l: 425px,
-  lm: 767px
+  lm: 767px,
 );
