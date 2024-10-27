@@ -335,7 +335,7 @@
   background: transparent;
   padding: 0;
   cursor: pointer;
-  margin-top: 11px;
+  margin-top: 1px;
 }
 @media screen and (min-width: 992px) {
   .toggle-button {
@@ -415,12 +415,8 @@
 }
 
 .label_form {
-  color: black;
+  color: var(--color-text);
   margin-bottom: 5px;
-}
-
-.nuit .label_form {
-  color: white;
 }
 
 .form {
@@ -466,15 +462,12 @@
 .titre_form {
   width: 90%;
   font-size: 18px;
+  color: var(--color-text);
 }
 @media screen and (min-width: 992px) {
   .titre_form {
     width: 100%;
   }
-}
-
-.nuit .titre_form {
-  color: white;
 }
 
 .nuit input::-moz-placeholder textarea::-moz-placeholder {
@@ -524,9 +517,11 @@
   text-align: center;
   align-items: center;
   margin-left: 0;
+  margin-top: 8px;
   width: auto;
-  background: linear-gradient(white, white) padding-box, linear-gradient(to right, rgba(97, 0, 255, 0.89), rgb(171, 48, 39)) border-box;
+  color: var(--color-text);
   border: 4px solid transparent;
+  background: linear-gradient(var(--color-bg), var(--color-bg)) padding-box, var(--color-border) border-box;
   border-radius: 15px;
   padding: 10px;
   cursor: pointer;
@@ -536,20 +531,16 @@
     display: block;
     width: 30%;
     margin-left: 180px;
-    margin-top: 8px;
   }
 }
 
 .nuit .button_denvoi {
-  background: linear-gradient(#151d2a, #151d2a) padding-box, linear-gradient(to right, rgb(192, 187, 54), rgba(97, 0, 255, 0.89)) border-box;
   border: 4px solid transparent;
-  color: white;
-  transition: background 1000ms ease-in-out;
 }
 
 .button_denvoi:hover {
   transform: none;
-  background: linear-gradient(var(--color-bg), var(--color-bg)) padding-box, linear-gradient(to right, rgb(192, 54, 170), rgba(137, 95, 13, 0.89)) border-box;
+  background: linear-gradient(var(--color-bg), var(--color-bg)) padding-box, linear-gradient(to right, #c036aa, rgba(137, 95, 13, 0.8901960784)) border-box;
   border: 4px solid transparent;
 }
 @media screen and (min-width: 992px) {
@@ -612,7 +603,7 @@
   margin-top: 0.25rem;
   margin-bottom: 0.5rem;
   padding: 0.5rem;
-  background-color: rgba(231, 76, 60, 0.1);
+  background-color: rgba(231, 76, 60, 0.1019607843);
   border: 1px solid #e74c3c;
   border-radius: 4px;
   transition: opacity 0.3s;
@@ -622,7 +613,7 @@
 input.erreur,
 textarea.erreur {
   border: 2px solid #e74c3c;
-  background-color: rgba(231, 76, 60, 0.05);
+  background-color: rgba(231, 76, 60, 0.0509803922);
 }
 
 .status_msg {
