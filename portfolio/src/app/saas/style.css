@@ -620,10 +620,10 @@ textarea.erreur {
   color: var(--color-text);
 }
 
-.g-recaptcha {
+.grecaptcha-badge {
   background-color: var(--color-bg);
 }
-.g-recaptcha > div {
+.grecaptcha-badge > div {
   color: var(--color-text);
 }
 
