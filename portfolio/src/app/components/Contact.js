@@ -2,10 +2,9 @@
 import React, { useState } from "react";
 import ReCAPTCHA from "./GoogleReCaptchaProvider";
 import Calendly from "./Calendly";
-import Script from 'next/script';
+import Script from "next/script";
 
 export default function ContactForm() {
-
   const [isRecaptchaLoaded, setIsRecaptchaLoaded] = useState(false);
   const handleLoadRecaptcha = () => {
     setIsRecaptchaLoaded(true);
@@ -58,7 +57,7 @@ export default function ContactForm() {
     }
 
     if (!fieldToValidate || fieldToValidate === "email") {
-      if (!/^\S+@\S+\.\S+$/.test(formData.email)) {
+      if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(formData.email)) {
         formErrors.email = "⚠️ Veuillez entrer une adresse email valide.";
         valid = false;
       } else {
@@ -67,8 +66,8 @@ export default function ContactForm() {
     }
 
     if (!fieldToValidate || fieldToValidate === "phone") {
-      if (!/^(\+33|0)[1-9](\d{2}){4}$/.test(formData.phone)) {
-        formErrors.phone = "⚠️ Veuillez entrer un numéro de téléphone valide.";
+      if (!/^(?:\+33|0033|0)[1-9](\d{2}){4}$/.test(formData.phone)) {
+        formErrors.phone = "⚠️ Veuillez entrer un numéro de téléphone valide (formats acceptés : +33, 0033 ou 0).";
         valid = false;
       } else {
         formErrors.phone = "";
@@ -253,12 +252,12 @@ export default function ContactForm() {
           </button>
         </form>
         {!isRecaptchaLoaded && (
-        <Script
-          src="https://www.google.com/recaptcha/api.js"
-          onLoad={handleLoadRecaptcha}
-          strategy="lazyOnload"
-        />
-      )}
+          <Script
+            src="https://www.google.com/recaptcha/api.js"
+            onLoad={handleLoadRecaptcha}
+            strategy="lazyOnload"
+          />
+        )}
       </div>
 
       <p className="status_msg">{status}</p>
