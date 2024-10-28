@@ -620,8 +620,9 @@ textarea.erreur {
   color: var(--color-text);
 }
 
-.grecaptcha-badge {
-  z-index: -1;
+.grecaptcha-logo iframe {
+  color: var(--color-text);
+  background: var(--color-bg);
 }
 
 .introduction {
