@@ -620,8 +620,12 @@ textarea.erreur {
   color: var(--color-text);
 }
 
-.grecaptcha-logo iframe {
+.rc-anchor-light {
   color: var(--color-text);
+  background: var(--color-bg);
+}
+
+.rc-anchor-invisible-text {
   background: var(--color-bg);
 }
 

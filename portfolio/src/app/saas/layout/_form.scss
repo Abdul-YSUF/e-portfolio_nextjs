@@ -200,7 +200,11 @@ textarea.erreur {
   color: $color-text;
 }
 
-.grecaptcha-logo iframe {
+.rc-anchor-light {
   color: $color-text;
+  background: $color-bg;
+}
+
+.rc-anchor-invisible-text {
   background: $color-bg;
 }
