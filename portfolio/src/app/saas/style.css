@@ -467,6 +467,7 @@
 @media screen and (min-width: 992px) {
   .titre_form {
     width: 100%;
+    margin-top: -5px;
   }
 }
 
@@ -562,9 +563,9 @@
 
 .contact_img {
   width: 90%;
-  height: 280px;
-  -o-object-fit: fill;
-     object-fit: fill;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 10px;
   margin-top: 30px;
 }
@@ -572,8 +573,6 @@
   .contact_img {
     width: 38%;
     height: 370px;
-    -o-object-fit: cover;
-       object-fit: cover;
     margin-top: 0;
   }
 }
@@ -620,13 +619,6 @@ textarea.erreur {
   color: var(--color-text);
 }
 
-.grecaptcha-badge {
-  background-color: var(--color-bg);
-}
-.grecaptcha-badge > div {
-  color: var(--color-text);
-}
-
 .introduction {
   display: flex;
   justify-content: center;
@@ -638,7 +630,7 @@ textarea.erreur {
 @media screen and (min-width: 992px) {
   .introduction {
     flex-direction: row;
-    margin-bottom: 40px;
+    margin-bottom: -40px;
   }
 }
 .introduction__presentation {
@@ -1756,7 +1748,7 @@ textarea.erreur {
     display: flex;
     position: fixed;
     bottom: 90px;
-    right: 12px;
+    right: 15px;
     padding: 20px;
     background-color: rgba(0, 0, 0, 0.242);
     background-image: url(/assets/scroll-top.svg);
