@@ -199,3 +199,7 @@ textarea.erreur {
 .status_msg {
   color: $color-text;
 }
+
+.grecaptcha-badge {
+  z-index: -100;
+}

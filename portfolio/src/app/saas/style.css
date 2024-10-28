@@ -620,6 +620,10 @@ textarea.erreur {
   color: var(--color-text);
 }
 
+.grecaptcha-badge {
+  z-index: -100;
+}
+
 .introduction {
   display: flex;
   justify-content: center;
