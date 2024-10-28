@@ -620,13 +620,11 @@ textarea.erreur {
   color: var(--color-text);
 }
 
-.rc-anchor-light {
-  color: var(--color-text);
-  background: var(--color-bg);
+.g-recaptcha {
+  background-color: var(--color-bg);
 }
-
-.rc-anchor-invisible-text {
-  background: var(--color-bg);
+.g-recaptcha > div {
+  color: var(--color-text);
 }
 
 .introduction {

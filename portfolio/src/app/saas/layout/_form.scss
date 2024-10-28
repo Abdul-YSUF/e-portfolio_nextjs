@@ -200,11 +200,9 @@ textarea.erreur {
   color: $color-text;
 }
 
-.rc-anchor-light {
-  color: $color-text;
-  background: $color-bg;
-}
-
-.rc-anchor-invisible-text {
-  background: $color-bg;
+.g-recaptcha {
+  background-color: $color-bg;
+  & > div {
+    color: $color-text;
+  }
 }
