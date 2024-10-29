@@ -58,7 +58,7 @@ export default function ContactForm() {
 
     if (!fieldToValidate || fieldToValidate === "email") {
       if (
-        !/^(?!.*\.\.)([a-zA-Z0-9._%+-]+)@[a-zA-Z0-9]+(\.[a-zA-Z0-9-]+)+\.[a-zA-Z]{2,}$/.test(
+        !/^(?!.*\.\.)([a-zA-Z0-9._%+-]+)@[a-zA-Z0-9]+(\.[a-zA-Z0-9-]+)+\.[a-zA-Z]{2,}(\.[a-zA-Z]{2,})?$/.test(
           formData.email
         )
       ) {
