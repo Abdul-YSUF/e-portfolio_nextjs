@@ -57,7 +57,11 @@ export default function ContactForm() {
     }
 
     if (!fieldToValidate || fieldToValidate === "email") {
-      if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(formData.email)) {
+      if (
+        !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9]+(\.[a-zA-Z0-9-]+)+\.[a-zA-Z]{2,}$/.test(
+          formData.email
+        )
+      ) {
         formErrors.email = "⚠️ Veuillez entrer une adresse email valide.";
         valid = false;
       } else {
@@ -67,7 +71,8 @@ export default function ContactForm() {
 
     if (!fieldToValidate || fieldToValidate === "phone") {
       if (!/^(?:\+33|0033|0)[1-9](\d{2}){4}$/.test(formData.phone)) {
-        formErrors.phone = "⚠️ Veuillez entrer un numéro de téléphone valide (formats acceptés : +33, 0033 ou 0).";
+        formErrors.phone =
+          "⚠️ Veuillez entrer un numéro de téléphone valide (formats acceptés : +33, 0033 ou 0).";
         valid = false;
       } else {
         formErrors.phone = "";
