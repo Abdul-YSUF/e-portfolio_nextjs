@@ -150,11 +150,12 @@
   height: 80%;
   margin-top: 80px;
   @include flexbox;
-  flex-direction: column;
+  flex-direction: column-reverse;
   @include breakpoints_desktop {
     width: 90%;
     height: 80%;
     margin-top: 80px;
+    flex-direction: row;
   }
 }
 
@@ -174,15 +175,22 @@
   }
 }
 
+.project_container {
+  @include flexbox;
+  flex-direction: column;
+  @include breakpoints_desktop {
+    margin-left: 150px;
+  }
+}
+
 .project-text,
 .project-description {
   color: $color-text;
 }
 
 .project-text {
-  margin-top: -100px;
   @include breakpoints_desktop {
-    margin-top: 40px;
+    margin-top: 60px;
   }
 }
 
@@ -217,11 +225,37 @@
   width: 200px;
   height: 125.5px;
   z-index: 1;
-  cursor: pointer;
   @include breakpoints_desktop {
     top: 28.1%;
     left: 16.7%;
     width: 333px;
     height: 207.5px;
   }
+}
+
+.technologie-container {
+  @include flexbox;
+  @include breakpoints_desktop {
+    margin-bottom: 50px;
+  }
+}
+
+.technologie-text {
+  color: $color-text;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.technologie-language {
+  border-radius: 20px;
+}
+
+.demostrastion {
+  margin: 0;
+}
+
+.demo,
+.code {
+  border: none;
+  font-size: 16px;
 }

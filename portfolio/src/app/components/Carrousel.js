@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
@@ -9,12 +10,9 @@ const Carrousel = ({ projects }) => {
   const [selectedProject, setSelectedProject] = useState(null);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      nextSlide();
-    }, 4000);
-
+    const interval = setInterval(nextSlide, 4000);
     return () => clearInterval(interval);
-  }, [slide]);
+  }, []);  
 
   const previousSlide = () => {
     setSlide(slide === 0 ? projects.length - 1 : slide - 1);
@@ -37,6 +35,8 @@ const Carrousel = ({ projects }) => {
     setIsPopupOpen(false);
     setSelectedProject(null);
   };
+
+  if (!projects || projects.length === 0) return null;
 
   return (
     <div className="carrousel">
@@ -181,26 +181,56 @@ const Popup = ({ project, onClose }) => {
         >
           &times;
         </button>
-        <h2 className="project-text">{project.title}</h2>
-        <div className="popup-frame">
-          <Image
-            src="/assets/ordinateur_portable.webp"
-            alt="Cadre d'Ordinateur portable qui s'affiche l'image principale d'un projet"
-            fill
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 450px"
-            style={{ objectFit: "contain" }}
-            priority
-          />
-          <div className="popup-image-wrapper">
+        <div className="contexte">
+          <div className="technologie-container">
+            <h2 className="technologie-text">Technologies utilisées</h2>
+            <div className="technologie-language"></div>
+          </div>
+          <div className="demostrastion">
+            {project.demoLink && (
+              <Link
+                className="demo btn btn-primary"
+                href={project.demoLink}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {project.demo}
+              </Link>
+            )}
+            {project.codeLink && (
+              <Link
+                className="code btn btn-primary"
+                href={project.codeLink}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {project.code}
+              </Link>
+            )}
+          </div>
+        </div>
+        <div className="project_container">
+          <h2 className="project-text">{project.title}</h2>
+          <div className="popup-frame">
             <Image
-              src={project.image}
-              alt={project.altMsg}
+              src="/assets/ordinateur_portable.webp"
+              alt="Cadre d'Ordinateur portable qui s'affiche l'image principale d'un projet"
               fill
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 450px"
-              style={{ objectFit: "fill" }}
+              style={{ objectFit: "contain" }}
+              priority
             />
+            <div className="popup-image-wrapper">
+              <Image
+                src={project.image}
+                alt={project.altMsg}
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 450px"
+                style={{ objectFit: "fill" }}
+              />
+            </div>
+            <p className="project-description">{project.description}</p>
           </div>
-          <p className="project-description">{project.description}</p>
         </div>
       </div>
     </div>
