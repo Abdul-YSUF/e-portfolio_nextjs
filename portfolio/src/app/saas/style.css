@@ -1430,7 +1430,8 @@ textarea.erreur {
 }
 
 .popup-content {
-  background: var(--color-bg);
+  background: linear-gradient(var(--color-bg), var(--color-bg)) padding-box, var(--color-border) border-box;
+  border: 2px solid transparent;
   border-radius: 10px;
   position: relative;
   width: 100%;

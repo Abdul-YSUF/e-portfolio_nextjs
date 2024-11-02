@@ -10,9 +10,12 @@ const Carrousel = ({ projects }) => {
   const [selectedProject, setSelectedProject] = useState(null);
 
   useEffect(() => {
-    const interval = setInterval(nextSlide, 4000);
+    const interval = setInterval(() => {
+      nextSlide();
+    }, 4000);
+
     return () => clearInterval(interval);
-  }, []);  
+  }, [slide]);
 
   const previousSlide = () => {
     setSlide(slide === 0 ? projects.length - 1 : slide - 1);
@@ -65,7 +68,7 @@ const Carrousel = ({ projects }) => {
           onClick={() => openPopup(projects[getPreviousIndex()])}
         >
           <motion.div
-            initial={{ opacity: 0, x: -100 }}
+            initial={{ opacity: 0, x: 100 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -100 }}
             transition={{ duration: 0.5 }}
