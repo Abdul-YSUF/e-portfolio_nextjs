@@ -187,7 +187,11 @@ const Popup = ({ project, onClose }) => {
         <div className="contexte">
           <div className="technologie-container">
             <h2 className="technologie-text">Technologies utilisées</h2>
-            <div className="technologie-language"></div>
+            <div className="technologie-language">
+            {project.logos[0] && Object.values(project.logos[0]).map((logo, index) => (
+              <Image className="language-img" key={index} src={logo} alt="logo" width={20} height={20} />
+            ))}
+            </div>
           </div>
           <div className="demostrastion">
             {project.demoLink && (
