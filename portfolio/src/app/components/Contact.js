@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import ReCaptcha from "./GoogleReCaptchaProvider";
+import ReCAPTCHA from "./GoogleReCaptchaProvider";
 import Calendly from "./Calendly";
 import Script from "next/script";
 
