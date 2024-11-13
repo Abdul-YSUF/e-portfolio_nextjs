@@ -1,11 +1,8 @@
 "use client";
 import React, { useState } from "react";
+import ReCaptcha from "./GoogleReCaptchaProvider";
 import Calendly from "./Calendly";
 import Script from "next/script";
-import dynamic from "next/dynamic";
-const ReCAPTCHA = dynamic(() => import("./GoogleReCaptchaProvider"), {
-  ssr: false,
-});
 
 export default function ContactForm() {
   const [isRecaptchaLoaded, setIsRecaptchaLoaded] = useState(false);
@@ -125,7 +122,7 @@ export default function ContactForm() {
         },
         body: JSON.stringify({
           ...formData,
-          recaptchaToken, // Inclusion du token reCAPTCHA ici
+          recaptchaToken,
         }),
       });
 
