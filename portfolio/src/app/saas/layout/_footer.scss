@@ -30,7 +30,7 @@
   width: 100%;
   margin-top: 30px;
   @include breakpoints_desktop {
-    margin-top: 10px;
+    margin-top: 0;
   }
 }
 
@@ -75,7 +75,7 @@
   @include breakpoints_desktop {
     position: absolute;
     margin-top: 160px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     @include flexbox;
   }
 }

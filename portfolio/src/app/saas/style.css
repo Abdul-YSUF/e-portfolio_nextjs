@@ -617,6 +617,47 @@ textarea.erreur {
 
 .status_msg {
   color: var(--color-text);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 255, 0, 0.8);
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.popup-status {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
+  visibility: hidden; /* Cache le fond par défaut */
+  opacity: 0; /* Cache aussi avec une opacité nulle */
+  transition: visibility 0s, opacity 0.5s ease-in-out; /* Animation pour la transition */
+}
+
+.popup-status-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 500px;
+  width: 100%;
+}
+
+.popup-status p {
+  margin: 0;
+  font-size: 16px;
+}
+
+.popup-status.show {
+  visibility: visible;
+  opacity: 1;
 }
 
 .introduction {
@@ -1644,7 +1685,7 @@ textarea.erreur {
 }
 @media screen and (min-width: 992px) {
   .footer_logo {
-    margin-top: 10px;
+    margin-top: 0;
   }
 }
 
@@ -1703,7 +1744,7 @@ textarea.erreur {
   .copy {
     position: absolute;
     margin-top: 160px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     display: flex;
     justify-content: center;
     text-align: center;
