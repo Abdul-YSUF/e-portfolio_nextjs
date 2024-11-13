@@ -49,7 +49,7 @@ export default function ContactForm() {
 
     if (!fieldToValidate || fieldToValidate === "name") {
       if (!/^[a-zA-ZÀ-ÿ\s'-]+$/.test(formData.name)) {
-        formErrors.name = "⚠️ Veuillez entrer un nom et prénom valide.";
+        formErrors.name = "⚠️ Veuillez entrer un nom valide.";
         valid = false;
       } else {
         formErrors.name = "";
@@ -265,7 +265,13 @@ export default function ContactForm() {
         )}
       </div>
 
-      <p className="status_msg">{status}</p>
+      {status && (
+        <div className={`popup-status ${status ? "show" : ""}`}>
+          <div className="popup-status-content">
+            <p>{status}</p>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
