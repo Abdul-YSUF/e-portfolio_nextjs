@@ -49,7 +49,7 @@ export default function ContactForm() {
 
     if (!fieldToValidate || fieldToValidate === "name") {
       if (!/^[a-zA-ZÀ-ÿ\s'-]+$/.test(formData.name)) {
-        formErrors.name = "⚠️ Veuillez entrer un nom valide.";
+        formErrors.name = "⚠️ Veuillez entrer un nom et prénom valide.";
         valid = false;
       } else {
         formErrors.name = "";
@@ -98,11 +98,17 @@ export default function ContactForm() {
     const isValid = validateForm();
     if (!isValid) {
       setStatus("Veuillez corriger les erreurs dans le formulaire.");
+      setTimeout(() => {
+        setStatus("");
+      }, 4000);
       return;
     }
 
     if (!recaptchaToken) {
       setStatus("reCAPTCHA non vérifié. Veuillez réessayer.");
+      setTimeout(() => {
+        setStatus("");
+      }, 4000);
       return;
     }
 
@@ -125,10 +131,16 @@ export default function ContactForm() {
         handleSuccess();
       } else {
         setStatus(`Erreur : ${result.message}`);
+        setTimeout(() => {
+          setStatus("");
+        }, 4000);
       }
     } catch (error) {
       setStatus("Échec de la soumission. Veuillez réessayer.");
       console.error("Erreur de soumission :", error);
+      setTimeout(() => {
+        setStatus("");
+      }, 4000);
     }
 
     setIsSubmitting(false);
@@ -138,7 +150,6 @@ export default function ContactForm() {
     setStatus("Votre formulaire a été soumis avec succès !");
     setFormData({ name: "", email: "", phone: "", message: "" });
     setRecaptchaToken(null);
-
     setTimeout(() => {
       setStatus("");
     }, 4000);
