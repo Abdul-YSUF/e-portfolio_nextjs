@@ -1,12 +1,11 @@
 "use client";
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import ReCAPTCHA from "./GoogleReCaptchaProvider";
 import Calendly from "./Calendly";
 import Script from "next/script";
 
 export default function ContactForm() {
   const [isRecaptchaLoaded, setIsRecaptchaLoaded] = useState(false);
-  const recaptchaRef = useRef(null);
   const handleLoadRecaptcha = () => {
     setIsRecaptchaLoaded(true);
   };
@@ -151,7 +150,6 @@ export default function ContactForm() {
     setStatus("Votre formulaire a été soumis avec succès !");
     setFormData({ name: "", email: "", phone: "", message: "" });
     setRecaptchaToken(null);
-    recaptchaRef.current.reset();
     setTimeout(() => {
       setStatus("");
     }, 4000);
@@ -258,7 +256,7 @@ export default function ContactForm() {
             </p>
           )}
 
-          <ReCAPTCHA onVerify={handleRecaptchaVerify} ref={recaptchaRef} />
+          <ReCAPTCHA onVerify={handleRecaptchaVerify} />
 
           <button
             id="buttonEnvoi"
