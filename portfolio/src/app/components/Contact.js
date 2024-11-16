@@ -100,7 +100,7 @@ export default function ContactForm() {
       setStatus("Veuillez corriger les erreurs dans le formulaire.");
       setTimeout(() => {
         setStatus("");
-      }, 4000);
+      }, 3000);
       return;
     }
 
@@ -108,7 +108,7 @@ export default function ContactForm() {
       setStatus("reCAPTCHA non vérifié. Veuillez réessayer.");
       setTimeout(() => {
         setStatus("");
-      }, 4000);
+      }, 3000);
       return;
     }
 
@@ -133,14 +133,14 @@ export default function ContactForm() {
         setStatus(`Erreur : ${result.message}`);
         setTimeout(() => {
           setStatus("");
-        }, 4000);
+        }, 3000);
       }
     } catch (error) {
       setStatus("Échec de la soumission. Veuillez réessayer.");
       console.error("Erreur de soumission :", error);
       setTimeout(() => {
         setStatus("");
-      }, 4000);
+      }, 3000);
     }
 
     setIsSubmitting(false);
@@ -152,11 +152,11 @@ export default function ContactForm() {
     setRecaptchaToken(null);
     setTimeout(() => {
       setStatus("");
-    }, 4000);
+    }, 3000);
   };
 
   return (
-    <div className="section_5" id="formulaire">
+    <div className="formulaire_contact" id="formulaire">
       <h2 className="stitre">Formulaire de contact</h2>
       <Calendly />
       <p className="ou">Ou</p>
@@ -178,7 +178,7 @@ export default function ContactForm() {
           </label>
           <input
             id="name"
-            className="nom_de_contact input_nuit"
+            className={`nom_de_contact input_nuit ${errors.name ? "input-error" : ""}`}
             type="text"
             name="name"
             autoComplete="name"
@@ -199,7 +199,7 @@ export default function ContactForm() {
           </label>
           <input
             id="email"
-            className="email input_nuit"
+            className={`email input_nuit ${errors.email ? "input-error" : ""}`}
             type="email"
             name="email"
             autoComplete="email"
@@ -220,7 +220,7 @@ export default function ContactForm() {
           </label>
           <input
             id="phone"
-            className="telephone input_nuit"
+            className={`telephone input_nuit ${errors.phone ? "input-error" : ""}`}
             type="text"
             name="phone"
             autoComplete="tel"
@@ -241,7 +241,7 @@ export default function ContactForm() {
           </label>
           <textarea
             id="message"
-            className="message input_nuit"
+            className={`message input_nuit ${errors.message ? "input-error" : ""}`}
             name="message"
             placeholder="Vos messages"
             value={formData.message}

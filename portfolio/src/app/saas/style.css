@@ -389,7 +389,7 @@
     gap: 5px;
   }
 }
-.section_5 {
+.formulaire_contact {
   display: flex;
   justify-content: center;
   text-align: center;
@@ -437,7 +437,7 @@
 
 .form input,
 .form textarea {
-  background: linear-gradient(white, white) padding-box, linear-gradient(to right, rgba(97, 0, 255, 0.89), rgb(171, 48, 39)) border-box;
+  background: linear-gradient(var(--color-bg), var(--color-bg)) padding-box, var(--color-border) border-box;
   border: 2px solid transparent;
   border-radius: 15px;
   color: black;
@@ -495,23 +495,6 @@
   padding: 10px 10px 30px 10px;
 }
 
-.nuit .input_nuit {
-  background: linear-gradient(#151d2a, #151d2a) padding-box, linear-gradient(to right, rgb(192, 187, 54), rgba(97, 0, 255, 0.89)) border-box;
-  border: 2px solid transparent;
-  border-radius: 15px;
-  color: white;
-  transition: background 1000ms ease-in-out;
-}
-
-.error {
-  font-size: 12px;
-  margin-bottom: 10px;
-}
-
-.error-msg {
-  color: red;
-}
-
 .button_denvoi {
   display: flex;
   justify-content: center;
@@ -533,10 +516,6 @@
     width: 30%;
     margin-left: 180px;
   }
-}
-
-.nuit .button_denvoi {
-  border: 4px solid transparent;
 }
 
 .button_denvoi:hover {
@@ -596,34 +575,16 @@
   }
 }
 
-.erreur {
-  color: #e74c3c;
-  font-size: 0.875rem;
-  margin-top: 0.25rem;
-  margin-bottom: 0.5rem;
-  padding: 0.5rem;
-  background-color: rgba(231, 76, 60, 0.1019607843);
-  border: 1px solid #e74c3c;
-  border-radius: 4px;
-  transition: opacity 0.3s;
+.input-error {
+  border: 2px solid red !important;
+  background: #d08787 !important;
 }
 
-/* Optionally, add a focus style to inputs with errors */
-input.erreur,
-textarea.erreur {
-  border: 2px solid #e74c3c;
-  background-color: rgba(231, 76, 60, 0.0509803922);
-}
-
-.status_msg {
-  color: var(--color-text);
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: rgba(0, 255, 0, 0.8);
-  padding: 10px 20px;
-  border-radius: 5px;
+.error-msg {
+  color: red;
+  font-size: 12px;
+  margin-top: -10px;
+  margin-bottom: 10px;
 }
 
 .popup-status {
@@ -635,10 +596,10 @@ textarea.erreur {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
-  visibility: hidden; /* Cache le fond par défaut */
-  opacity: 0; /* Cache aussi avec une opacité nulle */
-  transition: visibility 0s, opacity 0.5s ease-in-out; /* Animation pour la transition */
+  background-color: rgba(0, 0, 0, 0.5);
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s ease-in-out;
 }
 
 .popup-status-content {
@@ -1963,7 +1924,6 @@ strong {
 }
 
 .services {
-  display: none;
   padding: 100px 0;
   text-align: center;
 }
@@ -2007,7 +1967,7 @@ strong {
 }
 
 .xd {
-  background: linear-gradient(to bottom right, #ff758c, #ff7eb3);
+  background: linear-gradient(to bottom right, #ffc175, #e5a3bf);
 }
 
 .figma {
