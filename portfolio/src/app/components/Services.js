@@ -1,11 +1,11 @@
 import React from "react";
 
 const services = [
-  { title: "WEB DEVELOPMENT", colorClass: "web-development", description: "Développement front-end et back-end de sites." },
+  { title: "DÉVELOPPEMENT WEB", colorClass: "web-development", description: "Développement front-end et back-end de sites." },
   //{ title: "UI/UX", colorClass: "ui-ux", description: "Design d'interfaces ergonomiques et intuitives." },
   { title: "CONSEIL", colorClass: "xd", description: "Prototypage rapide pour vos projets digitaux." },
   //{ title: "FIGMA", colorClass: "figma", description: "Design collaboratif et création de maquettes." },
-  { title: "SEO", colorClass: "canva", description: "Optimisation SEO pour améliorer la visibilité de votre site." },
+  { title: "SEO ACCESSIBILITÉ", colorClass: "canva", description: "Optimisation SEO et accessibilité pour améliorer la visibilité de votre site." },
   { title: "CMS", colorClass: "wordpress", description: "Développement de sites avec les CMS." },
   //{ title: "CANVA", colorClass: "canva", description: "Création de visuels avec Canva." },
   //{ title: "WEB DESIGNING", colorClass: "web-designing", description: "Design et conception de sites web." },

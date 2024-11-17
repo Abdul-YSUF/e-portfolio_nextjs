@@ -1,11 +1,9 @@
 import React from "react";
 import Image from "next/image";
-import AnimatedBackground from "./AnimationBackground";
 
 export default function Introduction() {
   return (
     <section className="introduction">
-      <AnimatedBackground />
       <div className="introduction__presentation">
         <h1 className="introduction__titre">Bienvenue dans mon portfolio !</h1>
         <Image
