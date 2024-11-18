@@ -16,6 +16,7 @@
   @include breakpoints_desktop {
     width: unset;
     height: unset;
+    gap: 40px;
   }
 }
 
@@ -31,7 +32,7 @@
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s;
   @include breakpoints_desktop {
-    width: 250px;
+    width: 320px;
     height: 420px;
     &:hover {
       transform: scale(1.05);
@@ -81,5 +82,5 @@
 }
 
 .web-development {
-  background: linear-gradient(to bottom right, #667eea, #764ba2);
+  background: linear-gradient(to bottom right, #667ad6, #9678b3);
 }

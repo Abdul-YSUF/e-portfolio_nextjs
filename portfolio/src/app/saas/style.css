@@ -1948,6 +1948,7 @@ strong {
   .services-container {
     width: unset;
     height: unset;
+    gap: 40px;
   }
 }
 
@@ -1968,7 +1969,7 @@ strong {
 }
 @media screen and (min-width: 992px) {
   .service-card {
-    width: 250px;
+    width: 320px;
     height: 420px;
   }
   .service-card:hover {
@@ -2018,7 +2019,7 @@ strong {
 }
 
 .web-development {
-  background: linear-gradient(to bottom right, #667eea, #764ba2);
+  background: linear-gradient(to bottom right, #667ad6, #9678b3);
 }
 
 .calendly-overlay {
