@@ -8,6 +8,10 @@
   @include flexbox;
   overflow: hidden;
   width: 100%;
+  margin-top: 20px;
+  @include breakpoints_desktop {
+    margin-top: 0;
+  }
 }
 
 .carousel-container {
@@ -43,10 +47,7 @@
 }
 
 .center {
-  z-index: 2;
   @include flexbox;
-  @include breakpoints_desktop {
-  }
 }
 
 .computer-frame {
@@ -82,10 +83,10 @@
   text-align: center;
   z-index: 500;
   color: $white;
+  background: rgba(112, 112, 112, 0.167);
   margin-top: 105px;
   @include breakpoints_desktop {
     margin-top: 182px;
-    background: rgba(112, 112, 112, 0.167);
   }
 }
 
@@ -106,14 +107,14 @@
 }
 
 .arrow_left {
-  left: 3%;
+  left:10%;
   @include breakpoints_desktop {
     left: 5%;
   }
 }
 
 .arrow_right {
-  right: 3%;
+  right: 10%;
   @include breakpoints_desktop {
     right: 5%;
   }

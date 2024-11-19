@@ -231,8 +231,8 @@
     padding-top: unset;
     height: 75px;
     max-width: unset;
-    transform: unset;
-    transition: transform unset;
+    transform: none;
+    transition: none;
     flex-direction: row;
     box-shadow: unset;
   }
@@ -1269,6 +1269,12 @@
   align-items: center;
   overflow: hidden;
   width: 100%;
+  margin-top: 20px;
+}
+@media screen and (min-width: 992px) {
+  .carrousel {
+    margin-top: 0;
+  }
 }
 
 .carousel-container {
@@ -1314,12 +1320,12 @@
 }
 
 .center {
-  z-index: 2;
   display: flex;
   justify-content: center;
   text-align: center;
   align-items: center;
 }
+
 .computer-frame {
   position: relative;
   width: 300px;
@@ -1359,12 +1365,12 @@
   text-align: center;
   z-index: 500;
   color: white;
+  background: rgba(112, 112, 112, 0.167);
   margin-top: 105px;
 }
 @media screen and (min-width: 992px) {
   .project-title {
     margin-top: 182px;
-    background: rgba(112, 112, 112, 0.167);
   }
 }
 
@@ -1385,7 +1391,7 @@
 }
 
 .arrow_left {
-  left: 3%;
+  left: 10%;
 }
 @media screen and (min-width: 992px) {
   .arrow_left {
@@ -1394,7 +1400,7 @@
 }
 
 .arrow_right {
-  right: 3%;
+  right: 10%;
 }
 @media screen and (min-width: 992px) {
   .arrow_right {
