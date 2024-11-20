@@ -166,7 +166,6 @@ export default function ContactForm() {
           contact ci-dessous
         </p>
       </div>
-
       <div className="form_contact" id="contact">
         <video className="contact_img" autoPlay loop muted playsInline>
           <source src="./assets/contact-image.webm" type="video/webm" />
@@ -178,7 +177,9 @@ export default function ContactForm() {
           </label>
           <input
             id="name"
-            className={`nom_de_contact input_nuit ${errors.name ? "input-error" : ""}`}
+            className={`nom_de_contact input_nuit ${
+              errors.name ? "input-error" : ""
+            }`}
             type="text"
             name="name"
             autoComplete="name"
@@ -220,7 +221,9 @@ export default function ContactForm() {
           </label>
           <input
             id="phone"
-            className={`telephone input_nuit ${errors.phone ? "input-error" : ""}`}
+            className={`telephone input_nuit ${
+              errors.phone ? "input-error" : ""
+            }`}
             type="text"
             name="phone"
             autoComplete="tel"
@@ -241,7 +244,9 @@ export default function ContactForm() {
           </label>
           <textarea
             id="message"
-            className={`message input_nuit ${errors.message ? "input-error" : ""}`}
+            className={`message input_nuit ${
+              errors.message ? "input-error" : ""
+            }`}
             name="message"
             placeholder="Vos messages"
             value={formData.message}
@@ -275,7 +280,6 @@ export default function ContactForm() {
           />
         )}
       </div>
-
       {status && (
         <div className={`popup-status ${status ? "show" : ""}`}>
           <div className="popup-status-content">
@@ -283,6 +287,12 @@ export default function ContactForm() {
           </div>
         </div>
       )}
+      <p className="recaptcha-message">
+        Ce site est protégé par reCAPTCHA et la{" "}
+        <a href="https://policies.google.com/privacy">Confidentialité</a> et les{" "}
+        <a href="https://policies.google.com/terms">Conditions</a> de Google
+        s'appliquent.
+      </p>
     </div>
   );
 }

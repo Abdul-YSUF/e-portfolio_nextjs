@@ -21,14 +21,14 @@
   margin-left: 0;
   text-align: center;
   width: 90%;
-  padding: 0px 20px 0px 20px;
+  padding: 0px 10px 0px 10px;
   font-size: 16px;
   font-weight: 300;
   @include breakpoints_desktop {
     width: 46%;
     margin-left: 80px;
     margin-top: 30px;
-    padding: unset;
+    padding: 0;
   }
 }
 
@@ -60,25 +60,11 @@
 
 .me {
   width: 100%;
+  height: auto;
   box-shadow: 0 0 0 10px #08a9df;
   border: 10px solid green;
   border-radius: 500px;
   @include breakpoints_desktop {
     height: 360px;
-  }
-}
-
-.profil_img {
-  @include flexbox;
-  margin-left: 0;
-  margin-top: 0px;
-  width: 100%;
-  border-radius: 100px;
-  @include breakpoints_desktop {
-    display: block;
-    position: absolute;
-    width: 15%;
-    top: 878px;
-    left: 175px;
   }
 }

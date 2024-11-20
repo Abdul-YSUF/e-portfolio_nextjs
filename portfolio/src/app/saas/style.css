@@ -621,6 +621,35 @@
   opacity: 1;
 }
 
+.recaptcha-message {
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--color-text);
+  padding: 15px;
+  width: 90%;
+  max-width: 600px;
+  margin: 10px 0 -50px 0;
+}
+
+.recaptcha-message a {
+  color: #1a73e8;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.recaptcha-message a:hover {
+  color: #d93025;
+}
+
+.recaptcha-message p {
+  margin-bottom: 10px;
+}
+
+.grecaptcha-badge {
+  visibility: hidden;
+}
+
 .introduction {
   display: flex;
   justify-content: center;
@@ -926,7 +955,7 @@
   margin-left: 0;
   text-align: center;
   width: 90%;
-  padding: 0px 20px 0px 20px;
+  padding: 0px 10px 0px 10px;
   font-size: 16px;
   font-weight: 300;
 }
@@ -935,7 +964,7 @@
     width: 46%;
     margin-left: 80px;
     margin-top: 30px;
-    padding: unset;
+    padding: 0;
   }
 }
 
@@ -974,6 +1003,7 @@
 
 .me {
   width: 100%;
+  height: auto;
   box-shadow: 0 0 0 10px #08a9df;
   border: 10px solid green;
   border-radius: 500px;
@@ -981,26 +1011,6 @@
 @media screen and (min-width: 992px) {
   .me {
     height: 360px;
-  }
-}
-
-.profil_img {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
-  margin-left: 0;
-  margin-top: 0px;
-  width: 100%;
-  border-radius: 100px;
-}
-@media screen and (min-width: 992px) {
-  .profil_img {
-    display: block;
-    position: absolute;
-    width: 15%;
-    top: 878px;
-    left: 175px;
   }
 }
 
@@ -1324,6 +1334,7 @@
   justify-content: center;
   text-align: center;
   align-items: center;
+  z-index: 2;
 }
 
 .computer-frame {
@@ -1469,6 +1480,7 @@
   font-size: 40px;
   color: var(--color-text);
   cursor: pointer;
+  z-index: 1;
 }
 
 .project_container {
@@ -1977,9 +1989,6 @@ strong {
   .service-card {
     width: 320px;
     height: 420px;
-  }
-  .service-card:hover {
-    transform: scale(1.05);
   }
 }
 .service-card h3 {

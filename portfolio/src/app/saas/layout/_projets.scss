@@ -48,6 +48,7 @@
 
 .center {
   @include flexbox;
+  z-index: 2;
 }
 
 .computer-frame {
@@ -170,6 +171,7 @@
   font-size: 40px;
   color: $color-text;
   cursor: pointer;
+  z-index: 1;
 }
 
 .project_container {

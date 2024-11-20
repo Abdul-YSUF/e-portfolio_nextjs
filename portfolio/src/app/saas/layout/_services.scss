@@ -34,9 +34,6 @@
   @include breakpoints_desktop {
     width: 320px;
     height: 420px;
-    &:hover {
-      transform: scale(1.05);
-    }
   }
 
   h3 {
