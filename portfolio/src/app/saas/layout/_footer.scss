@@ -101,6 +101,9 @@
 
 .reseaux_sociaux a {
   margin: 5px;
+  @include breakpoints_desktop {
+    margin: 15px 5px;
+  }
 }
 
 .paragraph_footer {

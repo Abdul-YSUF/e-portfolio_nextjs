@@ -625,10 +625,9 @@
   font-size: 16px;
   line-height: 1.5;
   color: var(--color-text);
-  padding: 15px;
   width: 90%;
   max-width: 600px;
-  margin: 10px 0 -50px 0;
+  margin: 25px 0 -50px 0;
 }
 
 .recaptcha-message a {
@@ -1761,6 +1760,11 @@
 .reseaux_sociaux a {
   margin: 5px;
 }
+@media screen and (min-width: 992px) {
+  .reseaux_sociaux a {
+    margin: 15px 5px;
+  }
+}
 
 .paragraph_footer {
   font-size: 14px;
@@ -1833,7 +1837,7 @@
   .scroll-top {
     display: flex;
     position: fixed;
-    bottom: 90px;
+    bottom: 15px;
     right: 15px;
     padding: 20px;
     background-color: rgba(0, 0, 0, 0.242);
