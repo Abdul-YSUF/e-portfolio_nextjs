@@ -42,7 +42,7 @@
   flex-direction: column;
   margin-top: 40px;
   @include breakpoints_desktop {
-    margin-top: 30px;
+    margin-top: 10px;
     flex-direction: row;
   }
 }

@@ -22,8 +22,9 @@
 
 .form {
   display: flex;
+  align-items: center;
   flex-direction: column;
-  width: 90%;
+  width: 100%;
   max-width: 100%;
   margin-top: 30px;
   @include breakpoints_desktop {
@@ -41,6 +42,7 @@
   border-radius: 15px;
   color: $color-text;
   margin-bottom: 15px;
+  width: 90%;
 }
 
 .ou {
@@ -89,7 +91,7 @@
   @include flexbox;
   margin-left: 0;
   margin-top: 8px;
-  width: auto;
+  width: 40%;
   color: $color-text;
   border: 4px solid transparent;
   background: $border-calendly;
@@ -99,7 +101,6 @@
   @include breakpoints_desktop {
     display: block;
     width: 30%;
-    margin-left: 180px;
   }
 }
 

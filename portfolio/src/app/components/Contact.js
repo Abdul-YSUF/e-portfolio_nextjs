@@ -288,9 +288,9 @@ export default function ContactForm() {
         </div>
       )}
       <p className="recaptcha-message">
-        Ce site est protégé par reCAPTCHA et la{" "}
-        <a href="https://policies.google.com/privacy">Confidentialité</a> et les{" "}
-        <a href="https://policies.google.com/terms">Conditions</a> de Google
+        Ce site est protégé par reCAPTCHA et les{" "}
+        <a href="https://policies.google.com/privacy">règles de confidentialité</a> et les{" "}
+        <a href="https://policies.google.com/terms">conditions d’utilisation</a> de Google
         s'appliquent.
       </p>
     </div>
