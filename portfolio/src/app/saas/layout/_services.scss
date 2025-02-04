@@ -37,7 +37,7 @@
   }
 
   h3 {
-    margin-bottom: 15px;
+    margin-top: 10px;
     font-size: 18px;
     @include breakpoints_desktop {
       font-size: 22px;
@@ -47,6 +47,7 @@
   p {
     font-size: 1rem;
     color: $color-text;
+    margin-bottom: 10px;
   }
 }
 
@@ -80,4 +81,15 @@
 
 .web-development {
   background: linear-gradient(to bottom right, #667ad6, #9678b3);
+}
+
+.image-service {
+  border-radius: 20px;
+  width: 240px;
+  height: 120px;
+  margin: 10px auto;
+  @include breakpoints_desktop {
+    width: 260px;
+    height: 240px;
+  }
 }

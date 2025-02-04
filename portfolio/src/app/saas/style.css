@@ -1997,7 +1997,7 @@ strong {
   }
 }
 .service-card h3 {
-  margin-bottom: 15px;
+  margin-top: 10px;
   font-size: 18px;
 }
 @media screen and (min-width: 992px) {
@@ -2008,6 +2008,7 @@ strong {
 .service-card p {
   font-size: 1rem;
   color: var(--color-text);
+  margin-bottom: 10px;
 }
 
 .ui-ux {
@@ -2040,6 +2041,19 @@ strong {
 
 .web-development {
   background: linear-gradient(to bottom right, #667ad6, #9678b3);
+}
+
+.image-service {
+  border-radius: 20px;
+  width: 240px;
+  height: 120px;
+  margin: 10px auto;
+}
+@media screen and (min-width: 992px) {
+  .image-service {
+    width: 260px;
+    height: 240px;
+  }
 }
 
 .calendly-overlay {
