@@ -5,17 +5,13 @@ async function verifyRecaptcha(token) {
   const secretKey = process.env.RECAPTCHA_SECRET_KEY;
   if (!secretKey) return false;
 
-  const params = new URLSearchParams();
-  params.append("secret", secretKey);
-  params.append("response", token);
-
   try {
     const response = await fetch(
       "https://www.google.com/recaptcha/api/siteverify",
       {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: params,
+        body: new URLSearchParams({ secret: secretKey, response: token }),
       }
     );
     const data = await response.json();
