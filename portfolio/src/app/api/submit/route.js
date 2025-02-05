@@ -62,8 +62,8 @@ export async function POST(req) {
     // Configuration du transporteur d'e-mails
     const transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST,
-      port: process.env.SMTP_PORT || 587, // Assurez-vous que la variable d'env est bien définie
-      secure: process.env.SMTP_PORT == 465, // true pour le port 465, false pour les autres
+      port: process.env.SMTP_PORT,
+      secure: process.env.SMTP_PORT == 465,
       auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS,
