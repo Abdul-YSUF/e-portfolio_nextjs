@@ -28,7 +28,6 @@ async function verifyRecaptcha(token) {
 }
 
 // Fonction d'exportation pour la route API
-console.log("📌 Token reCAPTCHA reçu dans l'API:", recaptchaToken);
 export async function POST(req) {
   try {
     const body = await req.json();
