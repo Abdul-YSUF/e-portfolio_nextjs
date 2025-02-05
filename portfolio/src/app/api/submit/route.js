@@ -3,14 +3,7 @@ import nodemailer from "nodemailer";
 // Fonction pour vérifier le reCAPTCHA
 async function verifyRecaptcha(token) {
   const secretKey = process.env.RECAPTCHA_SECRET_KEY;
-
-  // Vérification si la clé secrète est bien définie
-  if (!secretKey) {
-    console.error(
-      "❌ RECAPTCHA_SECRET_KEY est manquant dans les variables d'environnement."
-    );
-    return false;
-  }
+  if (!secretKey) return false;
 
   const params = new URLSearchParams();
   params.append("secret", secretKey);
@@ -21,19 +14,13 @@ async function verifyRecaptcha(token) {
       "https://www.google.com/recaptcha/api/siteverify",
       {
         method: "POST",
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-        },
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: params,
       }
     );
-
     const data = await response.json();
-    console.log("🔍 Réponse de Google reCAPTCHA:", data);
-
     return data.success;
-  } catch (error) {
-    console.error("❌ Erreur lors de la vérification reCAPTCHA:", error);
+  } catch {
     return false;
   }
 }
@@ -42,16 +29,6 @@ async function verifyRecaptcha(token) {
 export async function POST(req) {
   try {
     const { name, email, phone, message, recaptchaToken } = await req.json();
-
-    console.log("📩 Données reçues:", {
-      name,
-      email,
-      phone,
-      message,
-      recaptchaToken,
-    });
-
-    // Vérifie si le token reCAPTCHA est présent
     if (!recaptchaToken) {
       return new Response(
         JSON.stringify({ message: "Token reCAPTCHA manquant." }),
@@ -59,7 +36,6 @@ export async function POST(req) {
       );
     }
 
-    // Validation du reCAPTCHA
     const isValidRecaptcha = await verifyRecaptcha(recaptchaToken);
     if (!isValidRecaptcha) {
       return new Response(
@@ -68,9 +44,6 @@ export async function POST(req) {
       );
     }
 
-    console.log("✅ reCAPTCHA validé avec succès");
-
-    // Configuration du transporteur d'e-mails
     const transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST,
       port: process.env.SMTP_PORT,
@@ -90,14 +63,11 @@ export async function POST(req) {
     };
 
     await transporter.sendMail(mailOptions);
-    console.log("✅ Email envoyé avec succès");
-
     return new Response(
       JSON.stringify({ message: "Email envoyé avec succès." }),
       { status: 200 }
     );
-  } catch (error) {
-    console.error("❌ Erreur interne:", error);
+  } catch {
     return new Response(
       JSON.stringify({ message: "Erreur interne du serveur." }),
       { status: 500 }
