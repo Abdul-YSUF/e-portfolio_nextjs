@@ -41,4 +41,5 @@ const GoogleReCaptchaProvider = ({ onVerify }) => {
     return null;
 };
 
+export { handleVerify };
 export default GoogleReCaptchaProvider;
