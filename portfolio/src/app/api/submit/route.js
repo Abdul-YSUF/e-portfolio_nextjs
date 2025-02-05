@@ -4,11 +4,16 @@ import nodemailer from "nodemailer";
 async function verifyRecaptcha(token) {
   try {
     const secretKey = process.env.RECAPTCHA_SECRET_KEY;
+    const params = new URLSearchParams();
+    params.append("secret", secretKey);
+    params.append("response", token);
+
     const response = await fetch(
       `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${token}`,
       {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: params,
       }
     );
 
