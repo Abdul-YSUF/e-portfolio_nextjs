@@ -1,7 +1,6 @@
 "use client";
 import React, { useState } from "react";
 import ReCAPTCHA from "./GoogleReCaptchaProvider";
-import { handleVerify } from "./GoogleReCaptchaProvider";
 import Calendly from "./Calendly";
 import Script from "next/script";
 
@@ -99,13 +98,17 @@ export default function ContactForm() {
     const isValid = validateForm();
     if (!isValid) {
       setStatus("Veuillez corriger les erreurs dans le formulaire.");
-      setTimeout(() => setStatus(""), 3000);
+      setTimeout(() => {
+        setStatus("");
+      }, 3000);
       return;
     }
 
     if (!recaptchaToken) {
       setStatus("reCAPTCHA non vérifié. Veuillez réessayer.");
-      setTimeout(() => setStatus(""), 3000);
+      setTimeout(() => {
+        setStatus("");
+      }, 3000);
       return;
     }
 
@@ -114,8 +117,13 @@ export default function ContactForm() {
     try {
       const response = await fetch("/api/submit", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...formData, recaptchaToken }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          ...formData,
+          recaptchaToken, // Inclusion du token reCAPTCHA ici
+        }),
       });
 
       const result = await response.json();
@@ -123,17 +131,19 @@ export default function ContactForm() {
         handleSuccess();
       } else {
         setStatus(`Erreur : ${result.message}`);
-        setTimeout(() => setStatus(""), 3000);
+        setTimeout(() => {
+          setStatus("");
+        }, 3000);
       }
     } catch (error) {
       setStatus("Échec de la soumission. Veuillez réessayer.");
       console.error("Erreur de soumission :", error);
-      setTimeout(() => setStatus(""), 3000);
+      setTimeout(() => {
+        setStatus("");
+      }, 3000);
     }
 
     setIsSubmitting(false);
-    setRecaptchaToken("");
-    await handleVerify();
   };
 
   const handleSuccess = () => {
@@ -279,12 +289,9 @@ export default function ContactForm() {
       )}
       <p className="recaptcha-message">
         Ce site est protégé par reCAPTCHA et les{" "}
-        <a href="https://policies.google.com/privacy">
-          règles de confidentialité
-        </a>{" "}
-        et les{" "}
-        <a href="https://policies.google.com/terms">conditions d’utilisation</a>{" "}
-        de Google s'appliquent.
+        <a href="https://policies.google.com/privacy">règles de confidentialité</a> et les{" "}
+        <a href="https://policies.google.com/terms">conditions d’utilisation</a> de Google
+        s'appliquent.
       </p>
     </div>
   );
