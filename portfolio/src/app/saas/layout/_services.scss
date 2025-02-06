@@ -25,7 +25,7 @@
   flex-direction: column;
   justify-content: space-between;
   width: 90%;
-  height: 250px;
+  height: 260px;
   border-radius: 15px;
   padding: 20px;
   color: $color-text;
@@ -37,17 +37,19 @@
   }
 
   h3 {
-    margin-top: 10px;
     font-size: 18px;
     @include breakpoints_desktop {
       font-size: 22px;
+      margin-top: 10px;
     }
   }
 
   p {
     font-size: 1rem;
     color: $color-text;
-    margin-bottom: 10px;
+    @include breakpoints_desktop {
+      margin-bottom: 10px;
+    }
   }
 }
 
@@ -85,11 +87,12 @@
 
 .image-service {
   border-radius: 20px;
-  width: 240px;
-  height: 120px;
-  margin: 10px auto;
+  width: 220px;
+  height: 160px;
+  margin: 0 auto;
   @include breakpoints_desktop {
     width: 260px;
     height: 240px;
+    margin: 10px auto;
   }
 }
