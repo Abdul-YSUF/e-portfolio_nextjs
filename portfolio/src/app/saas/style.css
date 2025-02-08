@@ -7,7 +7,6 @@
   --color-border1: #6100ffe3;
   --color-border2: #ab3027;
   --color-border: linear-gradient(to right, #6100ffe3, #ab3027);
-  --color-langage: white;
   --background-image: url("/assets/abdul-intro-black.webp");
 }
 
@@ -18,7 +17,6 @@
   --color-border1: #c0bb36;
   --color-border2: #6100ffe3;
   --color-border: linear-gradient(to right, #c0bb36, #6100ffe3);
-  --color-langage: grey;
   --background-image: url("/assets/abdul-intro-white.webp");
 }
 
@@ -1985,7 +1983,7 @@ strong {
   flex-direction: column;
   justify-content: space-between;
   width: 90%;
-  height: 260px;
+  height: 300px;
   border-radius: 15px;
   padding: 20px;
   color: var(--color-text);
@@ -2051,9 +2049,11 @@ strong {
 
 .image-service {
   border-radius: 20px;
-  width: 220px;
-  height: 160px;
+  width: 200px;
+  height: 180px;
   margin: 0 auto;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 @media screen and (min-width: 992px) {
   .image-service {
