@@ -1266,6 +1266,107 @@
   color: white;
 }
 
+.skills-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 90%;
+  margin: 50px auto;
+  background: linear-gradient(180deg, #a0c4ff 0%, #f5a6c2 100%) padding-box, linear-gradient(180deg, #a0c4ff 0%, #f5a6c2 100%) border-box;
+  border-radius: 10px;
+  padding: 50px;
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+  position: relative;
+  z-index: 1;
+}
+
+.skill-group {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.skill-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.skill-info {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+.icons {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  margin-bottom: -5px;
+}
+@media screen and (min-width: 992px) {
+  .icons {
+    gap: 2rem;
+    margin-bottom: 0;
+  }
+}
+
+.icon {
+  font-size: 2rem;
+}
+
+.skill-names {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  text-align: left;
+}
+
+.skill-bar-wrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 1rem;
+}
+
+.skill-bar {
+  flex: 1;
+  height: 10px;
+  background: #e0e0e0;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+}
+
+.skill-fill {
+  height: 100%;
+  background: #3498db;
+  transition: width 2s ease-in-out;
+}
+
+.skill-circle {
+  width: 40px;
+  height: 40px;
+}
+@media screen and (min-width: 992px) {
+  .skill-circle {
+    width: 50px;
+    height: 50px;
+  }
+}
+
 .projets {
   padding-top: 110px;
   text-align: center;
@@ -1986,7 +2087,7 @@ strong {
   height: 300px;
   border-radius: 15px;
   padding: 20px;
-  color: var(--color-text);
+  color: black;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s;
 }
@@ -2007,7 +2108,7 @@ strong {
 }
 .service-card p {
   font-size: 1rem;
-  color: var(--color-text);
+  color: black;
 }
 @media screen and (min-width: 992px) {
   .service-card p {

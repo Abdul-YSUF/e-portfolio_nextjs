@@ -1,5 +1,188 @@
 "use client";
 
+import { useEffect, useState, useRef } from "react";
+import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
+import "react-circular-progressbar/dist/styles.css";
+import {
+  FaJs,
+  FaReact,
+  FaNode,
+  FaCss3Alt,
+  FaHtml5,
+  FaSass,
+  FaBootstrap,
+  FaPhp,
+  FaGithub,
+  FaWordpress,
+} from "react-icons/fa";
+import {
+  SiNextdotjs,
+  SiMongodb,
+  SiPostman,
+  SiExpress,
+  SiReactrouter,
+  SiPhpmyadmin,
+  SiAdobephotoshop,
+  SiTailwindcss,
+} from "react-icons/si";
+import { TbSeo } from "react-icons/tb";
+import { BiHandicap } from "react-icons/bi";
+
+const skillGroups = [
+  {
+    level: 90,
+    skills: ["GitHub", "WordPress"],
+    icons: [<FaGithub />, <FaWordpress />],
+  },
+  {
+    level: 85,
+    skills: ["HTML", "CSS", "SASS", "Postman"],
+    icons: [<FaHtml5 />, <FaCss3Alt />, <FaSass />, <SiPostman />],
+  },
+  {
+    level: 80,
+    skills: [
+      "Tailwind",
+      "Bootstrap",
+      "SEO",
+      "Accessibilité",
+      "MongoDB",
+      "Express",
+    ],
+    icons: [
+      <SiTailwindcss />,
+      <FaBootstrap />,
+      <TbSeo />,
+      <BiHandicap />,
+      <SiMongodb />,
+      <SiExpress />,
+    ],
+  },
+  {
+    level: 75,
+    skills: ["JavaScript", "Node.js", "Next.js", "React", "React Router"],
+    icons: [
+      <FaJs />,
+      <FaNode />,
+      <SiNextdotjs />,
+      <FaReact />,
+      <SiReactrouter />,
+    ],
+  },
+  {
+    level: 70,
+    skills: ["Adobe Photoshop", "PHP", "PHPMyAdmin"],
+    icons: [<SiAdobephotoshop />, <FaPhp />, <SiPhpmyadmin />],
+  },
+];
+
+export default function Skills() {
+  const [progressValues, setProgressValues] = useState(
+    Array(skillGroups.length).fill(0)
+  );
+  const [hasAnimated, setHasAnimated] = useState(false);
+  const skillsRef = useRef(null); // Référence pour observer la section
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        console.log("Visible :", entries[0].isIntersecting);
+        if (entries[0].isIntersecting && !hasAnimated) {
+          setHasAnimated(true);
+        }
+      },
+      { threshold: 0.3 } // 30% de visibilité pour déclencher l'animation
+    );
+
+    if (skillsRef.current) {
+      observer.observe(skillsRef.current);
+    }
+
+    return () => {
+      if (skillsRef.current) {
+        observer.unobserve(skillsRef.current);
+      }
+    };
+  }, [hasAnimated]);
+
+  useEffect(() => {
+    if (!hasAnimated) return; // Lancer l'animation uniquement une fois
+
+    const duration = 2000; // Animation en 2 secondes
+    const steps = 60; // Nombre d'étapes
+    const intervalTime = duration / steps;
+
+    let currentStep = 0;
+    const interval = setInterval(() => {
+      currentStep++;
+
+      setProgressValues(
+        skillGroups.map((group) =>
+          Math.min(Math.floor((group.level / steps) * currentStep), group.level)
+        )
+      );
+
+      if (currentStep >= steps) {
+        clearInterval(interval);
+      }
+    }, intervalTime);
+
+    return () => clearInterval(interval);
+  }, [hasAnimated]); // Se déclenche seulement quand `hasAnimated` devient `true`
+
+  return (
+    <section id="skills" className="competences" ref={skillsRef}>
+      <h2 className="competences__titre">Compétences</h2>
+      <div className="skills-container">
+        {skillGroups.map((group, index) => (
+          <div key={index} className="skill-group">
+            <div className="skill-content">
+              <div className="skill-info">
+                <div className="icons">
+                  {group.icons.map((icon, i) => (
+                    <span key={i} className="icon">
+                      {icon}
+                    </span>
+                  ))}
+                </div>
+                <span className="skill-names">{group.skills.join(" / ")}</span>
+              </div>
+              <div className="skill-bar-wrapper">
+                <div className="skill-bar">
+                  <div
+                    className="skill-fill"
+                    style={{
+                      width: `${progressValues[index]}%`,
+                      transition: "width 0.1s ease-out",
+                    }}
+                  ></div>
+                </div>
+                <div className="skill-circle">
+                  <CircularProgressbar
+                    value={progressValues[index]}
+                    text={`${progressValues[index]}%`}
+                    styles={buildStyles({
+                      textSize: "26px",
+                      pathTransitionDuration: 0.1,
+                      pathColor: `rgba(59, 130, 246, ${
+                        progressValues[index] / 100
+                      })`,
+                      textColor: "#000",
+                      trailColor: "#e5e7eb",
+                    })}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+/*"use client";
+
 import { useEffect, useRef, useState } from "react";
 
 const skills = [
@@ -157,4 +340,4 @@ const Skills = () => {
   );
 };
 
-export default Skills;
+export default Skills;*/
