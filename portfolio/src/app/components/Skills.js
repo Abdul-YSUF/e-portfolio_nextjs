@@ -32,12 +32,12 @@ const skillGroups = [
   {
     level: 90,
     skills: ["GitHub", "WordPress"],
-    icons: [<FaGithub />, <FaWordpress />],
+    icons: [FaGithub, FaWordpress],
   },
   {
     level: 85,
     skills: ["HTML", "CSS", "SASS", "Postman"],
-    icons: [<FaHtml5 />, <FaCss3Alt />, <FaSass />, <SiPostman />],
+    icons: [FaHtml5, FaCss3Alt, FaSass, SiPostman],
   },
   {
     level: 80,
@@ -50,29 +50,23 @@ const skillGroups = [
       "Express",
     ],
     icons: [
-      <SiTailwindcss />,
-      <FaBootstrap />,
-      <TbSeo />,
-      <BiHandicap />,
-      <SiMongodb />,
-      <SiExpress />,
+      SiTailwindcss,
+      FaBootstrap,
+      TbSeo,
+      BiHandicap,
+      SiMongodb,
+      SiExpress,
     ],
   },
   {
     level: 75,
     skills: ["JavaScript", "Node.js", "Next.js", "React", "React Router"],
-    icons: [
-      <FaJs />,
-      <FaNode />,
-      <SiNextdotjs />,
-      <FaReact />,
-      <SiReactrouter />,
-    ],
+    icons: [FaJs, FaNode, SiNextdotjs, FaReact, SiReactrouter],
   },
   {
     level: 70,
     skills: ["Adobe Photoshop", "PHP", "PHPMyAdmin"],
-    icons: [<SiAdobephotoshop />, <FaPhp />, <SiPhpmyadmin />],
+    icons: [SiAdobephotoshop, FaPhp, SiPhpmyadmin],
   },
 ];
 
@@ -81,35 +75,35 @@ export default function Skills() {
     Array(skillGroups.length).fill(0)
   );
   const [hasAnimated, setHasAnimated] = useState(false);
-  const skillsRef = useRef(null); // Référence pour observer la section
+  const skillsRef = useRef(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
-        console.log("Visible :", entries[0].isIntersecting);
         if (entries[0].isIntersecting && !hasAnimated) {
           setHasAnimated(true);
         }
       },
-      { threshold: 0.3 } // 30% de visibilité pour déclencher l'animation
+      { threshold: 0.3 }
     );
 
-    if (skillsRef.current) {
-      observer.observe(skillsRef.current);
+    const refCurrent = skillsRef.current; // Stocker la valeur avant de l'utiliser
+    if (refCurrent) {
+      observer.observe(refCurrent);
     }
 
     return () => {
-      if (skillsRef.current) {
-        observer.unobserve(skillsRef.current);
+      if (refCurrent) {
+        observer.unobserve(refCurrent);
       }
     };
   }, [hasAnimated]);
 
   useEffect(() => {
-    if (!hasAnimated) return; // Lancer l'animation uniquement une fois
+    if (!hasAnimated) return;
 
-    const duration = 2000; // Animation en 2 secondes
-    const steps = 60; // Nombre d'étapes
+    const duration = 2000;
+    const steps = 60;
     const intervalTime = duration / steps;
 
     let currentStep = 0;
@@ -128,7 +122,7 @@ export default function Skills() {
     }, intervalTime);
 
     return () => clearInterval(interval);
-  }, [hasAnimated]); // Se déclenche seulement quand `hasAnimated` devient `true`
+  }, [hasAnimated]);
 
   return (
     <section id="skills" className="competences" ref={skillsRef}>
@@ -139,9 +133,9 @@ export default function Skills() {
             <div className="skill-content">
               <div className="skill-info">
                 <div className="icons">
-                  {group.icons.map((icon, i) => (
-                    <span key={i} className="icon">
-                      {icon}
+                  {group.icons.map((Icon, i) => (
+                    <span key={group.skills[i]} className="icon">
+                      <Icon />
                     </span>
                   ))}
                 </div>
