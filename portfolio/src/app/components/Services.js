@@ -35,15 +35,17 @@ const Services = () => {
             className={`service-card ${service.colorClass}`}
           >
             <h3>{service.title}</h3>
-            {service.imageService && (
+            {service.imageService ? (
               <Image
                 className="image-service"
                 src={`/assets/${service.imageService}`}
                 alt={`Illustration pour ${service.title}`}
-                width={150} // Ajuste la taille selon tes besoins
+                width={150}
                 height={150}
                 priority
               />
+            ) : (
+              <div className="image-fallback">Image non disponible</div>
             )}
             <p>{service.description}</p>
           </div>
