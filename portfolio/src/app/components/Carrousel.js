@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -9,21 +9,22 @@ const Carrousel = ({ projects }) => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
 
+  const nextSlide = useCallback(() => {
+    setSlide((prevSlide) =>
+      prevSlide === projects.length - 1 ? 0 : prevSlide + 1
+    );
+  }, [projects.length]);
+
+  const previousSlide = useCallback(() => {
+    setSlide((prevSlide) =>
+      prevSlide === 0 ? projects.length - 1 : prevSlide - 1
+    );
+  }, [projects.length]);
+
   useEffect(() => {
-    const interval = setInterval(() => {
-      nextSlide();
-    }, 4000);
-
+    const interval = setInterval(nextSlide, 4000);
     return () => clearInterval(interval);
-  }, [slide]);
-
-  const previousSlide = () => {
-    setSlide(slide === 0 ? projects.length - 1 : slide - 1);
-  };
-
-  const nextSlide = () => {
-    setSlide(slide === projects.length - 1 ? 0 : slide + 1);
-  };
+  }, [nextSlide]);
 
   const getPreviousIndex = () =>
     slide === 0 ? projects.length - 1 : slide - 1;
@@ -70,7 +71,6 @@ const Carrousel = ({ projects }) => {
           <motion.div
             initial={{ opacity: 0, x: 100 }}
             animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -100 }}
             transition={{ duration: 0.5 }}
           >
             <Image
@@ -91,7 +91,7 @@ const Carrousel = ({ projects }) => {
           <div className="computer-frame">
             <Image
               src="/assets/desktop_ordinateur.webp"
-              alt="Cadre d'Ordinateur qui s'affiche l'image principale un projet"
+              alt="Cadre d'Ordinateur"
               fill
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 450px"
               style={{ objectFit: "contain" }}
@@ -105,7 +105,6 @@ const Carrousel = ({ projects }) => {
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
                 transition={{ duration: 0.5 }}
                 key={projects[slide].image}
               >
@@ -129,7 +128,6 @@ const Carrousel = ({ projects }) => {
           <motion.div
             initial={{ opacity: 0, x: 100 }}
             animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: 100 }}
             transition={{ duration: 0.5 }}
           >
             <Image
@@ -229,9 +227,9 @@ const Popup = ({ project, onClose }) => {
           <div className="popup-frame">
             <Image
               src="/assets/ordinateur_portable.webp"
-              alt="Cadre d'Ordinateur portable qui s'affiche l'image principale d'un projet"
+              alt="Ordinateur portable"
               fill
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 450px"
+              sizes="(max-width: 768px) 100vw, 50vw, 450px"
               style={{ objectFit: "contain" }}
               priority
             />
@@ -240,7 +238,7 @@ const Popup = ({ project, onClose }) => {
                 src={project.image}
                 alt={project.altMsg}
                 fill
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 450px"
+                sizes="(max-width: 768px) 100vw, 50vw, 450px"
                 style={{ objectFit: "fill" }}
               />
             </div>
