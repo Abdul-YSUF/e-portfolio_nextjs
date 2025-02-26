@@ -87,7 +87,7 @@ export default function Skills() {
       { threshold: 0.3 }
     );
 
-    const refCurrent = skillsRef.current; // Stocker la valeur avant de l'utiliser
+    const refCurrent = skillsRef.current;
     if (refCurrent) {
       observer.observe(refCurrent);
     }
