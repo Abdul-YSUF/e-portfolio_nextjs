@@ -218,22 +218,20 @@
   gap: 1.5rem;
   width: 90%;
   margin: 50px auto;
-  background: linear-gradient(180deg, #a0c4ff 0%, #f5a6c2 100%) padding-box,
-    linear-gradient(180deg, #a0c4ff 0%, #f5a6c2 100%) border-box;
-  border-radius: 10px;
-  padding: 50px;
-  box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
   position: relative;
   z-index: 1;
+  @include breakpoints_desktop {
+    width: 60%;
+  }
 }
 
 .skill-group {
   @include flexbox;
   flex-direction: column;
-  border: 2px solid #ffffff00;
+  background: #d2bcef;
   border-radius: 10px;
   box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
-  padding: 10px;
+  padding: 20px;
 }
 
 .skill-content {
@@ -249,9 +247,8 @@
   align-items: flex-start;
   flex-direction: column;
   gap: 0.5rem;
-  font-size: 1.1rem;
+  font-size: 16px;
   font-weight: bold;
-  margin-top: 15px;
 }
 
 .icons {
@@ -260,18 +257,18 @@
   gap: 1rem;
   margin-bottom: -5px;
   @include breakpoints_desktop {
-    gap: 2rem;
-    margin-bottom: 0;
+    gap: 1.5rem;
   }
 }
 
 .icon {
-  font-size: 2rem;
+  font-size: 26px;
 }
 
 .skill-names {
   @include flexbox;
   text-align: left;
+  margin-bottom: -5px;
 }
 
 .skill-bar-wrapper {
@@ -283,7 +280,7 @@
 
 .skill-bar {
   flex: 1;
-  height: 10px;
+  height: 8px;
   background: #e0e0e0;
   border-radius: 5px;
   overflow: hidden;
@@ -299,8 +296,4 @@
 .skill-circle {
   width: 40px;
   height: 40px;
-  @include breakpoints_desktop {
-    width: 50px;
-    height: 50px;
-  }
 }
