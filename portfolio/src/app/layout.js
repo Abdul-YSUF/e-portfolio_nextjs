@@ -1,3 +1,4 @@
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./saas/style.css";
 
 export const metadata = {
@@ -38,7 +39,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="fr">
-      <body className="jour">{children}</body>
+      <body className="jour">
+        <SpeedInsights />
+        {children}
+      </body>
     </html>
   );
 }
