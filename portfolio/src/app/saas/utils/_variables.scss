@@ -1,11 +1,13 @@
 :root {
   --color-text: black;
-  --color-bg: white;
+  --color-bg: #dae0f4;
   --color-body: radial-gradient(circle, #c7e360, #b59c84, #b4c4c7);
   --color-border1: #6100ffe3;
   --color-border2: #ab3027;
   --color-border: linear-gradient(to right, #6100ffe3, #ab3027);
   --background-image: url("/assets/abdul-intro-black.webp");
+  --background-body: linear-gradient(135deg, #bbeef5, #d2daf2);
+  --color-header: white;
 }
 
 .nuit {
@@ -16,6 +18,8 @@
   --color-border2: #6100ffe3;
   --color-border: linear-gradient(to right, #c0bb36, #6100ffe3);
   --background-image: url("/assets/abdul-intro-white.webp");
+  --background-body: #151d2a;
+  --color-header: #151d2a;
 }
 
 $color-primaire: #9356dc;
@@ -32,10 +36,12 @@ $color-form: #cbcbcb;
 $nuit: #14141442;
 $color-light-gray: #e2e2e2;
 $color-icons-fonctionnement: #7d7d7d;
+$color-header: var(--color-header);
 $color-body: var(--color-body);
 $color-text: var(--color-text);
 $color-bg: var(--color-bg);
 $color-border: var(--color-border);
+$background-body: var(--background-body);
 $background-image: var(--background-image);
 $border-calendly: linear-gradient($color-bg, $color-bg) padding-box,
   $color-border border-box;

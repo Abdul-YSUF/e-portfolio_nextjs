@@ -228,9 +228,9 @@
 .skill-group {
   @include flexbox;
   flex-direction: column;
-  background: #d2bcef;
+  background: #ffffffd7;
   border-radius: 10px;
-  box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   padding: 20px;
 }
 
