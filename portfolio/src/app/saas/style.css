@@ -2,13 +2,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800&display=swap");
 :root {
   --color-text: black;
-  --color-bg: #dae0f4;
+  --color-bg: #ffffff;
   --color-body: radial-gradient(circle, #c7e360, #b59c84, #b4c4c7);
   --color-border1: #6100ffe3;
   --color-border2: #ab3027;
   --color-border: linear-gradient(to right, #6100ffe3, #ab3027);
   --background-image: url("/assets/abdul-intro-black.webp");
-  --background-body: linear-gradient(135deg, #bbeef5, #d2daf2);
+  --background-body: radial-gradient(ellipse at center, #fffeea 0%, #fffeea 35%, #b7e8eb 100%);
   --color-header: white;
 }
 
