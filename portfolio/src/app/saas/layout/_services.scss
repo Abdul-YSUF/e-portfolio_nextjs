@@ -28,7 +28,7 @@
   height: 300px;
   border-radius: 15px;
   padding: 20px;
-  color: $black;
+  color: $color-text;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s;
   @include breakpoints_desktop {
@@ -46,7 +46,7 @@
 
   p {
     font-size: 1rem;
-    color: $black;
+    color: $color-text;
     @include breakpoints_desktop {
       margin-bottom: 10px;
     }
@@ -62,11 +62,27 @@
 }
 
 .figma {
-  background: linear-gradient(to bottom right, #ff9a9e, #fad0c4);
+  //background: linear-gradient(to bottom right, #ff9a9e, #fad0c4);
+  background: radial-gradient(
+    ellipse at center,
+    #fffeea00 0%,
+    #fffeea00 100%,
+    #b7ebea00 100%
+  );
+  box-shadow: 0 5px 5px 5px rgba(0, 0, 0, 0.1);
+  border: 1px solid $color-text;
 }
 
 .wordpress {
-  background: linear-gradient(to bottom right, #a18cd1, #fbc2eb);
+  //background: linear-gradient(to bottom right, #a18cd1, #fbc2eb);
+  background: radial-gradient(
+    ellipse at center,
+    #fffeea00 0%,
+    #fffeea00 100%,
+    #b7ebea00 100%
+  );
+  box-shadow: 0 5px 5px 5px rgba(0, 0, 0, 0.1);
+  border: 1px solid $color-text;
 }
 
 .shopify {
@@ -74,7 +90,15 @@
 }
 
 .canva {
-  background: linear-gradient(to bottom right, #5ee7df, #b490ca);
+  //background: linear-gradient(to bottom right, #5ee7df, #b490ca);
+  background: radial-gradient(
+    ellipse at center,
+    #fffeea00 0%,
+    #fffeea00 100%,
+    #b7ebea00 100%
+  );
+  box-shadow: 0 5px 5px 5px rgba(0, 0, 0, 0.1);
+  border: 1px solid $color-text;
 }
 
 .web-designing {
@@ -92,8 +116,8 @@
   margin: 0 auto;
   object-fit: cover;
   @include breakpoints_desktop {
-    width: 260px;
-    height: 240px;
+    width: 220px;
+    height: 200px;
     margin: 10px auto;
   }
 }

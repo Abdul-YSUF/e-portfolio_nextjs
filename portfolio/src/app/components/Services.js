@@ -4,20 +4,20 @@ import Image from "next/image";
 const services = [
   {
     title: "DÉVELOPPEMENT WEB",
-    imageService: "wds.webp",
+    imageService: "ordi.webp",
     colorClass: "canva",
     description:
       "Développement front-end et back-end de sites web et gestion de CMS.",
   },
   {
     title: "CONSEIL",
-    imageService: "advice.webp",
+    imageService: "consult.webp",
     colorClass: "figma",
     description: "Prototypage rapide pour vos projets digitaux.",
   },
   {
     title: "SEO et ACCESSIBILITÉ",
-    imageService: "seoetacc.webp",
+    imageService: "seo.webp",
     colorClass: "wordpress",
     description:
       "Optimisation SEO et accessibilité pour améliorer la visibilité de votre site web.",

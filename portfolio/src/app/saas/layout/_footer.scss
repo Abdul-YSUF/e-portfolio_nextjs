@@ -1,7 +1,7 @@
 .footer {
   @include flexbox;
   flex-direction: column;
-  background: linear-gradient(180deg, #222222 0%, rgba(77, 77, 77, 0) 100%);
+  background: linear-gradient(180deg, #222222 0%, rgba(77, 77, 77, 0.282) 100%);
   margin-top: 80px;
   @include breakpoints_desktop {
     flex-direction: row;
@@ -109,7 +109,7 @@
 .paragraph_footer {
   font-size: 14px;
   font-weight: 400;
-  color: $color-text;
+  color: $white;
 }
 
 .footer_github {

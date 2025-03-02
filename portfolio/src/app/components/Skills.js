@@ -139,7 +139,6 @@ export default function Skills() {
                     </span>
                   ))}
                 </div>
-                <span className="skill-names">{group.skills.join(" / ")}</span>
               </div>
               <div className="skill-bar-wrapper">
                 <div className="skill-bar">
@@ -156,7 +155,7 @@ export default function Skills() {
                     value={progressValues[index]}
                     text={`${progressValues[index]}%`}
                     styles={buildStyles({
-                      textSize: "26px",
+                      textSize: "28px",
                       pathTransitionDuration: 0.1,
                       pathColor: `rgba(59, 130, 246, ${
                         progressValues[index] / 100
@@ -167,6 +166,7 @@ export default function Skills() {
                   />
                 </div>
               </div>
+              <span className="skill-names">{group.skills.join(" / ")}</span>
             </div>
           </div>
         ))}

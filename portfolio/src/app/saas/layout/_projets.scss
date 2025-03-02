@@ -38,10 +38,10 @@
   display: none;
   @include breakpoints_desktop {
     display: unset;
-    background: transparent;
-    border: 2px solid;
-    border-image: $color-border 1;
-    padding: 10px;
+    background: $color-bg;
+    border: 2px solid $color-text;
+    border-radius: 5px;
+    padding: 2px;
     cursor: pointer;
   }
 }
@@ -126,6 +126,10 @@
   border-radius: 50%;
   padding: 10px;
   @include flexbox;
+}
+
+.nuit .arrow-wrapper {
+  background: none;
 }
 
 .arrow-wrapper img {

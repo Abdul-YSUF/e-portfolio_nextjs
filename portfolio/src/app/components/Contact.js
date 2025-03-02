@@ -167,10 +167,11 @@ export default function ContactForm() {
         </p>
       </div>
       <div className="form_contact" id="contact">
-        <video className="contact_img" autoPlay loop muted playsInline>
-          <source src="./assets/contact-image.webm" type="video/webm" />
-        </video>
-
+        <img
+          className="contact_img"
+          alt="contact"
+          src="./assets/contact.webp"
+        />
         <form className="form" onSubmit={handleSubmit}>
           <label className="label_form" htmlFor="name">
             Nom et Prénom
@@ -289,9 +290,12 @@ export default function ContactForm() {
       )}
       <p className="recaptcha-message">
         Ce site est protégé par reCAPTCHA et les{" "}
-        <a href="https://policies.google.com/privacy">règles de confidentialité</a> et les{" "}
-        <a href="https://policies.google.com/terms">conditions d’utilisation</a> de Google
-        s'appliquent.
+        <a href="https://policies.google.com/privacy">
+          règles de confidentialité
+        </a>{" "}
+        et les{" "}
+        <a href="https://policies.google.com/terms">conditions d’utilisation</a>{" "}
+        de Google s'appliquent.
       </p>
     </div>
   );
