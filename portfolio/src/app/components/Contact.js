@@ -170,7 +170,7 @@ export default function ContactForm() {
         <img
           className="contact_img"
           alt="contact"
-          src="./assets/contact.webp"
+          src="./assets/contact2.webp"
         />
         <form className="form" onSubmit={handleSubmit}>
           <label className="label_form" htmlFor="name">
