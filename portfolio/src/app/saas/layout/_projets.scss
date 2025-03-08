@@ -3,6 +3,7 @@
   text-align: center;
 }
 
+/*
 .carrousel {
   position: relative;
   @include flexbox;
@@ -108,7 +109,7 @@
 }
 
 .arrow_left {
-  left:10%;
+  left: 10%;
   @include breakpoints_desktop {
     left: 5%;
   }
@@ -284,4 +285,149 @@
 .code {
   border: none;
   font-size: 16px;
+} 
+*/
+
+.projectsContainer {
+  @include flexbox;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  margin-top: 10px;
+}
+
+/* Cadrage du projet */
+.mainProject {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.computerFrame {
+  position: relative;
+  width: 460px;
+  height: 460px;
+  @include flexbox;
+  @include breakpoints_desktop {
+    width: 520px;
+    height: 520px;
+  }
+}
+
+.frameImage {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.screenContent {
+  position: absolute;
+  width: 92%;
+  height: 50%;
+  top: 4.5%;
+  left: 4%;
+  @include flexbox;
+  overflow: hidden;
+}
+
+.screenImage {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+/* Détails projet */
+.projectDetails {
+  position: relative;
+  width: 99%;
+  height: 96%;
+  top: -1.5%;
+  padding: 20px;
+  color: white;
+  @include flexbox;
+  flex-direction: column;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 2;
+}
+
+.projectDetails .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: -2;
+}
+
+.projectDetails h3,
+p {
+  color: $color-text;
+  margin-bottom: 20px;
+}
+
+.projectDetails p {
+  @include flexbox;
+  font-size: 15px;
+}
+
+.projectLinks a {
+  margin: 0 10px;
+  color: $white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Miniatures */
+.sideProjects {
+  @include flexbox;
+  width: 90%;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: -60px;
+  z-index: 2;
+}
+
+.projectItem {
+  width: 80px;
+  height: 50px;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.projectItem img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  border-radius: 3px;
+}
+
+.projectItem.active {
+  border: 2px solid #007bff;
+  border-radius: 5px;
+}
+
+/* Icône œil pour afficher les détails */
+.toggleDetails {
+  position: absolute;
+  top: 268px;
+  right: 46%;
+  background: transparent;
+  border: none;
+  border-radius: 50%;
+  padding: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  z-index: 2;
+  color: white;
+  @include breakpoints_desktop {
+    top: 305px;
+    right: 46%;
+  }
 }

@@ -158,20 +158,26 @@ export default function ContactForm() {
   return (
     <div className="formulaire_contact" id="formulaire">
       <h2 className="stitre">Formulaire de contact</h2>
-      <Calendly />
-      <p className="ou">Ou</p>
+      <img
+        className="contact_img"
+        alt="contact"
+        src="./assets/contactez-moi.webp"
+      />
       <div className="div_titre">
         <p className="titre_form">
-          Contactez-moi pour toute question ou proposition via le formulaire de
-          contact ci-dessous
+          N'hésitez pas à me contacter pour toute question ou proposition via le
+          moyen qui vous convient le mieux
         </p>
       </div>
       <div className="form_contact" id="contact">
-        <img
-          className="contact_img"
-          alt="contact"
-          src="./assets/contact2.webp"
-        />
+        <div className="divers">
+          <Calendly />
+        </div>
+        <p className="titre_form-mobile">
+          Sinon n'hésitez pas à me contacter pour toute question ou proposition par le
+          formulaire de contact ci-dessous
+        </p>
+        <p className="ou">ou</p>
         <form className="form" onSubmit={handleSubmit}>
           <label className="label_form" htmlFor="name">
             Nom et Prénom

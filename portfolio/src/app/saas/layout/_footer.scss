@@ -62,10 +62,11 @@
 }
 
 .conditions {
-  margin-top: 10px;
+  margin-top: 35px;
   color: $white;
   @include breakpoints_desktop {
     margin-bottom: 0;
+    margin-top: 10px;
   }
 }
 
@@ -84,7 +85,7 @@
   @include flexbox;
   flex-direction: column;
   width: 100%;
-  margin-top: 20px;
+  margin-top: 30px;
   @include breakpoints_desktop {
    order: 1;
    width: unset;
@@ -100,9 +101,9 @@
 }
 
 .reseaux_sociaux a {
-  margin: 5px;
+  margin: -10px 5px;
   @include breakpoints_desktop {
-    margin: 15px 5px;
+    margin: -5px 5px;
   }
 }
 

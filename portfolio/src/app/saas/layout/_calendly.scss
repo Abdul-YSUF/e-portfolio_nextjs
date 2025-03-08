@@ -18,11 +18,13 @@
   box-shadow: 0 5px 5px 5px rgba(0, 0, 0, 0.1);
   border: 1px solid $color-text;
   border-radius: 15px;
-  margin-top: 50px;
+  margin-top: 0;
   padding: 20px;
   width: 90%;
   @include breakpoints_desktop {
-    width: unset;
+    width: 85%;
+    height: 270px;
+    margin-top: -20px;
   }
 }
 
