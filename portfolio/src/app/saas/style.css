@@ -8,7 +8,12 @@
   --color-border2: #ab3027;
   --color-border: linear-gradient(to right, #6100ffe3, #ab3027);
   --background-image: url("/assets/abdul-intro-black.webp");
-  --background-body: radial-gradient(ellipse at center, #fffeea 0%, #fffeea 35%, #b7e8eb 100%);
+  --background-body: radial-gradient(
+    ellipse at center,
+    #fffeea 0%,
+    #fffeea 35%,
+    #b7e8eb 100%
+  );
   --color-header: white;
 }
 
@@ -1729,8 +1734,10 @@ textarea::placeholder {
 
 .computerFrame {
   position: relative;
-  width: 460px;
-  height: 460px;
+  width: 93.5vw;
+  max-width: 460px;
+  height: auto;
+  aspect-ratio: 1;
   display: flex;
   justify-content: center;
   text-align: center;
@@ -1785,10 +1792,18 @@ textarea::placeholder {
   text-align: center;
   align-items: center;
   flex-direction: column;
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
   z-index: 2;
+}
+.projectDetails::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  filter: brightness(40%);
+  z-index: -1;
 }
 
 .projectDetails .overlay {
@@ -1831,15 +1846,26 @@ p {
   width: 90%;
   flex-wrap: wrap;
   gap: 10px;
-  margin-top: -60px;
+  margin-top: -30px;
   z-index: 2;
+}
+@media screen and (min-width: 992px) {
+  .sideProjects {
+    margin-top: -100px;
+  }
 }
 
 .projectItem {
-  width: 80px;
-  height: 50px;
+  width: 50px;
+  height: 35px;
   cursor: pointer;
   transition: opacity 0.3s;
+}
+@media screen and (min-width: 992px) {
+  .projectItem {
+    width: 80px;
+    height: 50px;
+  }
 }
 
 .projectItem img {
@@ -1858,8 +1884,8 @@ p {
 /* Icône œil pour afficher les détails */
 .toggleDetails {
   position: absolute;
-  top: 268px;
-  right: 46%;
+  top: 217px;
+  right: 45%;
   background: transparent;
   border: none;
   border-radius: 50%;
@@ -1871,7 +1897,7 @@ p {
 }
 @media screen and (min-width: 992px) {
   .toggleDetails {
-    top: 305px;
+    top: 265px;
     right: 46%;
   }
 }

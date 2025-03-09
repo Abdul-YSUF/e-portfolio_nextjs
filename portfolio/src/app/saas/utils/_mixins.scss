@@ -16,3 +16,9 @@
 		@content;
 	}
 }
+
+@mixin breakpoints_small {
+	@media screen and (min-width: map-get($breakpoints_small, s)) and (max-width: map-get($breakpoints_small, xl)) {
+		@content;
+	}
+}

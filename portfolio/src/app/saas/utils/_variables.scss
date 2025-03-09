@@ -6,7 +6,12 @@
   --color-border2: #ab3027;
   --color-border: linear-gradient(to right, #6100ffe3, #ab3027);
   --background-image: url("/assets/abdul-intro-black.webp");
-  --background-body: radial-gradient(ellipse at center, #fffeea 0%, #fffeea 35%, #b7e8eb 100%);
+  --background-body: radial-gradient(
+    ellipse at center,
+    #fffeea 0%,
+    #fffeea 35%,
+    #b7e8eb 100%
+  );
   --color-header: white;
 }
 
@@ -64,4 +69,9 @@ $breakpoints_desktop: (
 $breakpoints_large: (
   l: 425px,
   lm: 767px,
+);
+
+$breakpoints_small: (
+  s: 320px,
+  xl: 991px,
 );
