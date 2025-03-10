@@ -1771,6 +1771,11 @@ textarea::placeholder {
   align-items: center;
   overflow: hidden;
 }
+@media screen and (min-width: 992px) {
+  .screenContent {
+    top: 4%;
+  }
+}
 
 .screenImage {
   width: 100%;
@@ -1782,16 +1787,13 @@ textarea::placeholder {
 /* Détails projet */
 .projectDetails {
   position: relative;
-  width: 99%;
-  height: 96%;
-  top: -1.5%;
-  padding: 20px;
-  color: white;
   display: flex;
   justify-content: center;
   text-align: center;
   align-items: center;
   flex-direction: column;
+  width: 100%;
+  padding: 30px;
   z-index: 2;
 }
 .projectDetails::before {
@@ -1805,21 +1807,19 @@ textarea::placeholder {
   filter: brightness(40%);
   z-index: -1;
 }
-
-.projectDetails .overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.6);
-  z-index: -2;
+@media screen and (min-width: 992px) {
+  .projectDetails {
+    margin-top: -30px;
+  }
 }
 
-.projectDetails h3,
-p {
+.projectDetails h3 {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
   color: var(--color-text);
-  margin-bottom: 20px;
+  margin-bottom: 12px;
 }
 
 .projectDetails p {
@@ -1827,7 +1827,9 @@ p {
   justify-content: center;
   text-align: center;
   align-items: center;
+  color: var(--color-text);
   font-size: 15px;
+  margin-bottom: 20px;
 }
 
 .projectLinks a {
