@@ -89,6 +89,7 @@
   @include breakpoints_desktop {
    order: 1;
    width: unset;
+   margin-top: 20px;
   }
 }
 
@@ -98,6 +99,7 @@
 
 .reseaux_sociaux {
   @include flexbox;
+  margin-top: 20px;
 }
 
 .reseaux_sociaux a {

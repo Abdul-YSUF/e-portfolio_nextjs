@@ -512,9 +512,10 @@
 
 .titre_form-mobile {
   width: 90%;
-  font-size: 17px;
+  font-size: 16px;
   color: var(--color-text);
   margin-top: 40px;
+  margin-bottom: 20px;
 }
 @media screen and (min-width: 992px) {
   .titre_form-mobile {
@@ -2032,6 +2033,7 @@ textarea::placeholder {
   .rs_align {
     order: 1;
     width: unset;
+    margin-top: 20px;
   }
 }
 
@@ -2044,6 +2046,7 @@ textarea::placeholder {
   justify-content: center;
   text-align: center;
   align-items: center;
+  margin-top: 20px;
 }
 
 .reseaux_sociaux a {
