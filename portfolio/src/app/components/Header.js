@@ -7,13 +7,13 @@ import Image from "next/image";
 export default function Header() {
   const { isNight, logoSrc, toggleTheme } = useDarkMode();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
   useEffect(() => {
-
     if (isMenuOpen) {
       document.body.style.overflow = "hidden";
     } else {
@@ -24,6 +24,35 @@ export default function Header() {
       document.body.style.overflow = "auto";
     };
   }, [isMenuOpen]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = [
+        "qui_suis-je",
+        "skills",
+        "projets",
+        "services",
+        "formulaire",
+      ];
+      let currentSection = "";
+
+      for (let section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          if (rect.top <= 150 && rect.bottom >= 150) {
+            currentSection = section;
+            break;
+          }
+        }
+      }
+
+      setActiveSection(currentSection);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <header className="header">
@@ -50,32 +79,24 @@ export default function Header() {
           </Link>
         </div>
         <ul className={`menu-items ${isMenuOpen ? "open" : ""}`}>
-          <li className="navbar_li">
-            <Link href="#qui_suis-je" onClick={() => setIsMenuOpen(false)}>
-              Qui suis-je
-            </Link>
-          </li>
-          <li className="navbar_li">
-            <Link href="#skills" onClick={() => setIsMenuOpen(false)}>
-              Compétences
-            </Link>
-          </li>
-          <li className="navbar_li">
-            <Link href="#projets" onClick={() => setIsMenuOpen(false)}>
-              Projets
-            </Link>
-          </li>
-          <li className="navbar_li">
-            <Link href="#services" onClick={() => setIsMenuOpen(false)}>
-              Services
-            </Link>
-          </li>
-          <li className="navbar_li">
-            <Link href="#formulaire" onClick={() => setIsMenuOpen(false)}>
-              Contact
-            </Link>
-          </li>
-          <li className="navbar_reseau" role="menuitem">
+          {[
+            { id: "qui_suis-je", label: "Qui suis-je" },
+            { id: "skills", label: "Compétences" },
+            { id: "projets", label: "Projets" },
+            { id: "services", label: "Services" },
+            { id: "formulaire", label: "Contact" },
+          ].map(({ id, label }) => (
+            <li key={id} className="navbar_li">
+              <Link
+                href={`#${id}`}
+                onClick={() => setIsMenuOpen(false)}
+                className={activeSection === id ? "active" : ""}
+              >
+                {label}
+              </Link>
+            </li>
+          ))}
+          <li className="navbar_reseau">
             <Link
               href="https://github.com/Abdul-YSUF?tab=repositories"
               target="_blank"

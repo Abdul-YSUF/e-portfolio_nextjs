@@ -270,11 +270,15 @@
 .menu-items li {
   list-style: none;
   font-size: 18px;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 @media screen and (min-width: 992px) {
   .menu-items li {
     padding-left: 20px;
     padding-right: 20px;
+    margin-top: 0;
+    margin-bottom: 0;
   }
 }
 
@@ -282,6 +286,15 @@
   text-decoration: none;
   color: #444;
   font-weight: 500;
+}
+
+.menu-items li a {
+  font-size: 17px;
+}
+@media screen and (min-width: 992px) {
+  .menu-items li a {
+    font-size: unset;
+  }
 }
 
 .menu-items a:hover {
@@ -306,7 +319,7 @@
   text-align: center;
   align-items: center;
   margin-top: 5px;
-  gap: 5px;
+  gap: 15px;
 }
 @media screen and (min-width: 992px) {
   .navbar_reseau {
@@ -318,7 +331,7 @@
 .navbar_linkedin,
 .navbar_Gmail {
   background: white;
-  width: 100%;
+  width: 80%;
   height: 100%;
   margin-top: 5px;
   border: 2px solid var(--color-text);
@@ -329,13 +342,6 @@
 .navbar_linkedin:hover,
 .navbar_Gmail:hover {
   transform: none;
-}
-@media screen and (min-width: 992px) {
-  .navbar_github:hover,
-  .navbar_linkedin:hover,
-  .navbar_Gmail:hover {
-    transform: scale(1.2);
-  }
 }
 
 .toggle-button {
@@ -359,33 +365,27 @@
 }
 
 .menu-items a.active {
-  border-bottom: 5px solid #08b7a2;
   font-weight: bold;
   color: #08b7a2;
 }
 
-@media (max-width: 991px) {
-  .navbar .hamburger-lines {
-    display: flex;
-  }
-  .header .menu-items li {
-    margin-top: 15px;
-    margin-bottom: 15px;
-    font-size: 20px;
-    font-weight: 500;
-  }
-  .navbar_reseau {
-    gap: 15px;
-  }
-  .navbar_github,
-  .navbar_linkedin,
-  .navbar_Gmail {
-    width: 80%;
-  }
-  .menu-items li a {
-    font-size: 17px;
-  }
+.navbar_li a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 3px;
+  background-color: #08b7a2;
+  transition: all 0.3s ease-in-out;
 }
+
+.navbar_li a.active::after,
+.navbar_li a:hover::after {
+  width: 100%;
+  left: 0;
+}
+
 @media (max-width: 991px) and (orientation: landscape) {
   .header .menu-items {
     padding-top: 70px;
