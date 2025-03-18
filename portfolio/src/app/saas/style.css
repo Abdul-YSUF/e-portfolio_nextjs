@@ -436,6 +436,8 @@
 
 .form {
   display: flex;
+  justify-content: center;
+  text-align: center;
   align-items: center;
   flex-direction: column;
   width: 100%;
@@ -446,7 +448,7 @@
   .form {
     width: 40%;
     max-width: unset;
-    margin-left: 20px;
+    margin-left: 0;
     margin-top: 40px;
   }
 }
@@ -468,7 +470,9 @@
 @media screen and (min-width: 992px) {
   .ou {
     display: block;
-    margin-top: 30px;
+    border: 1px dashed var(--color-text);
+    height: 320px;
+    margin: 0;
     font-size: 20px;
     font-weight: 400;
     color: var(--color-text);
@@ -487,7 +491,7 @@
 @media screen and (min-width: 992px) {
   .divers {
     width: 40%;
-    margin-top: 0;
+    margin: 0;
   }
 }
 
@@ -522,7 +526,7 @@
   width: 90%;
   font-size: 16px;
   color: var(--color-text);
-  margin-top: 30px;
+  margin-top: 0;
   margin-bottom: 30px;
 }
 @media screen and (min-width: 992px) {
@@ -606,13 +610,12 @@ textarea::placeholder {
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 10px;
-  margin-top: -15px;
-  margin-bottom: 10px;
+  margin-top: 0px;
+  margin-bottom: 0;
 }
 @media screen and (min-width: 992px) {
   .contact_img {
-    margin-top: -20px;
-    margin-bottom: 40px;
+    width: 90%;
   }
 }
 
@@ -1330,7 +1333,7 @@ textarea::placeholder {
   flex-direction: column;
   gap: 1.5rem;
   width: 90%;
-  margin: 40px auto;
+  margin: 30px auto;
   position: relative;
   z-index: 1;
 }
@@ -1730,7 +1733,7 @@ textarea::placeholder {
   flex-direction: column;
   gap: 20px;
   padding: 20px;
-  margin-top: 10px;
+  margin-top: 5px;
 }
 
 /* Cadrage du projet */
@@ -1867,8 +1870,8 @@ textarea::placeholder {
 }
 
 .projectItem {
-  width: 50px;
-  height: 35px;
+  width: 80px;
+  height: 50px;
   cursor: pointer;
   transition: opacity 0.3s;
 }
@@ -2277,7 +2280,7 @@ strong {
   flex-wrap: wrap;
   width: 100%;
   gap: 20px;
-  margin-top: 40px;
+  margin-top: 30px;
 }
 @media screen and (min-width: 992px) {
   .services-container {
@@ -2295,7 +2298,7 @@ strong {
   flex-direction: column;
   justify-content: space-between;
   width: 90%;
-  height: 300px;
+  height: 200px;
   border-radius: 15px;
   padding: 20px;
   color: var(--color-text);
@@ -2367,9 +2370,10 @@ strong {
 
 .image-service {
   border-radius: 20px;
-  width: 180px;
-  height: 170px;
+  width: 100px;
+  height: 100px;
   margin: 0 auto;
+  padding: 10px;
   -o-object-fit: fill;
      object-fit: fill;
 }
@@ -2408,15 +2412,16 @@ strong {
   box-shadow: 0 5px 5px 5px rgba(0, 0, 0, 0.1);
   border: 1px solid var(--color-text);
   border-radius: 15px;
-  margin-top: 0;
+  margin-top: 30px;
+  margin-bottom: -10px;
   padding: 20px;
   width: 90%;
 }
 @media screen and (min-width: 992px) {
   .calendly_div {
-    width: 84%;
-    height: 200px;
-    margin-top: -20px;
+    width: 70%;
+    height: 160px;
+    margin-bottom: 20px;
   }
 }
 

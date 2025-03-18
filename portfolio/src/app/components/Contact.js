@@ -158,10 +158,11 @@ export default function ContactForm() {
   return (
     <div className="formulaire_contact" id="formulaire">
       <h2 className="stitre">Formulaire de contact</h2>
+      <Calendly />
       <div className="div_titre">
         <p className="titre_form">
-          N'hésitez pas à me contacter pour toute question ou proposition via le
-          moyen qui vous convient le mieux
+          Sinon n'hésitez pas à me contacter pour toute question ou proposition
+          via le formulaire de contact ci-dessous
         </p>
       </div>
       <div className="form_contact" id="contact">
@@ -171,13 +172,11 @@ export default function ContactForm() {
             alt="contact"
             src="./assets/contactez-moi.webp"
           />
-          <Calendly />
         </div>
         <p className="titre_form-mobile">
           Sinon n'hésitez pas à me contacter pour toute question ou proposition
           par le formulaire de contact ci-dessous
         </p>
-        <p className="ou">ou</p>
         <form className="form" onSubmit={handleSubmit}>
           <label className="label_form" htmlFor="name">
             Nom et Prénom

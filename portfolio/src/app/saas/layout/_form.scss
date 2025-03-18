@@ -21,8 +21,7 @@
 }
 
 .form {
-  display: flex;
-  align-items: center;
+  @include flexbox;
   flex-direction: column;
   width: 100%;
   max-width: 100%;
@@ -30,7 +29,7 @@
   @include breakpoints_desktop {
     width: 40%;
     max-width: unset;
-    margin-left: 20px;
+    margin-left: 0;
     margin-top: 40px;
   }
 }
@@ -55,7 +54,9 @@
   display: none;
   @include breakpoints_desktop {
     display: block;
-    margin-top: 30px;
+    border: 1px dashed $color-text;
+    height: 320px;
+    margin: 0;
     font-size: 20px;
     font-weight: 400;
     color: $color-text;
@@ -69,7 +70,7 @@
   margin-top: 30px;
   @include breakpoints_desktop {
     width: 40%;
-    margin-top: 0;
+    margin: 0;
   }
 }
 
@@ -97,7 +98,7 @@
   width: 90%;
   font-size: 16px;
   color: $color-text;
-  margin-top: 30px;
+  margin-top: 0;
   margin-bottom: 30px;
   @include breakpoints_desktop {
     display: none;
@@ -177,11 +178,10 @@ textarea::placeholder {
   height: auto;
   object-fit: cover;
   border-radius: 10px;
-  margin-top: -15px;
-  margin-bottom: 10px;
+  margin-top: 0px;
+  margin-bottom: 0;
   @include breakpoints_desktop {
-    margin-top: -20px;
-    margin-bottom: 40px;
+    width: 90%;
   }
 }
 
