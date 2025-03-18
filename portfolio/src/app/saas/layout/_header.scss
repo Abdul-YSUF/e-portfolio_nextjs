@@ -92,6 +92,7 @@
 
 .line2.open {
   transform: scaleY(0);
+  opacity: 0;
 }
 
 .line3.open {
@@ -129,6 +130,7 @@
   display: flex;
   margin: -10px 0 0 0;
   width: 100%;
+  transition: transform 0.5s ease-in-out;
   @include breakpoints_desktop {
     @include flexbox;
     margin: 0 20px 0 0;
@@ -164,7 +166,7 @@
 
 .menu-items a:hover {
   color: #08b7a2;
-  transition: 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .menu-items.open {
@@ -225,6 +227,10 @@
 .menu-items a.active {
   font-weight: bold;
   color: #08b7a2;
+}
+
+.navbar_li a {
+  position: relative;
 }
 
 .navbar_li a::after {

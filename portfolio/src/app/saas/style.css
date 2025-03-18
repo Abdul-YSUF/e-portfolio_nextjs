@@ -216,6 +216,7 @@
 
 .line2.open {
   transform: scaleY(0);
+  opacity: 0;
 }
 
 .line3.open {
@@ -255,6 +256,7 @@
   display: flex;
   margin: -10px 0 0 0;
   width: 100%;
+  transition: transform 0.5s ease-in-out;
 }
 @media screen and (min-width: 992px) {
   .menu-items {
@@ -299,7 +301,7 @@
 
 .menu-items a:hover {
   color: #08b7a2;
-  transition: 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .menu-items.open {
@@ -367,6 +369,10 @@
 .menu-items a.active {
   font-weight: bold;
   color: #08b7a2;
+}
+
+.navbar_li a {
+  position: relative;
 }
 
 .navbar_li a::after {
@@ -464,23 +470,24 @@
     display: block;
     margin-top: 30px;
     font-size: 20px;
-    font-weight: 300;
+    font-weight: 400;
     color: var(--color-text);
   }
 }
 
 .divers {
-  width: 100%;
-  margin-top: 30px;
   display: flex;
   justify-content: center;
   text-align: center;
   align-items: center;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 30px;
 }
 @media screen and (min-width: 992px) {
   .divers {
     width: 40%;
-    margin-left: 20px;
+    margin-top: 0;
   }
 }
 
@@ -507,6 +514,7 @@
   .titre_form {
     width: 100%;
     font-size: 18px;
+    margin-bottom: 10px;
   }
 }
 
@@ -514,8 +522,8 @@
   width: 90%;
   font-size: 16px;
   color: var(--color-text);
-  margin-top: 40px;
-  margin-bottom: 20px;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 @media screen and (min-width: 992px) {
   .titre_form-mobile {
@@ -593,18 +601,18 @@ textarea::placeholder {
 }
 
 .contact_img {
-  width: 90%;
+  width: 97%;
   height: auto;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 10px;
-  margin-top: 20px;
+  margin-top: -15px;
+  margin-bottom: 10px;
 }
 @media screen and (min-width: 992px) {
   .contact_img {
-    width: 40%;
-    height: auto;
-    margin-top: 20px;
+    margin-top: -20px;
+    margin-bottom: 40px;
   }
 }
 
@@ -1810,7 +1818,7 @@ textarea::placeholder {
 }
 @media screen and (min-width: 992px) {
   .projectDetails {
-    margin-top: -30px;
+    margin-top: -40px;
   }
 }
 
@@ -1837,7 +1845,7 @@ textarea::placeholder {
   margin: 0 10px;
   color: white;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 500;
 }
 
 /* Miniatures */
@@ -1903,6 +1911,20 @@ textarea::placeholder {
     top: 265px;
     right: 46%;
   }
+}
+
+.logos {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 5px;
+  width: 100%;
+}
+
+.logoss {
+  font-size: 30px;
 }
 
 .footer {
@@ -2392,8 +2414,8 @@ strong {
 }
 @media screen and (min-width: 992px) {
   .calendly_div {
-    width: 85%;
-    height: 270px;
+    width: 84%;
+    height: 200px;
     margin-top: -20px;
   }
 }

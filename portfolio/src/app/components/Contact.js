@@ -158,11 +158,6 @@ export default function ContactForm() {
   return (
     <div className="formulaire_contact" id="formulaire">
       <h2 className="stitre">Formulaire de contact</h2>
-      <img
-        className="contact_img"
-        alt="contact"
-        src="./assets/contactez-moi.webp"
-      />
       <div className="div_titre">
         <p className="titre_form">
           N'hésitez pas à me contacter pour toute question ou proposition via le
@@ -171,11 +166,16 @@ export default function ContactForm() {
       </div>
       <div className="form_contact" id="contact">
         <div className="divers">
+          <img
+            className="contact_img"
+            alt="contact"
+            src="./assets/contactez-moi.webp"
+          />
           <Calendly />
         </div>
         <p className="titre_form-mobile">
-          Sinon n'hésitez pas à me contacter pour toute question ou proposition par le
-          formulaire de contact ci-dessous
+          Sinon n'hésitez pas à me contacter pour toute question ou proposition
+          par le formulaire de contact ci-dessous
         </p>
         <p className="ou">ou</p>
         <form className="form" onSubmit={handleSubmit}>

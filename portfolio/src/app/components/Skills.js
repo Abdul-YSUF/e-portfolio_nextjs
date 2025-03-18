@@ -5,7 +5,7 @@ import "react-circular-progressbar/dist/styles.css";
 import {
   FaJs,
   FaReact,
-  FaNode,
+  FaNodeJs,
   FaCss3Alt,
   FaHtml5,
   FaSass,
@@ -25,7 +25,6 @@ import {
   SiTailwindcss,
 } from "react-icons/si";
 import { TbSeo } from "react-icons/tb";
-import { BiHandicap } from "react-icons/bi";
 
 const skillGroups = [
   {
@@ -43,8 +42,7 @@ const skillGroups = [
     skills: [
       "Tailwind",
       "Bootstrap",
-      "SEO",
-      "Accessibilité",
+      "SEO et Accessibilité",
       "MongoDB",
       "Express",
     ],
@@ -52,7 +50,6 @@ const skillGroups = [
       SiTailwindcss,
       FaBootstrap,
       TbSeo,
-      BiHandicap,
       SiMongodb,
       SiExpress,
     ],
@@ -60,7 +57,7 @@ const skillGroups = [
   {
     level: 75,
     skills: ["JavaScript", "Node.js", "Next.js", "React", "React Router"],
-    icons: [FaJs, FaNode, SiNextdotjs, FaReact, SiReactrouter],
+    icons: [FaJs, FaNodeJs, SiNextdotjs, FaReact, SiReactrouter],
   },
   {
     level: 70,

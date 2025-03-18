@@ -366,7 +366,7 @@
     z-index: -1;
   }
   @include breakpoints_desktop {
-    margin-top: -30px;
+    margin-top: -40px;
   }
 }
 
@@ -387,7 +387,7 @@
   margin: 0 10px;
   color: $white;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 500;
 }
 
 /* Miniatures */
@@ -443,4 +443,15 @@
     top: 265px;
     right: 46%;
   }
+}
+
+.logos {
+  @include flexbox;
+  gap: 10px;
+  margin-bottom: 5px;
+  width: 100%;
+}
+
+.logoss {
+ font-size: 30px;
 }

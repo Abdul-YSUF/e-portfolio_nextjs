@@ -2,6 +2,30 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Eye, EyeOff } from "lucide-react";
+import {
+  FaJs,
+  FaReact,
+  FaCss3Alt,
+  FaHtml5,
+  FaSass,
+  FaBootstrap,
+  FaPhp,
+  FaGithub,
+  FaWordpress,
+  FaNodeJs,
+} from "react-icons/fa";
+import {
+  SiNextdotjs,
+  SiMongodb,
+  SiPostman,
+  SiExpress,
+  SiReactrouter,
+  SiPhpmyadmin,
+  SiNormalizedotcss,
+  SiAdobephotoshop,
+  SiTailwindcss,
+} from "react-icons/si";
+import { TbSeo } from "react-icons/tb";
 
 export default function Projects() {
   const projects = [
@@ -11,6 +35,7 @@ export default function Projects() {
       title: "BOOKI",
       altMsg: "Photo d'un projet BOOKI",
       description: "Intégration de la page d'accueil et l'interface responsive",
+      logos: [FaHtml5, FaCss3Alt, SiNormalizedotcss],
       demoLink: "https://abdul-ysuf.github.io/Booki",
       codeLink: "https://github.com/Abdul-YSUF/Booki",
     },
@@ -21,6 +46,7 @@ export default function Projects() {
       altMsg: "Photo d'un projet OHMYFOOD",
       description:
         "Intégration d'un site “mobile first” qui répertorie les menus de restaurants",
+      logos: [FaHtml5, FaSass, FaGithub],
       demoLink: "https://abdul-ysuf.github.io/ohmyfood",
       codeLink: "https://github.com/Abdul-YSUF/ohmyfood",
     },
@@ -31,6 +57,7 @@ export default function Projects() {
       altMsg: "Photo d'un projet LA PANTHÈRE",
       description:
         "Amélioration du référencement (SEO) et accessibilité d'un site web existant",
+      logos: [TbSeo, FaBootstrap, FaGithub],
       demoLink: "https://abdul-ysuf.github.io/LaPanthere",
       codeLink: "https://github.com/Abdul-YSUF/LaPanthere",
     },
@@ -40,6 +67,7 @@ export default function Projects() {
       title: "KANAP",
       altMsg: "Photo d'un projet KANAP",
       description: "Transformation d'un site e-commerce statique en dynamique",
+      logos: [FaJs],
       codeLink: "https://github.com/Abdul-YSUF/Kanap",
     },
     {
@@ -49,6 +77,7 @@ export default function Projects() {
       altMsg: "Photo d'un projet HOT TAKES",
       description:
         "Construction d'une API sécurisée pour une application d'avis gastronomiques",
+      logos: [FaNodeJs, SiMongodb, SiPostman, SiExpress],
       codeLink: "https://github.com/Abdul-YSUF/Piiquante",
     },
     {
@@ -57,6 +86,7 @@ export default function Projects() {
       title: "KASA",
       altMsg: "Photo d'un projet KASA",
       description: "Création d'une application web de location immobilière",
+      logos: [FaReact, SiReactrouter, FaCss3Alt, FaGithub],
       demoLink: "https://abdul-ysuf.netlify.app/",
       codeLink: "https://github.com/Abdul-YSUF/Kasa",
     },
@@ -66,6 +96,7 @@ export default function Projects() {
       title: "SMARTPOINT",
       altMsg: "Photo d'un projet SMARTPOINT",
       description: "Création d'un site web e-commerce pour le téléphone mobile",
+      logos: [FaWordpress],
     },
     {
       id: 8,
@@ -74,6 +105,7 @@ export default function Projects() {
       altMsg: "Photo d'un projet BLOG TECHNOLOGIE",
       description:
         "Transformation d'un site web existant en blog technologie et en dynamique",
+      logos: [FaPhp, SiPhpmyadmin, SiAdobephotoshop],
       codeLink: "https://github.com/mobile-zone/mobile-zone.github.io",
     },
   ];
@@ -86,13 +118,12 @@ export default function Projects() {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % projects.length);
     }, 3000);
     return () => clearInterval(interval);
-  }, [projects.length]);
+  }, [currentIndex]);
 
   return (
     <section className="projets" id="projets">
       <h2 className="stitre">Projets</h2>
       <div className="projectsContainer">
-        {/* Cadre ordinateur avec le projet en grand */}
         <div className="mainProject">
           <div className="computerFrame">
             <img
@@ -111,12 +142,19 @@ export default function Projects() {
               {!showDetails ? (
                 <img
                   src={projects[currentIndex].image}
-                  alt={projects[currentIndex].title}
+                  alt={`Capture d'écran du projet ${projects[currentIndex].title}`}
                   className="screenImage"
                 />
               ) : (
                 <div className="projectDetails">
                   <h3>{projects[currentIndex].title}</h3>
+                  <div className="logos">
+                    {projects[currentIndex].logos.map((Logo, i) => (
+                      <span key={i} className="logoss">
+                        <Logo />
+                      </span>
+                    ))}
+                  </div>
                   <p>{projects[currentIndex].description}</p>
                   <div className="projectLinks">
                     {projects[currentIndex].demoLink && (
@@ -143,18 +181,20 @@ export default function Projects() {
                 </div>
               )}
             </motion.div>
-
-            {/* Bouton pour afficher les détails */}
             <button
               className="toggleDetails"
               onClick={() => setShowDetails(!showDetails)}
+              aria-label={
+                showDetails
+                  ? "Masquer les détails du projet"
+                  : "Afficher les détails du projet"
+              }
             >
               {showDetails ? <EyeOff size={24} /> : <Eye size={24} />}
             </button>
           </div>
         </div>
 
-        {/* Miniatures des projets */}
         <div className="sideProjects">
           {projects.map((project, index) => (
             <motion.div
