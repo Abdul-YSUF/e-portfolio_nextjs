@@ -170,7 +170,7 @@ export default function ContactForm() {
           <img
             className="contact_img"
             alt="contact"
-            src="./assets/contactez-moi.webp"
+            src="./assets/image_form.webp"
           />
         </div>
         <p className="titre_form-mobile">

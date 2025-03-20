@@ -425,6 +425,7 @@
 @media screen and (min-width: 992px) {
   .form_contact {
     flex-direction: row;
+    gap: 80px;
     margin-top: -20px;
   }
 }
@@ -485,25 +486,27 @@
   text-align: center;
   align-items: center;
   flex-direction: column;
-  width: 100%;
+  width: 60%;
   margin-top: 30px;
 }
 @media screen and (min-width: 992px) {
   .divers {
-    width: 40%;
+    width: 30%;
     margin: 0;
   }
 }
 
 .div_titre {
-  display: none;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  margin-top: 50px;
+  width: 100%;
 }
 @media screen and (min-width: 992px) {
   .div_titre {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
+    width: 80%;
     margin-top: 20px;
     margin-bottom: -10px;
   }
@@ -513,6 +516,7 @@
   width: 90%;
   font-size: 17px;
   color: var(--color-text);
+  margin-bottom: -10px;
 }
 @media screen and (min-width: 992px) {
   .titre_form {
@@ -523,11 +527,7 @@
 }
 
 .titre_form-mobile {
-  width: 90%;
-  font-size: 16px;
-  color: var(--color-text);
-  margin-top: 0;
-  margin-bottom: 30px;
+  display: none;
 }
 @media screen and (min-width: 992px) {
   .titre_form-mobile {
@@ -536,12 +536,12 @@
 }
 
 .nuit input::-moz-placeholder, textarea::-moz-placeholder {
-  color: rgb(148, 148, 148);
+  color: #686868;
 }
 
 .nuit input::placeholder,
 textarea::placeholder {
-  color: rgb(148, 148, 148);
+  color: #686868;
 }
 
 .nom_de_contact {
@@ -605,17 +605,18 @@ textarea::placeholder {
 }
 
 .contact_img {
-  width: 97%;
+  width: 100%;
   height: auto;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 10px;
-  margin-top: 0px;
-  margin-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 30px;
 }
 @media screen and (min-width: 992px) {
   .contact_img {
-    width: 90%;
+    width: 100%;
+    margin-top: 40px;
   }
 }
 
@@ -2419,7 +2420,7 @@ strong {
 }
 @media screen and (min-width: 992px) {
   .calendly_div {
-    width: 70%;
+    width: 60%;
     height: 160px;
     margin-bottom: 20px;
   }

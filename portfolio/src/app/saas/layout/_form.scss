@@ -11,6 +11,7 @@
   width: 100%;
   @include breakpoints_desktop {
     flex-direction: row;
+    gap: 80px;
     margin-top: -20px;
   }
 }
@@ -66,18 +67,20 @@
 .divers {
   @include flexbox;
   flex-direction: column;
-  width: 100%;
+  width: 60%;
   margin-top: 30px;
   @include breakpoints_desktop {
-    width: 40%;
+    width: 30%;
     margin: 0;
   }
 }
 
 .div_titre {
-  display: none;
+  @include flexbox;
+  margin-top: 50px;
+  width: 100%;
   @include breakpoints_desktop {
-    @include flexbox;
+    width: 80%;
     margin-top: 20px;
     margin-bottom: -10px;
   }
@@ -87,6 +90,7 @@
   width: 90%;
   font-size: 17px;
   color: $color-text;
+  margin-bottom: -10px;
   @include breakpoints_desktop {
     width: 100%;
     font-size: 18px;
@@ -95,11 +99,7 @@
 }
 
 .titre_form-mobile {
-  width: 90%;
-  font-size: 16px;
-  color: $color-text;
-  margin-top: 0;
-  margin-bottom: 30px;
+  display: none;
   @include breakpoints_desktop {
     display: none;
   }
@@ -107,7 +107,7 @@
 
 .nuit input::placeholder,
 textarea::placeholder {
-  color: rgb(148, 148, 148);
+  color: #686868;
 }
 
 .nom_de_contact {
@@ -174,14 +174,15 @@ textarea::placeholder {
 }
 
 .contact_img {
-  width: 97%;
+  width: 100%;
   height: auto;
   object-fit: cover;
   border-radius: 10px;
-  margin-top: 0px;
-  margin-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 30px;
   @include breakpoints_desktop {
-    width: 90%;
+    width: 100%;
+    margin-top: 40px;
   }
 }
 
