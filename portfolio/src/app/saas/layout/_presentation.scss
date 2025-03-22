@@ -1,4 +1,4 @@
-.introduction {
+/*.introduction {
   @include flexbox;
   flex-direction: column;
   padding-top: 100px;
@@ -228,4 +228,138 @@
   animation: mouse-wheel 0.6s linear infinite;
   -webkit-animation: mouse-wheel 0.6s linear infinite;
   -moz-animation: mouse-wheel 0.6s linear infinite;
+}
+*/
+
+.container {
+  @include flexbox;
+  flex-direction: column;
+  padding-top: 110px;
+}
+
+.welcome {
+  @include flexbox;
+  font-size: 24px;
+  color: $color-text;
+  @include breakpoints_desktop {
+    font-size: 32px;
+  }
+}
+
+.description_welcome {
+  font-size: 16px;
+  color: $color-text;
+}
+
+.welcome,
+.description_welcome,
+.contact_welcome {
+  width: 90%;
+  color: $color-text;
+  @include breakpoints_desktop {
+    width: unset;
+  }
+}
+
+h2 {
+  font-size: 1.2rem;
+  color: #0070f3;
+  margin-top: 10px;
+  animation: fadeIn 1s ease-in-out;
+  @include breakpoints_desktop {
+    font-size: 1.5rem;
+  }
+}
+
+@keyframes defilement {
+  0% {
+    left: -200px;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.imageWrapper {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 2px solid $color-text;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0px 4px 10px #00000034;
+  @include breakpoints_desktop {
+    width: 340px;
+    height: 340px;
+  }
+}
+
+.nuit .imageWrapper {
+  box-shadow: 0px 4px 10px #aaa;
+}
+
+.imageWrapper img {
+  @include breakpoints_desktop {
+    width: 340px;
+    height: 340px;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Barre latérale
+.barre_container {
+  display: none;
+  @include breakpoints_desktop {
+    @include flexbox;
+  }
+}
+
+.barre {
+  @include flexbox;
+  flex-direction: column;
+  width: 10%;
+  &__vertical-content {
+    font-size: 26px;
+  }
+  &__reseau-social {
+    border: 2px solid $color-text;
+    border-radius: 40px;
+    position: absolute;
+    top: 40%;
+    right: 10%;
+    padding: 20px 5px 5px 5px;
+    animation: mouse_scroll 3s;
+  }
+  &__logo-1,
+  &__logo-2,
+  &__logo-3 {
+    color: $color-text;
+    &:hover {
+      color: #0073e6;
+    }
+  }
+}
+
+.contactButton {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 20px;
+  background: #0073e6;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.contactButton:hover {
+  background: #005bb5;
 }
