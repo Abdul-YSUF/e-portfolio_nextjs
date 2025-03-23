@@ -246,6 +246,16 @@
   }
 }
 
+.welcome_about {
+  font-size: 1.1rem;
+  color: #0070f3;
+  margin-top: 10px;
+  animation: fadeIn 1s ease-in-out;
+  @include breakpoints_desktop {
+    font-size: 1.5rem;
+  }
+}
+
 .description_welcome {
   font-size: 16px;
   color: $color-text;
@@ -258,16 +268,6 @@
   color: $color-text;
   @include breakpoints_desktop {
     width: unset;
-  }
-}
-
-h2 {
-  font-size: 1.2rem;
-  color: #0070f3;
-  margin-top: 10px;
-  animation: fadeIn 1s ease-in-out;
-  @include breakpoints_desktop {
-    font-size: 1.5rem;
   }
 }
 
@@ -358,8 +358,7 @@ h2 {
   text-decoration: none;
   border-radius: 5px;
   font-weight: bold;
-}
-
-.contactButton:hover {
-  background: #005bb5;
+  &:hover {
+    background: #005bb5;
+  }
 }

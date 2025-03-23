@@ -329,6 +329,10 @@
   }
 }
 
+.navbar_link {
+  font-size: 24px;
+}
+
 .navbar_github,
 .navbar_linkedin,
 .navbar_Gmail {
@@ -968,6 +972,18 @@ textarea::placeholder {
   }
 }
 
+.welcome_about {
+  font-size: 1.1rem;
+  color: #0070f3;
+  margin-top: 10px;
+  animation: fadeIn 1s ease-in-out;
+}
+@media screen and (min-width: 992px) {
+  .welcome_about {
+    font-size: 1.5rem;
+  }
+}
+
 .description_welcome {
   font-size: 16px;
   color: var(--color-text);
@@ -984,18 +1000,6 @@ textarea::placeholder {
   .description_welcome,
   .contact_welcome {
     width: unset;
-  }
-}
-
-h2 {
-  font-size: 1.2rem;
-  color: #0070f3;
-  margin-top: 10px;
-  animation: fadeIn 1s ease-in-out;
-}
-@media screen and (min-width: 992px) {
-  h2 {
-    font-size: 1.5rem;
   }
 }
 
@@ -1092,7 +1096,6 @@ h2 {
   border-radius: 5px;
   font-weight: bold;
 }
-
 .contactButton:hover {
   background: #005bb5;
 }
@@ -1960,6 +1963,16 @@ h2 {
   color: white;
   text-decoration: none;
   font-weight: 500;
+  padding: 5px 10px;
+  background: #0073e6;
+}
+@media screen and (min-width: 992px) {
+  .projectLinks a {
+    padding: 0.5em 1.2em;
+  }
+}
+.projectLinks a:hover {
+  background: #005bb5;
 }
 
 /* Miniatures */
@@ -2038,6 +2051,7 @@ h2 {
 }
 
 .logoss {
+  color: var(--color-text);
   font-size: 30px;
 }
 
@@ -2182,16 +2196,18 @@ h2 {
   justify-content: center;
   text-align: center;
   align-items: center;
-  margin-top: 20px;
+  gap: 10px;
+  margin-top: 30px;
+  margin-left: -5px;
 }
 
 .reseaux_sociaux a {
+  color: white;
+  font-size: 24px;
   margin: -10px 5px;
 }
-@media screen and (min-width: 992px) {
-  .reseaux_sociaux a {
-    margin: -5px 5px;
-  }
+.reseaux_sociaux a:hover {
+  color: #0073e6;
 }
 
 .paragraph_footer {
@@ -2553,11 +2569,15 @@ strong {
   align-items: center;
   font-size: 13px;
   margin-top: 20px;
+  background: #0073e6;
 }
 @media screen and (min-width: 992px) {
   .calendly_link {
     font-size: unset;
   }
+}
+.calendly_link:hover {
+  background: #005bb5;
 }
 
 .font_emoji {

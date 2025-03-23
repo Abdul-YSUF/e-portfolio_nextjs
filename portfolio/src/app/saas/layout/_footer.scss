@@ -87,9 +87,9 @@
   width: 100%;
   margin-top: 30px;
   @include breakpoints_desktop {
-   order: 1;
-   width: unset;
-   margin-top: 20px;
+    order: 1;
+    width: unset;
+    margin-top: 20px;
   }
 }
 
@@ -99,13 +99,17 @@
 
 .reseaux_sociaux {
   @include flexbox;
-  margin-top: 20px;
+  gap: 10px;
+  margin-top: 30px;
+  margin-left: -5px;
 }
 
 .reseaux_sociaux a {
+  color: $white;
+  font-size: 24px;
   margin: -10px 5px;
-  @include breakpoints_desktop {
-    margin: -5px 5px;
+  &:hover {
+    color: #0073e6;
   }
 }
 

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -29,13 +30,7 @@ const Footer = () => {
             rel="noopener noreferrer"
             aria-label="Lien vers le profil GitHub d'Abdul"
           >
-            <Image
-              className="footer_github"
-              src="/assets/github.svg"
-              alt="Logo GitHub"
-              width={35}
-              height={35}
-            />
+            <FaGithub />
           </a>
           <a
             href="https://www.linkedin.com/in/abdul-fahad-ysuf-970887235/"
@@ -43,13 +38,7 @@ const Footer = () => {
             rel="noopener noreferrer"
             aria-label="Lien vers le profil LinkedIn d'Abdul"
           >
-            <Image
-              className="footer_linkedin"
-              src="/assets/linkedin.svg"
-              alt="Logo LinkedIn"
-              width={35}
-              height={35}
-            />
+            <FaLinkedin />
           </a>
           <a
             href="mailto:abdulledev@gmail.com"
@@ -57,13 +46,7 @@ const Footer = () => {
             rel="noopener noreferrer"
             aria-label="Envoyer un e-mail à Abdul"
           >
-            <Image
-              className="footer_gmail"
-              src="/assets/Gmail_icon.svg"
-              alt="Logo Gmail"
-              width={35}
-              height={35}
-            />
+            <FaEnvelope />
           </a>
         </div>
       </div>

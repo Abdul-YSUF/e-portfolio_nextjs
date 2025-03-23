@@ -43,8 +43,12 @@
   @include flexbox;
   font-size: 13px;
   margin-top: 20px;
+  background: #0073e6;
   @include breakpoints_desktop {
     font-size: unset;
+  }
+  &:hover {
+    background: #005bb5;
   }
 }
 

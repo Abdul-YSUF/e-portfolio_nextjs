@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import useDarkMode from "./DarkModeToggle";
 import Image from "next/image";
+import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
 export default function Header() {
   const { isNight, logoSrc, toggleTheme } = useDarkMode();
@@ -102,35 +103,17 @@ export default function Header() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Image
-                className="navbar_github"
-                src="/assets/github.svg"
-                alt="Logo GitHub"
-                width={33}
-                height={33}
-              />
+              <FaGithub className="navbar_link" />
             </Link>
             <Link
               href="https://www.linkedin.com/in/abdul-fahad-ysuf-970887235/"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Image
-                className="navbar_linkedin"
-                src="/assets/linkedin.svg"
-                alt="Logo LinkedIn"
-                width={33}
-                height={33}
-              />
+              <FaLinkedin className="navbar_link" />
             </Link>
             <Link href="mailto:abdulledev@gmail.com">
-              <Image
-                className="navbar_Gmail"
-                src="/assets/Gmail_icon.svg"
-                alt="Logo Gmail"
-                width={33}
-                height={33}
-              />
+              <FaEnvelope className="navbar_link" />
             </Link>
           </li>
           <li className="navbar_li">

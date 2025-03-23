@@ -25,7 +25,7 @@ export default function Accueil() {
   return (
     <div className="container">
       <h1 className="welcome">Bienvenue sur mon Portfolio</h1>
-      <h2>Abdul YSUF - {title}</h2>
+      <h2 className="welcome_about">Abdul YSUF - {title}</h2>
       <p className="description_welcome">
         Je suis un développeur passionné par le web et la création d’expériences
         uniques.
