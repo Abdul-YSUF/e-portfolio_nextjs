@@ -102,6 +102,7 @@ export default function Header() {
               href="https://github.com/Abdul-YSUF?tab=repositories"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="GitHub Abdul le Dev"
             >
               <FaGithub className="navbar_link" />
             </Link>
@@ -109,10 +110,14 @@ export default function Header() {
               href="https://www.linkedin.com/in/abdul-fahad-ysuf-970887235/"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="LinkedIn Abdul le Dev"
             >
               <FaLinkedin className="navbar_link" />
             </Link>
-            <Link href="mailto:abdulledev@gmail.com">
+            <Link
+              href="mailto:abdulledev@gmail.com"
+              aria-label="Envoyer un email à Abdul le Dev"
+            >
               <FaEnvelope className="navbar_link" />
             </Link>
           </li>

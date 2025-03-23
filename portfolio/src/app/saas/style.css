@@ -699,7 +699,7 @@ textarea::placeholder {
 }
 
 .recaptcha-message a {
-  color: #1a73e8;
+  color: #0073e6;
   text-decoration: none;
   font-weight: bold;
   transition: color 0.3s ease;
@@ -1535,7 +1535,7 @@ textarea::placeholder {
 
 .skill-fill {
   height: 100%;
-  background: #3498db;
+  background: #0073e6;
   transition: width 2s ease-in-out;
 }
 

@@ -153,7 +153,7 @@ export default function Skills() {
                     styles={buildStyles({
                       textSize: "28px",
                       pathTransitionDuration: 0.1,
-                      pathColor: `rgba(59, 130, 246, ${
+                      pathColor: `rgb(0, 115, 230, ${
                         progressValues[index] / 100
                       })`,
                       textColor: "#000",
