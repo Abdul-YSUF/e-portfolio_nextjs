@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import GoogleReCaptchaProvider from "./GoogleReCaptchaProvider";
 import Calendly from "./Calendly";
 
@@ -14,6 +14,7 @@ export default function ContactForm() {
   const [status, setStatus] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [recaptchaToken, setRecaptchaToken] = useState(null);
+  const [executeReCAPTCHA, setExecuteReCAPTCHA] = useState(null);
 
   const handleRecaptchaVerify = (token) => {
     setRecaptchaToken(token);
@@ -21,7 +22,7 @@ export default function ContactForm() {
 
   useEffect(() => {
     if (!recaptchaToken) return;
-    console.log("reCAPTCHA token mis à jour :", recaptchaToken);
+    console.log("Nouveau token reCAPTCHA :", recaptchaToken);
   }, [recaptchaToken]);
 
   const handleChange = (e) => {
@@ -95,15 +96,20 @@ export default function ContactForm() {
       return;
     }
 
-    if (!recaptchaToken) {
-      setStatus("Validation reCAPTCHA en cours...");
+    setStatus("Validation reCAPTCHA en cours...");
+    setIsSubmitting(true);
+
+    const newToken = await executeReCAPTCHA();
+    if (!newToken) {
+      setStatus("Erreur lors de la validation reCAPTCHA. Veuillez réessayer.");
+      setIsSubmitting(false);
       setTimeout(() => {
         setStatus("");
       }, 3000);
       return;
     }
 
-    setIsSubmitting(true);
+    setRecaptchaToken(newToken);
 
     try {
       const response = await fetch("/api/submit", {
@@ -111,10 +117,7 @@ export default function ContactForm() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({
-          ...formData,
-          recaptchaToken,
-        }),
+        body: JSON.stringify({ ...formData, recaptchaToken: newToken }),
       });
 
       const result = await response.json();

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 
 const GoogleReCaptchaProvider = ({ onVerify }) => {
   const [recaptchaLoaded, setRecaptchaLoaded] = useState(false);
@@ -21,28 +21,24 @@ const GoogleReCaptchaProvider = ({ onVerify }) => {
     loadReCAPTCHA();
   }, []);
 
-  useEffect(() => {
-    const executeReCAPTCHA = async () => {
-      if (!recaptchaLoaded || !window.grecaptcha) return;
+  // Fonction pour exécuter reCAPTCHA et obtenir un nouveau token
+  const executeReCAPTCHA = useCallback(async () => {
+    if (!recaptchaLoaded || !window.grecaptcha) return null;
 
-      try {
-        const token = await window.grecaptcha.execute(
-          process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY,
-          { action: "submit" }
-        );
-        onVerify(token);
-      } catch (error) {
-        console.error("Erreur lors de l'exécution de reCAPTCHA :", error);
-        onVerify(null);
-      }
-    };
-
-    if (recaptchaLoaded) {
-      executeReCAPTCHA();
+    try {
+      const token = await window.grecaptcha.execute(
+        process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY,
+        { action: "submit" }
+      );
+      onVerify(token);
+      return token;
+    } catch (error) {
+      console.error("Erreur lors de l'exécution de reCAPTCHA :", error);
+      return null;
     }
   }, [recaptchaLoaded, onVerify]);
 
-  return null;
+  return executeReCAPTCHA;
 };
 
 export default GoogleReCaptchaProvider;
