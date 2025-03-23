@@ -1,9 +1,15 @@
 "use client";
-import { useState, useEffect, useCallback } from "react";
-import GoogleReCaptchaProvider from "./GoogleReCaptchaProvider";
+import React, { useState } from "react";
+import ReCAPTCHA from "./GoogleReCaptchaProvider";
 import Calendly from "./Calendly";
+import Script from "next/script";
 
 export default function ContactForm() {
+  const [isRecaptchaLoaded, setIsRecaptchaLoaded] = useState(false);
+  const handleLoadRecaptcha = () => {
+    setIsRecaptchaLoaded(true);
+  };
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -14,20 +20,22 @@ export default function ContactForm() {
   const [status, setStatus] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [recaptchaToken, setRecaptchaToken] = useState(null);
-  const [executeReCAPTCHA, setExecuteReCAPTCHA] = useState(null);
 
+  // Ajout de la fonction pour gérer la vérification du reCAPTCHA
   const handleRecaptchaVerify = (token) => {
     setRecaptchaToken(token);
   };
 
-  useEffect(() => {
-    if (!recaptchaToken) return;
-    console.log("Nouveau token reCAPTCHA :", recaptchaToken);
-  }, [recaptchaToken]);
-
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-    setErrors({ ...errors, [e.target.name]: "" });
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+    setErrors({
+      ...errors,
+      [name]: "",
+    });
   };
 
   const handleBlur = (e) => {
@@ -96,20 +104,15 @@ export default function ContactForm() {
       return;
     }
 
-    setStatus("Validation reCAPTCHA en cours...");
-    setIsSubmitting(true);
-
-    const newToken = await executeReCAPTCHA();
-    if (!newToken) {
-      setStatus("Erreur lors de la validation reCAPTCHA. Veuillez réessayer.");
-      setIsSubmitting(false);
+    if (!recaptchaToken) {
+      setStatus("reCAPTCHA non vérifié. Veuillez réessayer.");
       setTimeout(() => {
         setStatus("");
       }, 3000);
       return;
     }
 
-    setRecaptchaToken(newToken);
+    setIsSubmitting(true);
 
     try {
       const response = await fetch("/api/submit", {
@@ -117,7 +120,10 @@ export default function ContactForm() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ ...formData, recaptchaToken: newToken }),
+        body: JSON.stringify({
+          ...formData,
+          recaptchaToken, // Inclusion du token reCAPTCHA ici
+        }),
       });
 
       const result = await response.json();
@@ -261,7 +267,7 @@ export default function ContactForm() {
             </p>
           )}
 
-          <GoogleReCaptchaProvider onVerify={handleRecaptchaVerify} />
+          <ReCAPTCHA onVerify={handleRecaptchaVerify} />
 
           <button
             id="buttonEnvoi"
@@ -272,6 +278,13 @@ export default function ContactForm() {
             {isSubmitting ? "Envoi en cours..." : "Envoyez"}
           </button>
         </form>
+        {!isRecaptchaLoaded && (
+          <Script
+            src="https://www.google.com/recaptcha/api.js"
+            onLoad={handleLoadRecaptcha}
+            strategy="lazyOnload"
+          />
+        )}
       </div>
       {status && (
         <div className={`popup-status ${status ? "show" : ""}`}>
