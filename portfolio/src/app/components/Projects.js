@@ -72,7 +72,7 @@ export default function Projects() {
     },
     {
       id: 5,
-      image: "https://res.cloudinary.com/doqbpkxy7/image/upload/v1742848497/Capture_d_e%CC%81cran_2023-05-10_a%CC%80_12.52.15_qkqz6l.png",
+      image: "https://res.cloudinary.com/doqbpkxy7/image/upload/q_auto,f_auto/v1742848497/Capture_d_e%CC%81cran_2023-05-10_a%CC%80_12.52.15_qkqz6l.png",
       title: "HOT TAKES",
       altMsg: "Photo d'un projet HOT TAKES",
       description:
@@ -92,7 +92,7 @@ export default function Projects() {
     },
     {
       id: 7,
-      image: "https://res.cloudinary.com/doqbpkxy7/image/upload/v1742848523/WordPress_axtiwy.png",
+      image: "https://res.cloudinary.com/doqbpkxy7/image/upload/q_auto,f_auto/v1742848523/WordPress_axtiwy.png",
       title: "SMARTPOINT",
       altMsg: "Photo d'un projet SMARTPOINT",
       description: "Création d'un site web e-commerce pour le téléphone mobile",
@@ -100,7 +100,7 @@ export default function Projects() {
     },
     {
       id: 8,
-      image: "https://res.cloudinary.com/doqbpkxy7/image/upload/v1742848468/Capture_d_e%CC%81cran_2023-05-25_a%CC%80_22.53.19_ddkhlr.png",
+      image: "https://res.cloudinary.com/doqbpkxy7/image/upload/q_auto,f_auto/v1742848468/Capture_d_e%CC%81cran_2023-05-25_a%CC%80_22.53.19_ddkhlr.png",
       title: "BLOG TECHNOLOGIE",
       altMsg: "Photo d'un projet BLOG TECHNOLOGIE",
       description:
