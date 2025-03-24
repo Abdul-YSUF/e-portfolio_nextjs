@@ -32,7 +32,7 @@ export default function Accueil() {
       </p>
       <div className="imageWrapper">
         <Image
-          src="/assets/4962136_2597613.webp"
+          src="https://res.cloudinary.com/doqbpkxy7/image/upload/q_auto,f_auto/v1742851499/programation_um4l9a.svg"
           alt="Photo de profil"
           width={280}
           height={280}
@@ -81,7 +81,11 @@ export default function Accueil() {
         Si vous souhaitez discuter d'un projet ou simplement échanger, n'hésitez
         pas à me contacter !
       </p>
-      <a href="#formulaire" aria-label="Aller à la section contact" className="contactButton">
+      <a
+        href="#formulaire"
+        aria-label="Aller à la section contact"
+        className="contactButton"
+      >
         Contactez-moi
       </a>
     </div>

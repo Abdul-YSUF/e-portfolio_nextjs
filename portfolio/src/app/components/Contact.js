@@ -170,7 +170,7 @@ export default function ContactForm() {
           <img
             className="contact_img"
             alt="contact"
-            src="./assets/image_form.webp"
+            src="https://res.cloudinary.com/doqbpkxy7/image/upload/q_auto,f_auto/v1742851654/call-center-7040784_1280_ijs3rb.png"
           />
         </div>
         <p className="titre_form-mobile">
