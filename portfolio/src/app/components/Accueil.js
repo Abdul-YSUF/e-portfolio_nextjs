@@ -32,7 +32,7 @@ export default function Accueil() {
       </p>
       <div className="imageWrapper">
         <Image
-          src="https://res.cloudinary.com/doqbpkxy7/image/upload/q_auto,f_auto/v1742851499/programation_um4l9a.svg"
+          src="https://res.cloudinary.com/doqbpkxy7/image/upload/q_auto,f_svg/v1742851499/programation_um4l9a.svg"
           alt="Photo de profil"
           width={280}
           height={280}
