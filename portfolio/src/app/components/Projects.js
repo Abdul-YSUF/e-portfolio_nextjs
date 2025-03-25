@@ -63,7 +63,7 @@ export default function Projects() {
     },
     {
       id: 4,
-      image: "/assets/kanap-smaller.webp",
+      image: "https://res.cloudinary.com/doqbpkxy7/image/upload/q_auto,f_auto/v1742925492/Capture_d_e%CC%81cran_2025-03-25_a%CC%80_18.57.30_kjej9m.png",
       title: "KANAP",
       altMsg: "Photo d'un projet KANAP",
       description: "Transformation d'un site e-commerce statique en dynamique",
@@ -92,7 +92,7 @@ export default function Projects() {
     },
     {
       id: 7,
-      image: "https://res.cloudinary.com/doqbpkxy7/image/upload/q_auto,f_auto/v1742848523/WordPress_axtiwy.png",
+      image: "https://res.cloudinary.com/doqbpkxy7/image/upload/q_auto,f_auto/v1742925997/Capture_d_e%CC%81cran_2025-03-25_a%CC%80_19.06.00_zdofyu.png",
       title: "SMARTPOINT",
       altMsg: "Photo d'un projet SMARTPOINT",
       description: "Création d'un site web e-commerce pour le téléphone mobile",
