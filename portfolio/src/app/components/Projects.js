@@ -41,7 +41,7 @@ export default function Projects() {
     },
     {
       id: 2,
-      image: "/assets/ohmyfood-smaller.webp",
+      image: "https://res.cloudinary.com/doqbpkxy7/image/upload/q_auto,f_auto/v1742924580/Capture_d_e%CC%81cran_2025-03-25_a%CC%80_18.38.23_elmjzw.png",
       title: "OHMYFOOD",
       altMsg: "Photo d'un projet OHMYFOOD",
       description:
@@ -52,7 +52,7 @@ export default function Projects() {
     },
     {
       id: 3,
-      image: "/assets/lapanthere-smaller.webp",
+      image: "https://res.cloudinary.com/doqbpkxy7/image/upload/q_auto,f_auto/v1742924580/Capture_d_e%CC%81cran_2025-03-25_a%CC%80_18.38.59_rrf8wc.png",
       title: "LA PANTHÈRE",
       altMsg: "Photo d'un projet LA PANTHÈRE",
       description:
@@ -82,7 +82,7 @@ export default function Projects() {
     },
     {
       id: 6,
-      image: "/assets/kasa-smaller.webp",
+      image: "https://res.cloudinary.com/doqbpkxy7/image/upload/q_auto,f_auto/v1742924581/Capture_d_e%CC%81cran_2025-03-25_a%CC%80_18.41.23_myecw7.png",
       title: "KASA",
       altMsg: "Photo d'un projet KASA",
       description: "Création d'une application web de location immobilière",
