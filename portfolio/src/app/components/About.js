@@ -9,7 +9,7 @@ export default function AboutMe() {
           <div className="about-me">
             <Image
               className="me"
-              src="/assets/3d-rendering-cartoon-like-man-working-computer.webp"
+              src="https://res.cloudinary.com/doqbpkxy7/image/upload/q_auto,f_auto/v1742927417/3d-rendering-cartoon-like-man-working-computer_gbwr08.webp"
               alt="Dessin animé d'un homme qui travail sur son ordinateur"
               width={250}
               height={250}
