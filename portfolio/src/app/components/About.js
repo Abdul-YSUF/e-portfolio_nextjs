@@ -2,7 +2,11 @@ import Image from "next/image";
 
 export default function AboutMe() {
   return (
-    <section className="section_2" id="qui_suis-je" style={{ minHeight: '500px' }}>
+    <section
+      className="section_2"
+      id="qui_suis-je"
+      style={{ minHeight: "500px" }}
+    >
       <div className="section_2-container">
         <h2 className="stitre">Qui suis-je</h2>
         <div className="qui_suis-je">
