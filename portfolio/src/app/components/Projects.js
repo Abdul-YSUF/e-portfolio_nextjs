@@ -97,6 +97,7 @@ export default function Projects() {
       altMsg: "Photo d'un projet SMARTPOINT",
       description: "Création d'un site web e-commerce pour le téléphone mobile",
       logos: [FaWordpress],
+      demoLink: "https://smartphone.ct.ws/",
     },
     {
       id: 8,
