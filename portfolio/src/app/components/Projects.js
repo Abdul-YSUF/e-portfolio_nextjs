@@ -108,6 +108,7 @@ export default function Projects() {
         "Transformation d'un site web existant en blog technologie et en dynamique",
       logos: [FaPhp, SiPhpmyadmin, SiAdobephotoshop],
       codeLink: "https://github.com/mobile-zone/mobile-zone.github.io",
+      demoLink: "https://blogtechnologie.ct.ws/",
     },
   ];
 
