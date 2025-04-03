@@ -79,6 +79,7 @@ export default function Projects() {
       description:
         "Construction d'une API sécurisée pour une application d'avis gastronomiques",
       logos: [FaNodeJs, SiMongodb, SiPostman, SiExpress],
+      demoLink: "https://hottakes-abdulledev.netlify.app/",
       codeLink: "https://github.com/Abdul-YSUF/Piiquante",
     },
     {
