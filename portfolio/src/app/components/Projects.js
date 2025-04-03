@@ -68,6 +68,7 @@ export default function Projects() {
       altMsg: "Photo d'un projet KANAP",
       description: "Transformation d'un site e-commerce statique en dynamique",
       logos: [FaJs],
+      demoLink: "https://kanap-abdulledev.netlify.app/",
       codeLink: "https://github.com/Abdul-YSUF/Kanap",
     },
     {
