@@ -1229,11 +1229,6 @@ textarea::placeholder {
   font-size: 24px;
   font-weight: 600;
 }
-@media screen and (min-width: 992px) {
-  .competences__titre {
-    margin-top: 10px;
-  }
-}
 .competences__details {
   display: flex;
   flex-direction: column;
