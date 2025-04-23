@@ -225,11 +225,10 @@
 .skill-group {
   @include flexbox;
   flex-direction: column;
-  background: radial-gradient(ellipse at center, #fffeea00 0%, #fffeea00 100%, #b7ebea00 100%);
   backdrop-filter: blur(10px);
+  background: rgba( 255, 255, 255, 0.25 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
   border-radius: 10px;
-  box-shadow: 0 5px 5px 5px rgba(0, 0, 0, 0.1);
-  border: 1px solid $color-text;
   padding: 20px;
 }
 
