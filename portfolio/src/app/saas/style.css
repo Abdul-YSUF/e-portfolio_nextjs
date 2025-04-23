@@ -471,12 +471,6 @@
   width: 90%;
 }
 
-.form input:focus,
-.form textarea:focus {
-  outline: none;
-  border: 2px solid #0073e6;
-}
-
 .ou {
   display: none;
 }
