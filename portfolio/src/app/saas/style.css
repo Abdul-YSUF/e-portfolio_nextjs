@@ -1458,7 +1458,7 @@ textarea::placeholder {
   text-align: center;
   align-items: center;
   flex-direction: column;
-  background: rgba(221, 227, 238, 0.8);
+  background: radial-gradient(ellipse at center, rgba(255, 254, 234, 0) 0%, rgba(255, 254, 234, 0) 100%, rgba(183, 235, 234, 0) 100%);
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
   border-radius: 10px;
