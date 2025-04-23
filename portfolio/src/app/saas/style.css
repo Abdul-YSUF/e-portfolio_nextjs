@@ -460,9 +460,11 @@
 
 .form input,
 .form textarea {
-  background: radial-gradient(ellipse at center, rgba(255, 254, 234, 0) 0%, rgba(255, 254, 234, 0) 100%, rgba(183, 235, 234, 0) 100%);
-  box-shadow: 0 5px 5px 5px rgba(0, 0, 0, 0.1);
-  border: 1px solid var(--color-text);
+  background: rgba(255, 255, 255, 0.36);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(7.7px);
+  -webkit-backdrop-filter: blur(7.7px);
+  border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: 15px;
   color: var(--color-text);
   margin-bottom: 15px;
@@ -573,8 +575,8 @@ textarea::placeholder {
   margin-top: 8px;
   width: 40%;
   color: var(--color-text);
-  border: 2px solid var(--color-text);
-  background: radial-gradient(ellipse at center, rgba(255, 254, 234, 0) 0%, rgba(255, 254, 234, 0) 100%, rgba(183, 235, 234, 0) 100%);
+  border: 2px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.36);
   border-radius: 15px;
   padding: 10px;
   cursor: pointer;
@@ -588,8 +590,11 @@ textarea::placeholder {
 
 .button_denvoi:hover {
   transform: none;
-  background: radial-gradient(ellipse at center, rgba(255, 254, 234, 0) 0%, rgba(255, 254, 234, 0) 100%, rgba(183, 235, 234, 0) 100%);
-  border: 2px solid var(--color-text);
+  background: rgba(255, 255, 255, 0.36);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(7.7px);
+  -webkit-backdrop-filter: blur(7.7px);
+  border: 2px solid rgba(255, 255, 255, 0.16);
 }
 @media screen and (min-width: 992px) {
   .button_denvoi:hover {
