@@ -24,6 +24,15 @@ export default function Accueil() {
 
   return (
     <div className="container">
+      <div className="scrollDown">
+        <p className="scrollDown__text">Faites défiler vers le bas</p>
+        <a href="#qui_suis-je">
+          <span className="arrow_1"></span>
+          <span className="arrow_2"></span>
+          <span className="arrow_3"></span>
+        </a>
+      </div>
+
       <h1 className="welcome">Bienvenue sur mon Portfolio</h1>
       <h2 className="welcome_about">Abdul YSUF - {title}</h2>
       <p className="description_welcome">

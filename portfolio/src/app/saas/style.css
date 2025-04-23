@@ -1113,6 +1113,66 @@ textarea::placeholder {
   background: #005bb5;
 }
 
+.scrollDown {
+  display: none;
+}
+@media screen and (min-width: 992px) {
+  .scrollDown {
+    display: block;
+    position: absolute;
+    bottom: 20px;
+    top: 34%;
+    left: 10%;
+    animation: mouse_scroll 3s;
+    cursor: pointer;
+  }
+}
+
+.scrollDown__text {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  color: var(--color-text);
+}
+
+.scrollDown span {
+  display: flex;
+  flex-direction: column;
+  width: 22px;
+  height: 22px;
+  border-right: 2px solid var(--color-text);
+  border-bottom: 2px solid var(--color-text);
+  transform: rotate(45deg);
+  animation: mouse-scroll 0.6s linear infinite;
+}
+
+.arrow_1,
+.arrow_2,
+.arrow_3 {
+  animation: mouse-scroll 1s infinite alternate;
+  -webkit-animation: mouse-scroll 1s infinite alternate;
+  -moz-animation: mouse-scroll 1s infinite alternate;
+}
+.arrow_1.arrow_1,
+.arrow_2.arrow_1,
+.arrow_3.arrow_1 {
+  animation-delay: 0.1s;
+  margin-top: 1px;
+}
+.arrow_1.arrow_2,
+.arrow_2.arrow_2,
+.arrow_3.arrow_2 {
+  animation-delay: 0.2s;
+  margin-top: -6px;
+}
+.arrow_1.arrow_3,
+.arrow_2.arrow_3,
+.arrow_3.arrow_3 {
+  animation-delay: 0.3s;
+  margin-top: -6px;
+}
+
 .section_2 {
   display: flex;
   justify-content: center;
