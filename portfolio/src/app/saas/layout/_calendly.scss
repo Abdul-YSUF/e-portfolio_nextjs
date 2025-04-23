@@ -14,9 +14,11 @@
 .calendly_div {
   @include flexbox;
   flex-direction: column;
-  background: radial-gradient(ellipse at center, #fffeea00 0%, #fffeea00 100%, #b7ebea00 100%);
-  box-shadow: 0 5px 5px 5px rgba(0, 0, 0, 0.1);
-  border: 1px solid $color-text;
+  background: rgba(255, 255, 255, 0.36);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(7.7px);
+  -webkit-backdrop-filter: blur(7.7px);
+  border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: 15px;
   margin-top: 30px;
   margin-bottom: -10px;
