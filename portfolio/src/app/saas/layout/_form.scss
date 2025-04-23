@@ -46,6 +46,7 @@
   color: $color-text;
   margin-bottom: 15px;
   width: 90%;
+  outline: none;
 }
 
 .ou {
@@ -157,7 +158,7 @@ textarea::placeholder {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #00ff00cc;
+  background: #00ff00cc;
   padding: 10px 20px;
   border-radius: 5px;
   color: $white;
