@@ -37,11 +37,11 @@
 
 .form input,
 .form textarea {
-  background: rgba(255, 255, 255, 0.36);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  background: $color-container;
+  box-shadow: 0 4px 30px $color-shadow;
   backdrop-filter: blur(7.7px);
   -webkit-backdrop-filter: blur(7.7px);
-  border: 1px solid rgba(255, 255, 255, 0.16);
+  border: 1px solid #ffffff72;
   border-radius: 15px;
   color: $color-text;
   margin-bottom: 15px;
@@ -129,8 +129,9 @@ textarea::placeholder {
   margin-top: 8px;
   width: 40%;
   color: $color-text;
-  border: 2px solid rgba(255, 255, 255, 0.16);
-  background: rgba(255, 255, 255, 0.36);
+  border: 2px solid #ffffff72;
+  background: $color-container;
+  box-shadow: 0 4px 30px $color-shadow;
   border-radius: 15px;
   padding: 10px;
   cursor: pointer;
@@ -142,11 +143,11 @@ textarea::placeholder {
 
 .button_denvoi:hover {
   transform: none;
-  background: rgba(255, 255, 255, 0.36);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  background: $color-container;
+  box-shadow: 0 4px 30px $color-shadow;
   backdrop-filter: blur(7.7px);
   -webkit-backdrop-filter: blur(7.7px);
-  border: 2px solid rgba(255, 255, 255, 0.16);
+  border: 2px solid #ffffff72;
   @include breakpoints_desktop {
     transform: scale(1.05);
   }

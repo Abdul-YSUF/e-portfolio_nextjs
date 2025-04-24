@@ -283,14 +283,13 @@
 .imageWrapper {
   margin-top: 20px;
   margin-bottom: 20px;
-  background: rgba(255, 255, 255, 0.36);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  background: $color-container;
+  box-shadow: 0 4px 30px $color-shadow;
   backdrop-filter: blur(7.7px);
   -webkit-backdrop-filter: blur(7.7px);
-  border: 1px solid rgba(255, 255, 255, 0.16);
+  border: 1px solid $border-color;
   border-radius: 50%;
   overflow: hidden;
-  box-shadow: 0px 4px 10px #00000034;
   @include breakpoints_desktop {
     width: 340px;
     height: 340px;
@@ -335,11 +334,11 @@
     font-size: 26px;
   }
   &__reseau-social {
-    background: rgba(255, 255, 255, 0.36);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    background: $color-container;
+    box-shadow: 0 4px 30px $color-shadow;
     backdrop-filter: blur(7.7px);
     -webkit-backdrop-filter: blur(7.7px);
-    border: 1px solid rgba(255, 255, 255, 0.16);
+    border: 1px solid $border-color;
     border-radius: 40px;
     position: absolute;
     top: 40%;
@@ -376,9 +375,15 @@
   @include breakpoints_desktop {
     display: block;
     position: absolute;
-    bottom: 20px;
-    top: 34%;
+    top: 32%;
     left: 10%;
+    background: $color-container;
+    box-shadow: 0 4px 30px $color-shadow;
+    backdrop-filter: blur(7.7px);
+    -webkit-backdrop-filter: blur(7.7px);
+    border: 1px solid $border-color;
+    border-radius: 40px;
+    padding: 25px 10px 25px 10px;
     animation: mouse_scroll 3s;
     cursor: pointer;
   }
@@ -387,7 +392,7 @@
 .scrollDown__text {
   writing-mode: vertical-rl;
   transform: rotate(180deg);
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   letter-spacing: 2px;
   color: $color-text;
 }
@@ -395,8 +400,8 @@
 .scrollDown span {
   display: flex;
   flex-direction: column;
-  width: 22px;
-  height: 22px;
+  width: 18px;
+  height: 18px;
   border-right: 2px solid $color-text;
   border-bottom: 2px solid $color-text;
   transform: rotate(45deg);
@@ -409,6 +414,7 @@
   animation: mouse-scroll 1s infinite alternate;
   -webkit-animation: mouse-scroll 1s infinite alternate;
   -moz-animation: mouse-scroll 1s infinite alternate;
+  margin-left: 2px;
   &.arrow_1 {
     animation-delay: 0.1s;
     margin-top: 1px;

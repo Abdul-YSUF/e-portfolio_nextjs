@@ -15,6 +15,9 @@
     #b7e8eb 100%
   );
   --color-header: white;
+  --color-container: #ffffff5c;
+  --color-shadow: #0000001a;
+  --border-color: none;
 }
 
 .nuit {
@@ -27,6 +30,9 @@
   --background-image: url("/assets/abdul-intro-white.webp");
   --background-body: #151d2a;
   --color-header: #151d2a;
+  --color-container: #151d2a;
+  --color-shadow: #aaa;
+  --border-color: #ffffff85;
 }
 
 @keyframes mouse_scroll {
@@ -460,11 +466,11 @@
 
 .form input,
 .form textarea {
-  background: rgba(255, 255, 255, 0.36);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  background: var(--color-container);
+  box-shadow: 0 4px 30px var(--color-shadow);
   backdrop-filter: blur(7.7px);
   -webkit-backdrop-filter: blur(7.7px);
-  border: 1px solid rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.4470588235);
   border-radius: 15px;
   color: var(--color-text);
   margin-bottom: 15px;
@@ -575,8 +581,9 @@ textarea::placeholder {
   margin-top: 8px;
   width: 40%;
   color: var(--color-text);
-  border: 2px solid rgba(255, 255, 255, 0.16);
-  background: rgba(255, 255, 255, 0.36);
+  border: 2px solid rgba(255, 255, 255, 0.4470588235);
+  background: var(--color-container);
+  box-shadow: 0 4px 30px var(--color-shadow);
   border-radius: 15px;
   padding: 10px;
   cursor: pointer;
@@ -590,11 +597,11 @@ textarea::placeholder {
 
 .button_denvoi:hover {
   transform: none;
-  background: rgba(255, 255, 255, 0.36);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  background: var(--color-container);
+  box-shadow: 0 4px 30px var(--color-shadow);
   backdrop-filter: blur(7.7px);
   -webkit-backdrop-filter: blur(7.7px);
-  border: 2px solid rgba(255, 255, 255, 0.16);
+  border: 2px solid rgba(255, 255, 255, 0.4470588235);
 }
 @media screen and (min-width: 992px) {
   .button_denvoi:hover {
@@ -1019,14 +1026,13 @@ textarea::placeholder {
 .imageWrapper {
   margin-top: 20px;
   margin-bottom: 20px;
-  background: rgba(255, 255, 255, 0.36);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  background: var(--color-container);
+  box-shadow: 0 4px 30px var(--color-shadow);
   backdrop-filter: blur(7.7px);
   -webkit-backdrop-filter: blur(7.7px);
-  border: 1px solid rgba(255, 255, 255, 0.16);
+  border: 1px solid var(--border-color);
   border-radius: 50%;
   overflow: hidden;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2039215686);
 }
 @media screen and (min-width: 992px) {
   .imageWrapper {
@@ -1080,11 +1086,11 @@ textarea::placeholder {
   font-size: 26px;
 }
 .barre__reseau-social {
-  background: rgba(255, 255, 255, 0.36);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  background: var(--color-container);
+  box-shadow: 0 4px 30px var(--color-shadow);
   backdrop-filter: blur(7.7px);
   -webkit-backdrop-filter: blur(7.7px);
-  border: 1px solid rgba(255, 255, 255, 0.16);
+  border: 1px solid var(--border-color);
   border-radius: 40px;
   position: absolute;
   top: 40%;
@@ -1120,9 +1126,15 @@ textarea::placeholder {
   .scrollDown {
     display: block;
     position: absolute;
-    bottom: 20px;
-    top: 34%;
+    top: 32%;
     left: 10%;
+    background: var(--color-container);
+    box-shadow: 0 4px 30px var(--color-shadow);
+    backdrop-filter: blur(7.7px);
+    -webkit-backdrop-filter: blur(7.7px);
+    border: 1px solid var(--border-color);
+    border-radius: 40px;
+    padding: 25px 10px 25px 10px;
     animation: mouse_scroll 3s;
     cursor: pointer;
   }
@@ -1131,7 +1143,7 @@ textarea::placeholder {
 .scrollDown__text {
   writing-mode: vertical-rl;
   transform: rotate(180deg);
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   letter-spacing: 2px;
   color: var(--color-text);
 }
@@ -1139,8 +1151,8 @@ textarea::placeholder {
 .scrollDown span {
   display: flex;
   flex-direction: column;
-  width: 22px;
-  height: 22px;
+  width: 18px;
+  height: 18px;
   border-right: 2px solid var(--color-text);
   border-bottom: 2px solid var(--color-text);
   transform: rotate(45deg);
@@ -1153,6 +1165,7 @@ textarea::placeholder {
   animation: mouse-scroll 1s infinite alternate;
   -webkit-animation: mouse-scroll 1s infinite alternate;
   -moz-animation: mouse-scroll 1s infinite alternate;
+  margin-left: 2px;
 }
 .arrow_1.arrow_1,
 .arrow_2.arrow_1,
@@ -1531,12 +1544,12 @@ textarea::placeholder {
   text-align: center;
   align-items: center;
   flex-direction: column;
-  background: rgba(255, 255, 255, 0.36);
+  background: var(--color-container);
   backdrop-filter: blur(7.7px);
   border-radius: 10px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 30px var(--color-shadow);
   -webkit-backdrop-filter: blur(7.7px);
-  border: 1px solid rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.4470588235);
   padding: 20px;
 }
 
@@ -2536,21 +2549,21 @@ strong {
 }
 
 .figma {
-  background: rgba(255, 255, 255, 0.36);
+  background: var(--color-container);
   border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 30px var(--color-shadow);
   backdrop-filter: blur(7.7px);
   -webkit-backdrop-filter: blur(7.7px);
-  border: 1px solid rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.4470588235);
 }
 
 .wordpress {
-  background: rgba(255, 255, 255, 0.36);
+  background: var(--color-container);
   border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 30px var(--color-shadow);
   backdrop-filter: blur(7.7px);
   -webkit-backdrop-filter: blur(7.7px);
-  border: 1px solid rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.4470588235);
 }
 
 .shopify {
@@ -2558,11 +2571,11 @@ strong {
 }
 
 .canva {
-  background: rgba(255, 255, 255, 0.36);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  background: var(--color-container);
+  box-shadow: 0 4px 30px var(--color-shadow);
   backdrop-filter: blur(7.7px);
   -webkit-backdrop-filter: blur(7.7px);
-  border: 1px solid rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.4470588235);
 }
 
 .web-designing {
@@ -2613,11 +2626,11 @@ strong {
   text-align: center;
   align-items: center;
   flex-direction: column;
-  background: rgba(255, 255, 255, 0.36);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  background: var(--color-container);
+  box-shadow: 0 4px 30px var(--color-shadow);
   backdrop-filter: blur(7.7px);
   -webkit-backdrop-filter: blur(7.7px);
-  border: 1px solid rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.4470588235);
   border-radius: 15px;
   margin-top: 30px;
   margin-bottom: -10px;

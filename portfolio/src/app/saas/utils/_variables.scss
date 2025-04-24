@@ -13,6 +13,9 @@
     #b7e8eb 100%
   );
   --color-header: white;
+  --color-container: #ffffff5c;
+  --color-shadow: #0000001a;
+  --border-color: none;
 }
 
 .nuit {
@@ -25,6 +28,9 @@
   --background-image: url("/assets/abdul-intro-white.webp");
   --background-body: #151d2a;
   --color-header: #151d2a;
+  --color-container: #151d2a;
+  --color-shadow: #aaa;
+  --border-color: #ffffff85;
 }
 
 $color-primaire: #9356dc;
@@ -43,9 +49,12 @@ $color-light-gray: #e2e2e2;
 $color-icons-fonctionnement: #7d7d7d;
 $color-header: var(--color-header);
 $color-body: var(--color-body);
+$color-container: var(--color-container);
 $color-text: var(--color-text);
 $color-bg: var(--color-bg);
 $color-border: var(--color-border);
+$color-shadow: var(--color-shadow);
+$border-color: var(--border-color);
 $background-body: var(--background-body);
 $background-image: var(--background-image);
 $border-calendly: linear-gradient($color-bg, $color-bg) padding-box,

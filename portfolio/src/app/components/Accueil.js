@@ -25,8 +25,8 @@ export default function Accueil() {
   return (
     <div className="container">
       <div className="scrollDown">
-        <p className="scrollDown__text">Faites défiler vers le bas</p>
         <a href="#qui_suis-je">
+          <p className="scrollDown__text">Faites défiler vers le bas</p>
           <span className="arrow_1"></span>
           <span className="arrow_2"></span>
           <span className="arrow_3"></span>
