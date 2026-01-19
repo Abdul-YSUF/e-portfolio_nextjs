@@ -125,7 +125,7 @@ export default function Projects() {
       image:
         "https://res.cloudinary.com/doqbpkxy7/image/upload/q_auto,f_auto/v1768780666/Capture_d_e%CC%81cran_2026-01-19_a%CC%80_00.53.22_si0uis.png",
       title: "MON VIEUX GRIMOIRE",
-      altMsg: "Photo d'un projet MON VIEUX GRIMOIRE",
+      altMsg: "Photo d'un projet Mon Vieux Grimoire",
       description:
         "Création d'une API backend pour une application de gestion de livres",
       logos: [FaNodeJs, SiMongodb, SiPostman, SiExpress],
