@@ -31,7 +31,8 @@ export default function Projects() {
   const projects = [
     {
       id: 1,
-      image: "https://res.cloudinary.com/doqbpkxy7/image/upload/q_auto,f_auto/v1742848370/Capture_d_e%CC%81cran_2024-05-17_a%CC%80_22.22.22_yibgmf.png",
+      image:
+        "https://res.cloudinary.com/doqbpkxy7/image/upload/q_auto,f_auto/v1742848370/Capture_d_e%CC%81cran_2024-05-17_a%CC%80_22.22.22_yibgmf.png",
       title: "BOOKI",
       altMsg: "Photo d'un projet BOOKI",
       description: "Intégration de la page d'accueil et l'interface responsive",
@@ -41,7 +42,8 @@ export default function Projects() {
     },
     {
       id: 2,
-      image: "https://res.cloudinary.com/doqbpkxy7/image/upload/q_auto,f_auto/v1742924580/Capture_d_e%CC%81cran_2025-03-25_a%CC%80_18.38.23_elmjzw.png",
+      image:
+        "https://res.cloudinary.com/doqbpkxy7/image/upload/q_auto,f_auto/v1742924580/Capture_d_e%CC%81cran_2025-03-25_a%CC%80_18.38.23_elmjzw.png",
       title: "OHMYFOOD",
       altMsg: "Photo d'un projet OHMYFOOD",
       description:
@@ -52,7 +54,8 @@ export default function Projects() {
     },
     {
       id: 3,
-      image: "https://res.cloudinary.com/doqbpkxy7/image/upload/q_auto,f_auto/v1742924580/Capture_d_e%CC%81cran_2025-03-25_a%CC%80_18.38.59_rrf8wc.png",
+      image:
+        "https://res.cloudinary.com/doqbpkxy7/image/upload/q_auto,f_auto/v1742924580/Capture_d_e%CC%81cran_2025-03-25_a%CC%80_18.38.59_rrf8wc.png",
       title: "LA PANTHÈRE",
       altMsg: "Photo d'un projet LA PANTHÈRE",
       description:
@@ -63,7 +66,8 @@ export default function Projects() {
     },
     {
       id: 4,
-      image: "https://res.cloudinary.com/doqbpkxy7/image/upload/q_auto,f_auto/v1742925492/Capture_d_e%CC%81cran_2025-03-25_a%CC%80_18.57.30_kjej9m.png",
+      image:
+        "https://res.cloudinary.com/doqbpkxy7/image/upload/q_auto,f_auto/v1742925492/Capture_d_e%CC%81cran_2025-03-25_a%CC%80_18.57.30_kjej9m.png",
       title: "KANAP",
       altMsg: "Photo d'un projet KANAP",
       description: "Transformation d'un site e-commerce statique en dynamique",
@@ -73,7 +77,8 @@ export default function Projects() {
     },
     {
       id: 5,
-      image: "https://res.cloudinary.com/doqbpkxy7/image/upload/q_auto,f_auto/v1742848497/Capture_d_e%CC%81cran_2023-05-10_a%CC%80_12.52.15_qkqz6l.png",
+      image:
+        "https://res.cloudinary.com/doqbpkxy7/image/upload/q_auto,f_auto/v1742848497/Capture_d_e%CC%81cran_2023-05-10_a%CC%80_12.52.15_qkqz6l.png",
       title: "HOT TAKES",
       altMsg: "Photo d'un projet HOT TAKES",
       description:
@@ -84,7 +89,8 @@ export default function Projects() {
     },
     {
       id: 6,
-      image: "https://res.cloudinary.com/doqbpkxy7/image/upload/q_auto,f_auto/v1742924581/Capture_d_e%CC%81cran_2025-03-25_a%CC%80_18.41.23_myecw7.png",
+      image:
+        "https://res.cloudinary.com/doqbpkxy7/image/upload/q_auto,f_auto/v1742924581/Capture_d_e%CC%81cran_2025-03-25_a%CC%80_18.41.23_myecw7.png",
       title: "KASA",
       altMsg: "Photo d'un projet KASA",
       description: "Création d'une application web de location immobilière",
@@ -94,7 +100,8 @@ export default function Projects() {
     },
     {
       id: 7,
-      image: "https://res.cloudinary.com/doqbpkxy7/image/upload/q_auto,f_auto/v1742925997/Capture_d_e%CC%81cran_2025-03-25_a%CC%80_19.06.00_zdofyu.png",
+      image:
+        "https://res.cloudinary.com/doqbpkxy7/image/upload/q_auto,f_auto/v1742925997/Capture_d_e%CC%81cran_2025-03-25_a%CC%80_19.06.00_zdofyu.png",
       title: "SMARTPOINT",
       altMsg: "Photo d'un projet SMARTPOINT",
       description: "Création d'un site web e-commerce pour le téléphone mobile",
@@ -103,7 +110,8 @@ export default function Projects() {
     },
     {
       id: 8,
-      image: "https://res.cloudinary.com/doqbpkxy7/image/upload/q_auto,f_auto/v1742848468/Capture_d_e%CC%81cran_2023-05-25_a%CC%80_22.53.19_ddkhlr.png",
+      image:
+        "https://res.cloudinary.com/doqbpkxy7/image/upload/q_auto,f_auto/v1742848468/Capture_d_e%CC%81cran_2023-05-25_a%CC%80_22.53.19_ddkhlr.png",
       title: "BLOG TECHNOLOGIE",
       altMsg: "Photo d'un projet BLOG TECHNOLOGIE",
       description:
@@ -111,6 +119,18 @@ export default function Projects() {
       logos: [FaPhp, SiPhpmyadmin, SiAdobephotoshop],
       codeLink: "https://github.com/mobile-zone/mobile-zone.github.io",
       demoLink: "https://blogtechnologie.ct.ws/",
+    },
+    {
+      id: 9,
+      image:
+        "https://res.cloudinary.com/doqbpkxy7/image/upload/q_auto,f_auto/v1768780666/Capture_d_e%CC%81cran_2026-01-19_a%CC%80_00.53.22_si0uis.png",
+      title: "MON VIEUX GRIMOIRE",
+      altMsg: "Photo d'un projet MON VIEUX GRIMOIRE",
+      description:
+        "Création d'une API backend pour une application de gestion de livres",
+      logos: [FaNodeJs, SiMongodb, SiPostman, SiExpress],
+      codeLink: "https://github.com/Abdul-YSUF/Mon-Vieux-Grimoire-Backend",
+      demoLink: "https://mvg-abdulledev.vercel.app/",
     },
   ];
 
